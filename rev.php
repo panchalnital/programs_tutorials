@@ -16,4 +16,5 @@ $revsum=($revsum*10)+$rem;
 $num=($num/10);
 }
 echo "<br>Reverse number of 565989 is: $revsum";  
+echo "test";
 ?>
