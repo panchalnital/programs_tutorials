@@ -1,0 +1,3 @@
+RewriteEngine On
+#RewiteRule ^chess?$ prog1.php 
+#DirectoryIndex prog1.php #directory structe files call
