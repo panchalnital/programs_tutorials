@@ -1,0 +1,84 @@
+API(Application programimg interface)
+Rest API (REpresentational State Transger)
+
+Rest Api set of Rules:
+    =>Uniform Interface
+    =>Client-Server
+    =>Stateless
+    =>Cacheable
+    =>Layered system
+    =>Code on Demand 
+
+Rest API (REpresentational State Transger)
+=>set of guidelines which helps in creating a system where application can easily communicate with each other
+
+Rest Guidelines:
+    
+    => Separation client and server :- the implemenation of client and the implemenatation of the server can be done indeoendently without each knowing bout the other
+    
+    =>stateless: http request not store client made ,no session,no history
+    
+    =>Uniform interface:- identify of resources by URL
+                        www.abc.com/api/v1/products
+    
+    =>cacheable ;- the cabeable constraint requiores that a response should implicity or explicitly lable itself as cacheable or no-cacheable
+   
+    =>Layered system: the layered system style allow an architecture to be composed of Hierarchical Lyear like MVC is Layered system
+
+
+    Web APi Authentication &JWT :
+        =>Basic Authentication  : menas verifying a user who is accessing the system or web api 
+            ->the user passes their credentails[username and password ] on post request
+            ->credentials are verified
+            ->a session will intiate to accept the sunsequest request without validating the user again 
+
+
+        =>API Key Authentication
+            API Key difference API pass on header 
+        
+        =>Token based Authentication
+            1:client application send request Authentication server a valid credentials
+            2:web api server send token cient as response
+            3:client apllication the user the token to access the restricted resource in next request until the token valid
+            4:if access token is expried ,then the client request new access token by using Refresh token
+
+        =>OAuth
+            OAuth is standard for crating token based authentocation and authorication 
+        =>JWT Authentication
+            JWT(JSON web token)token based authentocation where JWT a token Format
+            
+            JWT Token 
+               Header : algirethem:'HS256', TYpe:"JWT"
+               Payload: { 'sub':'5656','name':'df'}
+               Verify Signature: HMACSHA256{
+                    base64urlencode(head)
+                    base64urlencode(payload)
+                    Secret
+                        secret base64 encode
+               }
+
+        =>JWT token 
+
+        Response Code :
+            1xx: informational :communicates trenfer protocal level information
+            2xx:success: client request was accepted succefuuly
+            3xx: redirection :request is not complete, client must take some addtitonal action in order
+            4xx: cleint error
+            5xx: server error: the error is not due to web apic code but due some environment setting 
+
+            200 OK Indicates that the request has succeeded.
+            201 Created Indicates that the request has succeeded and a new resource has been created as a result.
+            202 Accepted Indicates that the request has been received but not completed yet. It is typically used in log running requests and batch processing.
+
+            302 Found a Cache-Control or Expires header field.
+
+            400 Bad Request The request could not be understood by the server due to incorrect syntax. The client SHOULD NOT repeat the request without modifications.
+            401 Unauthorized Indicates that the request requires user authentication information. The client MAY repeat the request with a suitable Authorization header field
+
+            403 Forbidden Unauthorized request. The client does not have access rights to the content. Unlike 401, the client’s identity is known to the server.
+            404 Not Found The server can not find the requested resource.
+            408 Request Timeout
+
+            500 Internal Server Error The server encountered an unexpected condition that prevented it from fulfilling the request.
+
+            502 Bad Gateway The server got an invalid response while working as a gateway to get the response needed to handle the request.
