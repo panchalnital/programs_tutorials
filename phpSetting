@@ -1,0 +1,81 @@
+----------------------------------------------------
+apache setting {
+virtualhost setting in
+---------------------------------
+window for xampp/apache/conf/extra/httpd-vhosts.conf  change
+
+ubuntu for /etc/apache2/sites-available/example.com.conf
+
+sudo systemctl restart apache2
+-----------------------------------
+change the host window machine
+---------------
+c:/windowns/system32/drive/etc/hosts/ change servename with ip
+
+/etc/hosts
+---------------------
+
+}
+php ini setting{
+windown for xampp/php/php.ini
+Ubuntu for /etc/php/7.0/apache2/php.ini
+
+memory_limit
+enable_safe_mode
+register_globals = on EGPCS (Environment, GET, POST, Cookie, Server) variables are registered as
+upload_max_filesize
+upload_tmp_dir
+post_max_size
+display_errors = off
+error_reporting = E_ALL & ~E_NOTIC
+max_execution_time = 30
+file_uploads
+mysql.default_host = hostname
+mysql.default_user = username
+mysql.default_password = password
+}
+
+
+error_log = /var/log/php_errors.log
+error_reporting = E_ALL | E_STRIC
+
+
+.htaccess file is created in order to enable extra features for that subdirectory.
+1 Change the default start page
+DirectoryIndex index.html home.html config.php
+2 Block a specific IP or range of IPs
+Denying specific IP
+
+Order Deny,Allow
+Deny from 192.206.221.140
+
+Denying list of IPs
+Order Deny,Allow
+Deny from 185.120.120.120
+Deny from 192.190.190.190
+3 301 Permanent Redirect
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^domain1.com [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.domain1.com [NC]
+RewriteRule ^(.*)$ http://domain2.com/$1 [L,R=301,NC]
+
+4 Redirect from HTTP to HTTPS:
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+5 Customize your Error Page
+ErrorDocument 404 /404.html
+ErrorDocument 404 /error.php?q=404
+
+6 Authenticated folder
+AuthName "Your Authenticated Folder"
+AuthUserFile /path/.htpasswd
+AuthType Basic
+require valid-user

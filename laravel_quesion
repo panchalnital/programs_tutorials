@@ -1,0 +1,35 @@
+service container
+service provider
+depedancy injection
+defrable
+facade
+middlware
+kernal
+command
+schedulare
+jobs queue
+event listner
+migration
+hooks
+model
+controller
+laravelcache - rediscache filecache memcahce
+larvael elocunt and larvel db:query
+repostory pattern laravel
+laravel helpers
+model boot method
+csrf token
+autocation and authorise
+laravel accessors and mutators
+What is throttling and how to implement it in Laravel?
+
+what is the new feature add in php7
+what is the new feature add in php8
+oops in php
+composer
+composer update
+psr
+mysql views
+mysql indexing
+mysql cluster index and non cluster index
+uniqkey and primery key
