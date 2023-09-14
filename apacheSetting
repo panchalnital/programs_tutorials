@@ -1,0 +1,169 @@
+--------------------------------------------------------------------------
+
+apache setting {
+virtualhost setting in
+---------------------------------
+window for xampp/apache/conf/extra/httpd-vhosts.conf  change
+
+ubuntu for /etc/apache2/sites-available/example.com.conf
+
+sudo systemctl restart apache2
+-----------------------------------
+change the host window machine
+---------------
+c:/windowns/system32/drive/etc/hosts/ change servename with ip
+
+/etc/hosts
+---------------------
+
+}
+php ini setting{
+windown for xampp/php/php.ini
+Ubuntu for /etc/php/7.0/apache2/php.ini
+
+memory_limit
+enable_safe_mode
+register_globals = on EGPCS (Environment, GET, POST, Cookie, Server) variables are registered as
+upload_max_filesize
+upload_tmp_dir
+post_max_size
+display_errors = off
+error_reporting = E_ALL & ~E_NOTIC
+max_execution_time = 30
+file_uploads
+mysql.default_host = hostname
+mysql.default_user = username
+mysql.default_password = password
+}
+---------------------------------------------------------------------------
+oop
+https://www.fullstacktutorials.com/interviews/oops-interview-questions-and-answers-for-experienced-in-php-5.html
+
+-------------------------------
+
+8*8
+//
+for($i=1;$<=8;$i++){
+for($j=1;$j<=8;$j++){
+
+if(j%2==0){
+echo "white"
+}else{
+echo "black"
+}
+}
+echo "\n";
+}
+
+--------------------------------------
+
+$array=[15,abc,2,20,11,5];
+
+$arr1=$array[0];
+$out=[];
+for($i=1;i<=len($array);$i++){
+if($arr1>$array[i]){
+$out[]=$array[i];
+
+}
+$arr1=$array[i];
+}
+print_r($out);
+
+-------------------------------------------------
+employee
+emp_id Employee  EMP_Salary
+1        A            10000    
+2        B            25000
+3        C             55000
+4        D            70000
+
+
+
+deptments
+dept_id dept
+1        P
+2        Q
+3        R
+4        S
+5        T
+
+relartion_emp_dept
+
+EMP_id  dept_id
+    1        1
+    2        2
+    1        2
+    3        4
+    3        4
+    4        3
+
+
+select d.dept,e.employee
+from relartion_emp_dept ed,d.deptments,e.employee
+where ed.dept_id=d.dept and ed.EMP_id=e.emp_id
+group by d.dept having count(employee);
+
+----------------------------------------
+
+select EMP_Salary from employee order by EMP_Salary desc limit 2,1;
+
+--------------------------
+string = "reverse"
+function cnt(str) {
+  var result = 0, i = 0;
+  var e='r';
+  for(i;i<str.length;i++)
+  if(str[i]==e){
+    result++;
+  }
+  return result;
+};
+
+var res=cnt('reverse');
+console.log(res); //2
+
+---------------------------------------------------------------------
+
+$a = '1';
+$b = &$a;
+$b = "2$b";
+
+Final value $b = 22
+
+$x = 5;
+echo $x; 5
+echo "<br />";
+echo $x+++$x++; error
+echo "<br />";
+echo $x;
+echo "<br />";
+echo $x---$x--;
+echo "<br />";
+echo $x;
+
+
+$str="abbcdffg";
+$strleng=strlen($str);
+$cnt=0;
+$outarr=[];
+for($i=0;$i<$strleng;$i++){
+for($j=0;$j<$strleng;$j++){
+if($str[$i]==$str[$j]){
+$cnt++
+}
+}
+$out[$str[$i]]=$cnt;
+$cnt=0;
+}
+employee
+id,name,salary,deptname.
+
+
+select name,employee.salray from employee
+inner join(select salary from employee group by(salary) having count(id)>1)temp on
+employee.salary=temp.salary;
+
+
+select max(salary) as salary_dept from employee
+group by (deptname);
