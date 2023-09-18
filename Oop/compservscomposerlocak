@@ -1,0 +1,14 @@
+composer.json :
+    =>compose update command should be used only in development phase of the projects baecuse it updates the dependencies and aslo update the compser.locak file
+
+    =>if you run this command in production it can breack your code.beacuse it'll update the dependencies which is not good in production beacuse version may change
+
+composer.lock
+    => composer.install in production 
+    => beacuse not update any depencey
+    => if require exite version view on compser,lock
+    => when you run composer install command in terminal  reads the composer.locak file and install dependencies which are mentioned this file
+    => but what if the composer,lock file does not exists
+    =>so in thid case it reads the composer,json file and install the dependencies then creates the composerloca
+
+    =>production you need only those dependencies which you have used in deveopment phase,and those  dependencies can be found with thire exact version in composer.lock
