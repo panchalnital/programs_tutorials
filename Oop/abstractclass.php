@@ -1,5 +1,5 @@
 <?php 
-//show what he neccersy 
+//show what method the neccersy 
 //cannot create the instand(objects)
 //if you create abstract method then define on signatuetr
 //abstract class also the define property and methods 
@@ -7,6 +7,31 @@
 //abstract class define public,private and veriables on class
 
 //abstract method if you declare protected derived class must decler as public 
+
+// abstract class is a half defined parent class or a partially defined parent class
+// abstract method also this override on abstract class
+
+// we can't define pur half calss in 
+abstract class customer{
+    public $name;
+    public $address;
+    public $productname;
+    public $productAmount;
+
+    abstract public function CalclateDiscount();
+}
+
+class GoldCustomer{
+    public function CalclateDiscount(){
+        return $productAmount-10;
+    }
+}
+
+class SilverCustomer{
+    public function CalclateDiscount(){
+        return $productAmount-5;
+    }
+}
 
 
 abstract class car{

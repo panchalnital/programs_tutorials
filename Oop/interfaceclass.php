@@ -1,4 +1,6 @@
 <?php
+
+//interface is contract is legal between binding developer are createring class and customer user class
 //https://www.youtube.com/watch?v=S6v9CJ8IGYM&list=PLT51dtioU1pOCka0jIwYYaIGhPct3El_i&index=13
 // interfaces can be useful in improving code fexibllity and resability
 // payment processing,API integrations database connection,
@@ -8,6 +10,13 @@
 //interface do not define property and body of the logic in mehtod
 //inteerface only define public methods
 //multple interface impplements , , 
+
+//interface class aslo implements other interface class
+//in interface class in define in const prorperty
+// but can't not overider on derrivd class
+
+//To change Interface what's the best practice ?
+//=> interface cand extend other interface class and used 
 
 interface PayemntProcessInterface{
     public function processPayment($amount);
