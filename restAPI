@@ -9,7 +9,7 @@ Rest Api set of Rules:
     =>Layered system
     =>Code on Demand 
 
-Rest API (REpresentational State Transger)
+Rest API (REpresentational State Transfer)
 =>set of guidelines which helps in creating a system where application can easily communicate with each other
 
 Rest Guidelines:
@@ -66,19 +66,31 @@ Rest Guidelines:
             4xx: cleint error
             5xx: server error: the error is not due to web apic code but due some environment setting 
 
-            200 OK Indicates that the request has succeeded.
-            201 Created Indicates that the request has succeeded and a new resource has been created as a result.
+            *200 OK Indicates that the request has succeeded.
+            *201 Created Indicates that the request has succeeded and a new resource has been created as a result.
             202 Accepted Indicates that the request has been received but not completed yet. It is typically used in log running requests and batch processing.
 
-            302 Found a Cache-Control or Expires header field.
+            *302 Found a Cache-Control or Expires header field.
 
-            400 Bad Request The request could not be understood by the server due to incorrect syntax. The client SHOULD NOT repeat the request without modifications.
-            401 Unauthorized Indicates that the request requires user authentication information. The client MAY repeat the request with a suitable Authorization header field
+            *400 Bad Request The request could not be understood by the server due to incorrect syntax. The client SHOULD NOT repeat the request without modifications.
+            *401 Unauthorized Indicates that the request requires user authentication information. The client MAY repeat the request with a suitable Authorization header field
 
-            403 Forbidden Unauthorized request. The client does not have access rights to the content. Unlike 401, the client’s identity is known to the server.
-            404 Not Found The server can not find the requested resource.
+            *403 Forbidden Unauthorized request. The client does not have access rights to the content. Unlike 401, the client’s identity is known to the server.
+            *404 Not Found The server can not find the requested resource.
             408 Request Timeout
 
-            500 Internal Server Error The server encountered an unexpected condition that prevented it from fulfilling the request.
+            *500 Internal Server Error The server encountered an unexpected condition that prevented it from fulfilling the request.
 
-            502 Bad Gateway The server got an invalid response while working as a gateway to get the response needed to handle the request.
+            502 Bad Gateway 
+            The server got an invalid response while working as a gateway to get the response needed to handle the request.
+
+
+Widely used HTTP Headers:
+    Accept          :type of data client can understand
+    Accept-Encoding :which encoding method client can understand
+    Accept-Language :client is expecting the respomse in the mentioned langauge
+    Content-Type     : specifies the media type of the resorces
+    Host             : specifies the domain name
+    Authorization    : used to pass credentials so that server can authenticate
+    Access-Control-allow-origin : which origin is allwed to access the resources
+    Access-Control-Allow-Method: which methods are allowed to access the cross-origin resorces
