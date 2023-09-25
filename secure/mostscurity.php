@@ -74,5 +74,11 @@
      sql :
      firy in query on textbox
      '; drop table forum_topics;--
+     ' or '1'='1
      using prepare statment
+
+     $pre_stmt=$con->prepare('select * from conatct name=? and message=?');
+     $pre_stmt->bind_param("ss",$name,$message);
+     $pre_stmt->execute();
+
   */

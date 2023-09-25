@@ -9,4 +9,11 @@
  * 
  * creater index index_name on tables_name(column1,column2);
  * drop index index_name on tables_name
+ * create view view_name as 
+ * 
+ * drop tigger if exists tr_in_location 
+ * create tigger tr_in_location
+ * before insert on 'location'
+ * for each row
+ * set new.datetime=noe()
  */
