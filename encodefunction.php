@@ -37,6 +37,8 @@ echo "\n ".base64_decode($strbase64e);
 //utf8_encode Encode: utf8_encode()
 //This function encodes an ISO-8859–1 string to UTF-8. learn more about it on
 
+//convert the script to in string code 
+
 $htmlspecial="<script>alert('test')</script>";
 echo htmlspecialchars($htmlspecial);
 

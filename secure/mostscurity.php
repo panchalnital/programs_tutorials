@@ -48,3 +48,31 @@
  * htmlspecialchars(string,flag)// & " , < > convert into string 
  * htmlspecialchars_decode(string,flag)//
  */
+
+
+ /***
+  * how attackers steal cookies
+  * httpOnly set cookies not reading
+  setcookie(
+    string $name,
+    string $value = "",
+    int $expires_or_options = 0,
+    string $path = "",
+    string $domain = "",
+    bool $secure = false,
+    bool $httponly = false
+): bool
+
+     setcookie('key','value',time(),'/',null,null,true)
+
+     document.cookie
+     display on console black value
+
+     =>init_set('display_errors','off');
+     =>error_reporting(0);
+
+     sql :
+     firy in query on textbox
+     '; drop table forum_topics;--
+     using prepare statment
+  */
