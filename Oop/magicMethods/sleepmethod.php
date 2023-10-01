@@ -47,5 +47,6 @@ $password='password';
 $tablename='student';
 $conn=new Connection($dsn, $username, $password,$tablename);
 $sel->serialize($conn);// that function before call sleep function clear the objects of value
+$us->unserialize($sel);//convert array into objects that user
 
 ?>

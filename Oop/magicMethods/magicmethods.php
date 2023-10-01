@@ -1,5 +1,5 @@
 <?php 
-
+//https://www.geeksforgeeks.org/what-are-magic-methods-and-how-to-use-them-in-php/
 //magic method automatically call in class creater on objects collator_get_error_code
 //magic method __ sign 
 //list of magic methods
@@ -21,4 +21,8 @@
     __invoke()
     __toString(): The __toString() magic method is called when an object is treated as a string, such as when using the echo or print functions. It allows you to define a string representation of the object.
     
+
+
+    =>magic method not need objects create that mean automatically call by any condition 
+    =>magic method starting prefix(__) function
     */

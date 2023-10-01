@@ -14,7 +14,7 @@ Rest API (REpresentational State Transfer)
 
 Rest Guidelines:
     
-    => Separation client and server :- the implemenation of client and the implemenatation of the server can be done indeoendently without each knowing bout the other
+    => Separation client and server :- the implemenation of client and the implemenatation of the server can be done indeoendently without each knowing both the other
     
     =>stateless: http request not store client made ,no session,no history
     

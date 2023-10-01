@@ -9,7 +9,7 @@ composer.lock
     => composer.install in production 
     => beacuse not update any depencey
     => if require exite version view on compser,lock
-    => when you run composer install command in terminal  reads the composer.locak file and install dependencies which are mentioned this file
+    => when you run composer install command in terminal  reads the composer.lock file and install dependencies which are mentioned this file
     => but what if the composer,lock file does not exists
     =>so in thid case it reads the composer,json file and install the dependencies then creates the composerloca
 
