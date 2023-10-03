@@ -1,0 +1,20 @@
+1 if productions apllication is slow/some of the functionality does ork or down
+
+2 when use submit the form server responds with http error code with 500 serivces
+
+3 when user repoerted issue for production, there will ticket Jira/Bugzilla/Zoho , which contains issue deatil,impact,priority and severrify and there will be SLA for this
+
+4 =>first step to identify the log for your apllication,
+  => some of apllication record each and every transaction and you can verify in the apllication itself
+  => if log are not available in app, you must connect to application srver using putty/WINSCP and collect the logs
+  =>if your application load balancer then collect logs on all the instance
+
+  => form the logs, developer can able to the find the exception stack trace corresponding to the 500 series an will able to know which line of code cusing to exception
+
+  => developer can debug the code in thir local/stage enviroment wit same data setup and prod and debug the issue to find RCA.
+
+  =>once code fix is done ,developer can test in local/dev/qa and stag enviroment and can promote to production based on the bussines ungeney getting requried approvart
+
+  => for any production issue which has the bussiness impact you must provide the RCA and preventive action for the issue.
+
+  =>for any code changes deployment, you must submit the change request which contain bussines impact, deployments and rollback plan change request requries bussiness outage in case monolithic  application and need the approvel from business stakeholders for the downtime windo
