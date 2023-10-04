@@ -1,5 +1,6 @@
 <?php
 /***
+ * https://www.youtube.com/watch?v=sBwsyzBRSAQ
  * 1 => Union types
  *      => union type is type declation multple type of data pass  
  *      
@@ -72,3 +73,10 @@ $person->setPerson(gender:'male',name:'rahul',age:35);
       public float $z = 0.0,
     ) {}
   }
+
+  /***
+   * 5 Nullsafe operator : some time get error null property is null
+   *        if access the property of objects is exiting available not 
+   * =>Instead of null check conditions, you can now use a chain of calls with the new nullsafe operator. When the evaluation of one element in the chain fails, the execution of the entire chain aborts and the entire chain evaluates to null.
+   */
+  $county=$session?->user?->getaddres?->country;
