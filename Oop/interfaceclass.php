@@ -17,6 +17,9 @@
 
 //To change Interface what's the best practice ?
 //=> interface cand extend other interface class and used 
+//=> interface is a ontract by having contract we have better control on impact analysis,change management and breaking changes
+//=> muliple inheritance helps to add new methods with out affecting the ld intefaces
+
 
 interface PayemntProcessInterface{
     public function processPayment($amount);
@@ -29,7 +32,6 @@ class RazoryPaymentPrcess implements PayemntProcessInterface{
     }
 
 }
-
 class PayuPaymentPrcess implements PayemntProcessInterface{
 
     public function processPayment($amount){
@@ -37,7 +39,6 @@ class PayuPaymentPrcess implements PayemntProcessInterface{
     }
 
 }
-
 class Order{
 
     private $paymentprocess;
@@ -56,3 +57,25 @@ $myorder->checkout(100);
 
 $myorderpayu=new Order(new PayuPaymentPrcess());
 $myorderpayu->checkout(100);
+
+
+/**************************************************************************** */
+/***
+ * Abstract class  vs interface class
+ * 
+ *  Abstract class comes under partial abstraction.
+    Abstract classes can maintain abstract methods and non abstract methods.
+    In abstract classes, we can create the variables.
+    In abstract classes, we can use any access specifier.
+    By using 'extends' keyword we can access the abstract class features from derived class.
+    Multiple inheritance is not possible.
+ * 
+ * 
+ *  Interface comes under fully abstraction.
+    Interfaces can maintain only abstract methods.
+    In interfaces, we can't create the variables.
+    In interface, we can use only public access specifier.
+    By using 'implement' keyword we can get interface from derived class.
+    By using interfaces multiple inheritance is possible.
+ * */ 
+
