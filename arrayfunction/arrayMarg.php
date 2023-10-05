@@ -14,13 +14,39 @@
  $arr3=[1,2,3];
  array_merge($arr1,$arr2,$arr3);
  $arr=$arr1+$arr2+$arr3; // plus sing used the array1 and array2 in same key but if you want to array1 key value that time used in + sing
-
+//  Array
+//  (
+//      [0] => dsfsdf
+//      [a] => aa
+//      [1] => er1
+//      [2] => dd
+//      [3] => cc
+//      [4] => 1
+//      [5] => 2
+//      [6] => 3
+//  )
 
 // marge array1  and array2 same key then create the associate array 
  $arr11=['a'=>'ram','b'=>'sita','c'=>'er1'];
  $arr21=['a'=>'aa','b'=>'dd'];
  
- array_marge_recursive($arr1,$arr2,$arr3);
+ array_merge_recursive($arr1,$arr2,$arr3);
+ Array
+// (
+//     [a] => Array
+//         (
+//             [0] => ram
+//             [1] => aa
+//         )
+
+//     [b] => Array
+//         (
+//             [0] => sita
+//             [1] => dd
+//         )
+
+//     [c] => er1
+// )
  // [b]=>array(
 //      [0]=>sita
 //      [1]=>aa

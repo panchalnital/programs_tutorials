@@ -1,5 +1,7 @@
 <?php
 
+// same name of file,class can not include derived class
+//
 //Namespaces are similar directory structures in file system.
 //Directories store relaeated files,while namespaces group related classes,
 //directory prvent having wo files with same name and namespaces fllow the same principle.
@@ -18,4 +20,14 @@ class post{
     public function __construct(){
         echo "connected namespace";
     }
+}
+
+namespace per1;
+class person{
+
+}
+
+namespace per2;
+class person{
+
 }

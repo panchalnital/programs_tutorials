@@ -30,7 +30,7 @@ Rest Guidelines:
         =>Basic Authentication  : menas verifying a user who is accessing the system or web api 
             ->the user passes their credentails[username and password ] on post request
             ->credentials are verified
-            ->a session will intiate to accept the sunsequest request without validating the user again 
+            ->a session will intiate to accept the subsequest request without validating the user again 
 
 
         =>API Key Authentication
@@ -63,7 +63,7 @@ Rest Guidelines:
             1xx: informational :communicates trenfer protocal level information
             2xx:success: client request was accepted succefuuly
             3xx: redirection :request is not complete, client must take some addtitonal action in order
-            4xx: cleint error
+            4xx: client error
             5xx: server error: the error is not due to web apic code but due some environment setting 
 
             *200 OK Indicates that the request has succeeded.

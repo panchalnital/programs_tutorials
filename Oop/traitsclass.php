@@ -27,3 +27,26 @@ class helloWorld{
 
 $w=new helloWorld;
 $w->sayhello();
+
+
+// traits method overriding 
+trait hello{
+    public function sayhello(){
+        echo "hello function\n";
+    }
+}
+trait hi{
+    public function sayhello(){
+        echo "hi function\n";
+    }
+}
+class base{
+    use hello,hi{
+        hello::sayhello insteadof hi;//means hello class sayhello method call kar not hi class method
+        hi::sayhello as newhi; //change hi class method sayhello method then we call both method 
+    }
+}
+
+$test=new base();
+$test->sayhello();
+$test->newhi();

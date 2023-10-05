@@ -1,29 +1,40 @@
 Difference Between Development, Staging, and Prod Environment?
 
-Development, Staging, and Production (Prod) environments are distinct phases in the software development and deployment process, each serving a specific purpose. Here's an overview of the key differences between them:
+Development, Staging, and Production (Prod) environments are distinct phases in the software development and 
+deployment process, each serving a specific purpose. Here's an overview of the key differences between them:
 
-Development Environment:
+=> Development Environment:
 
-Purpose: This environment is primarily used by developers during the coding and testing phase of software development.
+Purpose: This environment is primarily used by developers during the coding and testing phase of 
+        software development.
+
 Characteristics:
 Typically located on developers' local machines or dedicated development servers.
 It's where coding, debugging, and unit testing occur.
 May not be stable or reflect the exact configuration of the production environment.
 Often used for experimenting with new features or changes without affecting the live application.
-Staging Environment:
 
-Purpose: Staging is a bridge between development and production, serving as a testing ground for final pre-production testing.
+=> Staging Environment:
+
+Purpose: Staging is a bridge between development and production, serving as a testing ground 
+        for final pre-production testing.
+
 Characteristics:
-Designed to closely mimic the production environment in terms of configuration and infrastructure.
-Used for integration testing, user acceptance testing (UAT), and performance testing before changes are deployed to the production environment.
-Ideally, it should be isolated from the public, accessible only to authorized personnel.
-Production (Prod) Environment:
+-Designed to closely mimic the production environment in terms of configuration and infrastructure.
+-Used for integration testing, user acceptance testing (UAT), and performance testing before changes 
+are deployed to the production environment.
+-Ideally, it should be isolated from the public, accessible only to authorized personnel.
 
-Purpose: The production environment is the live, operational environment where the software or application is accessible to end-users or customers.
+=> Production (Prod) Environment:
+
+Purpose: The production environment is the live, operational environment where 
+the software or application is accessible to end-users or customers.
+
 Characteristics:
 Hosts the live version of the software that customers use.
 Must be highly stable, secure, and optimized for performance.
 Any changes deployed here should undergo rigorous testing in the development and staging environments to minimize the risk of issues affecting users.
+
 Key Takeaways:
 
 Development is where coding and initial testing happen.

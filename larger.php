@@ -84,5 +84,29 @@ function ascdesc($arr){
  print_r($out);
 
 
+//find largest and second largest element in array
+$arr=[1,10,9,5,15,13];
+$max=$smax=0;
+for($i=0;$i<count($arr);$i++){
+    if($arr[$i]>$max){
+        $smax=$max;
+        $max=$arr[$i];
+    }else if($arr[$i]>$smax && $arr[$i]!=$max){
+        $smax=$arr[$i];
+    }
+}
+
+//Smallest sum of two elements Time complexity O(n)
+
+$arr=[1,10,9,5,15,13];
+$max=$smax=2147483647;
+for($i=0;$i<count($arr);$i++){
+    if($arr[$i]>$max){
+        $smax=$max;
+        $max=$arr[$i];
+    }else if($arr[$i]>$smax && $arr[$i]!=$max){
+        $smax=$arr[$i];
+    }
+}
 
 ?>
