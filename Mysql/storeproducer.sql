@@ -10,7 +10,7 @@ Modularity: Stored procedures allow you to break down complex tasks into smaller
 Performance: They can be faster than executing individual SQL statements because the procedure is precompiled and stored in the database.
 Syntax: To create a stored procedure in MySQL, you use the CREATE PROCEDURE statement. Here's a simplified example:
 
-Copy
+
 DELIMITER //
 CREATE PROCEDURE sp_GetEmployee(IN employeeID INT)
 BEGIN
@@ -23,7 +23,7 @@ Parameters: Stored procedures can accept input parameters (like employeeID in th
 
 Execution: Once defined, you can call a stored procedure using the CALL statement:
 
-Copy
+
 CALL sp_GetEmployee(123);
 This would execute the sp_GetEmployee procedure with the input parameter 123.
 

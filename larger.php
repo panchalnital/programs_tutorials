@@ -1,4 +1,22 @@
 <?php
+/** duplicate value remove in array and ascending order in php without php function  */
+
+$input="1,2,3,1,4,3,6,5,4,100";
+$array=explode(',',$input);
+$out=[];
+
+$uniqueme = array();
+foreach ($array as $key => $value) {
+   $uniqueme[$value] = $key;
+}
+$final = array();
+foreach ($uniqueme as $key => $value) {
+   $final[] = $key;
+}
+//print_r($uniqueme);
+print_r($final);
+
+
 /* max value find in array */
 $array1=[5,1,9,8,2,6];
 $larger=$array1[0];
@@ -106,6 +124,19 @@ for($i=0;$i<count($arr);$i++){
         $max=$arr[$i];
     }else if($arr[$i]>$smax && $arr[$i]!=$max){
         $smax=$arr[$i];
+    }
+}
+
+class dbconnection{
+    private static $instace=null;
+    public function __construct(){
+        echo "connection";
+    }
+    public static function dbconn(){
+        if(self::$instace==null){
+            self::$instace=new dbconnection();
+        }
+        return self::$instace;
     }
 }
 
