@@ -1,0 +1,42 @@
+A robots.txt file is a set of instructions for bots that tells search engine crawlers which URLs they can access on a website. It's used to avoid overloading a site with requests. 
+
+A robots.txt file is included in the source files of most websites. It consists of one or more rules. Each rule blocks or allows access for all or a specific crawler to a specified file path on the domain or subdomain where the robots.txt file is hosted. 
+
+A robots.txt file helps website owners control the behavior of search engine crawlers. It allows them to: 
+
+Manage access
+Limit indexing to specific areas
+Regulate crawling rate
+
+A robots.txt file is not a mechanism for keeping a web page out of Google. To keep a web page out of Google, you 
+
+can: 
+Block indexing with noindex
+Password-protect the page
+Google stopped supporting the unofficial robots.txt noindex directive in September 2019.
+
+
+
+
+
+
+
+
+
+
+
+===============================
+.htaccess
+Tells your Apache server how to handle page and file names, URLs, and a user's way to access these resources. It's used for directory-level access control, URL redirection, and URL rewriting.
+
+robots.txt
+Instructs search engine crawlers which pages on a website they can and cannot crawl. It's included in the source files of most websites.
+
+.htaccess is used mostly for internal access, while robots.txt manages external access. The server software always obeys the .htaccess file, but a search engine may or may not obey the instructions written in the robots.txt file. 
+
+To create a robots.txt file, you can: 
+
+Create a file named robots.txt.
+Add rules to the robots.txt file.
+Upload the robots.txt file to the root of your site.
+Test the robots.txt file.
