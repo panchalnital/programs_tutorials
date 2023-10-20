@@ -17,6 +17,7 @@ BEGIN
     SELECT * FROM employees WHERE id = employeeID;
 END //
 DELIMITER ;
+
 In this example, we create a procedure called sp_GetEmployee that takes an employee ID as input and retrieves the corresponding employee's data from the employees table.
 
 Parameters: Stored procedures can accept input parameters (like employeeID in the example above) and return output parameters if needed.

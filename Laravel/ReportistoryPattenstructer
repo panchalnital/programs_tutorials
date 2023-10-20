@@ -1,0 +1,25 @@
+
+repository pattern laravel
+
+The repository design pattern is a software design pattern that separates the data access layer and business logic layer of an application. It provides a consistent interface to access data stored in a database, file system, or external service. 
+
+The repository pattern: 
+
+-Abstracts the data layer of an application
+-Provides a separation of concerns between the application's data access layer and business logic layer
+-Allows you to use objects without having to know how these objects are persisted
+-Creates a bridge between models and controllers
+-Provides a collection interface to access data
+-Allows you to inject the repository into your controllers or services and use its methods to interact with the data layer
+
+-The repository pattern consists of adding a layer of classes that are in charge of accessing the data source and obtaining the different data models. These classes have methods such as: find, findAll, create, update. 
+
+To use the repository pattern in a Laravel application, you need: 
+A basic understanding of PHP and Laravel
+-PHP 7.4
+-Composer installed globally
+-cURL
+-Git
+-jq (optional)
+-The Laravel installer
+-Access to a MySQL database

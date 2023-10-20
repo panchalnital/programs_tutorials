@@ -25,7 +25,8 @@ echo base::$name;
 base::show();
 
 /***
- *  Late Static Binding: if you want to derived class property call that time use static keyword base class
+ *  Late Static Binding: if you want to derived class property call that time use static keyword 
+ * base class
  * 
  * 
  */

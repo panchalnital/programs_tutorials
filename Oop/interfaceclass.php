@@ -1,6 +1,6 @@
 <?php
 
-//interface is contract is legal between binding developer are createring class and customer user class
+//interface is contract is legal binding between developer are createring class and customer user class
 //https://www.youtube.com/watch?v=S6v9CJ8IGYM&list=PLT51dtioU1pOCka0jIwYYaIGhPct3El_i&index=13
 // interfaces can be useful in improving code fexibllity and resability
 // payment processing,API integrations database connection,
@@ -19,6 +19,8 @@
 //=> interface cand extend other interface class and used 
 //=> interface is a ontract by having contract we have better control on impact analysis,change management and breaking changes
 //=> muliple inheritance helps to add new methods with out affecting the ld intefaces
+
+//=>An abstract class allows you to create functionality that subclasses can implement or override. An interface only allows you to define functionality, not implement it
 
 
 interface PayemntProcessInterface{

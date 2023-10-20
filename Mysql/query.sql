@@ -47,3 +47,7 @@ from employee
 inner join dept on employee.dept_no=dept.dept_no
 group by dept.name
 
+/* substring replace abc*/
+
+update users set name=replace(name,'gupta','abc');
+

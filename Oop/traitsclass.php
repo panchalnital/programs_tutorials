@@ -41,7 +41,7 @@ trait hi{
     }
 }
 class base{
-    use hello,hi{
+    use hello,hi{   
         hello::sayhello insteadof hi;//means hello class sayhello method call kar not hi class method
         hi::sayhello as newhi; //change hi class method sayhello method then we call both method 
     }

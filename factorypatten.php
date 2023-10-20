@@ -20,3 +20,5 @@ class factory{
 $obj=factory::createEmp('Nital','IT');
 echo "<pre>";
 print_r($obj);
+
+
