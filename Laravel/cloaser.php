@@ -118,4 +118,40 @@ echo $b('world');// clouser
 // as return function 
 
 
+===========================
+PHP closures, also known as anonymous functions, are a powerful feature introduced in PHP 5.3. They allow you to create and use functions without giving them a specific name. Closures are particularly useful when you need to pass functions as arguments to other functions, create callbacks, or work with variables in a local scope. Here's a brief overview of PHP closures:
+
+Basic Syntax:
+Closures are defined using the function keyword, followed by a list of parameters (if any), and the function's body enclosed in curly braces. For example:
+
+Copy
+$closure = function($param) {
+    // Function logic here
+};
+Usage:
+Closures are commonly used for tasks like array filtering, sorting, and mapping. They can also be assigned to variables, passed as arguments to functions, or returned from functions.
+
+Scope:
+Closures can capture variables from the surrounding scope. This means they can "remember" and use variables from the context in which they were defined.
+
+Copy
+$x = 10;
+$closure = function($y) use ($x) {
+    return $x + $y;
+};
+echo $closure(5); // Outputs 15
+Arrow Functions (PHP 7.4+):
+PHP 7.4 introduced arrow functions as a more concise way to write simple closures that implicitly capture variables from the outer scope. For example:
+
+Copy
+$x = 10;
+$arrowFunction = fn($y) => $x + $y;
+echo $arrowFunction(5); // Outputs 15
+Use Cases:
+
+Callbacks for array functions like array_filter, array_map, and usort.
+Event handling and listeners in web applications.
+Implementing custom sorting algorithms.
+Lazy loading of resources.
+
 
