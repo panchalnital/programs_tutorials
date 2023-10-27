@@ -1,0 +1,23 @@
+=>In Laravel, accessors and mutators are custom, user-defined methods that allow you to alter data before it's saved to and fetched from a database.
+
+=> if you want to coming and going data in database thattime use the accessors and mutators
+
+
+
+Mutators : 
+- mutators is setter method in model class setUserNameAttribute()
+- mutator transforms an eloquent attributes value when it set
+-Used to format attributes before saving them into the database. For example, you may want to hash passwords before storing them.
+
+in model file 
+public function setUserNameAttribute($value){
+    $this->attributes['user_name']=ucword($value);
+}
+
+
+
+Accessors : Used to format attributes when you retrieve them from a database. For example, you may want to combine two fields to show the full name as a single field.
+
+public function getDodAttribute($value){
+    return date('d-M-y',strtotime($value));
+}

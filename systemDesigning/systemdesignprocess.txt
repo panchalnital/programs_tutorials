@@ -1,0 +1,17 @@
+system design id the process of designing the elements of a system
+    : such as the architecture, modules and components, the different interfaces of those components
+        and the data that goes though that system
+
+TYpe of system design:
+=> LLD(low level design)
+=> HLD(High level design)
+
+LLD (Low level design):
+    = describes the man components that would be developed for the resulting product.
+    = the system architecture deatils,database design,services and processes, relationship between
+        avrious modules between various modules and feature
+
+=> HLD(High level design)
+    = describes the design of each elements mentned in the high-level design of the system,
+    = classes,interfaces,relationship between differentclases and actul logic of the various components
+
