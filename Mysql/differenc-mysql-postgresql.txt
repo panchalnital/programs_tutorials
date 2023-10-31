@@ -1,0 +1,28 @@
+
+S.NO.	MySQL	PostgreSQL
+1.	It is the most popular Database.	        => It is the most advanced Database.
+2.	It is a relational-based DBMS.	            =>It is an object-based relational DBMS
+3.	It is an ACID-compliant only when used with InnoDB and NDB cluster engines	 =>It is an ACID-compliant from the ground up.
+4.	The implementation language is C/C++.	    =>The implementation language is C.
+
+5.	It supports the CASCADE option.	            =>CASCADE option is supported.
+
+6.	GUI tool provided is MySQL Workbench	    =>PgAdmin is provided
+
+7.	It does not support partial, bitmap, and expression indexes.	         =>It supports all of these
+
+8.	It doesn’t provide support for Materialised views and Table inheritance. =>PostgreSQL provides both of them.
+
+9.	SQL only supports Standard data types.	    =>It supports Advanced data types such as arrays, hstore, and user-defined types.
+
+10.	SQL provides limited MVCC support ( in InnoDB)	 =>Full MVCC support.
+
+11.	It was developed in 1995 by a Swedish company named MySQL AB.	        =>It was developed at the University of California, Department of Computer Science.
+
+12.	It is reliable, simple, and faster.	    =>It is slower and more complex.
+13.	Troubleshooting MySQL is easy.	        =>It is difficult to troubleshoot PostgreSQL.
+14.	MySQL is licensed beneath GNU GPU.	    =>PostgreSQL is licensed beneath MIT style.
+
+15.	It is best suitable for simple operations like write and reading.	=>It is commonly used for large and complex operations.
+
+16.	In MySQL, every connection created is an OS thread.	=>In PostgreSQL, every connection created is an OS process.

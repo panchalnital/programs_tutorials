@@ -8,8 +8,7 @@
  * 5 : how attackers perfom cross-site scripting
  * 6 : how attackers steal cookies
  * 7 : what is corss-site request forgery
- * 8 : how write regular expression
- * 9 : how  to validate user input  using regular expression
+ * 8 : how write regular expression * 9 : how  to validate user input  using regular expression
  *
  * 
  * 

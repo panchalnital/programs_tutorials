@@ -165,4 +165,16 @@ for ($i = 0; $i < $length - 1; $i++) {
 foreach ($multidimensionalArray as $person) {
     echo "Name: " . $person['name'] . ", Age: " . $person['age'] . "<br>";
 }
+
+//PHP random string generator     
+$length=3;
+$characters = 'ABC';
+//$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+$charactersLength = strlen($characters);
+$randomString = '';
+for ($i = 0; $i < $length; $i++) {
+  echo "\n";
+    $randomString .= $characters[random_int(0, $charactersLength - 1)];
+}
+echo $randomString, "\n";
 ?>
