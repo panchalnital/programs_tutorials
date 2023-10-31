@@ -1,0 +1,37 @@
+Polymorphism in PHP is a fundamental concept in object-oriented programming (OOP). It allows objects of different classes to be treated as objects of a common superclass. PHP supports polymorphism through method overriding and method overloading. Here are the types of polymorphism in PHP:
+
+Compile-time (Early Binding) Polymorphism:
+
+Method Overloading: This is when a class has multiple methods with the same name but a different number or type of parameters. PHP does not natively support method overloading, but you can achieve it using default values for parameters.
+Example:
+
+Copy
+class MyClass {
+    public function add($a, $b) {
+        return $a + $b;
+    }
+    public function add($a, $b, $c) {
+        return $a + $b + $c;
+    }
+}
+Run-time (Late Binding) Polymorphism:
+
+Method Overriding: This is when a subclass provides a specific implementation for a method that is already defined in its parent class. The subclass method overrides the parent class method, and the method called depends on the object's type at runtime.
+Example:
+
+Copy
+class Animal {
+    public function makeSound() {
+        echo "Animal makes a sound";
+    }
+}
+
+class Dog extends Animal {
+    public function makeSound() {
+        echo "Dog barks";
+    }
+}
+
+$animal = new Dog();
+$animal->makeSound(); // Output: "Dog barks"
+Polymorphism is a key feature of OOP, allowing for flexibility and code reusability by enabling different objects to respond to the same method in a way that makes sense for their specific class.
