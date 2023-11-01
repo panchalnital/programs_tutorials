@@ -18,3 +18,46 @@
   => for any production issue which has the bussiness impact you must provide the RCA and preventive action for the issue.
 
   =>for any code changes deployment, you must submit the change request which contain bussines impact, deployments and rollback plan change request requries bussiness outage in case monolithic  application and need the approvel from business stakeholders for the downtime windo
+
+
+
+=====================================
+  Identifying and resolving production issues is crucial for maintaining the smooth operation of software systems or any production environment. Here are some general steps to help you address production issues:
+
+Gather Information:
+        Start by collecting information about the issue. Understand what the problem is, when it started, and its impact on the system or users.
+
+Logs and Monitoring:
+    Check your logs and monitoring systems. Look for error messages or unusual patterns. This can provide valuable insights into the root cause of the problem.
+
+Isolate the Issue:
+    Try to reproduce the issue in a controlled environment if possible. This can help determine whether the problem is specific to the production environment or more widespread.
+
+Impact Assessment:
+    Assess the impact of the issue on users and the system. Is it critical or can it be addressed during regular maintenance?
+
+Identify the Root Cause:
+    Once you have a good understanding of the problem, investigate its root cause. It could be a code bug, a misconfiguration, or a resource constraint.
+
+Fix the Issue:
+    Develop a solution to the problem. This might involve writing code patches, updating configurations, or making changes to the infrastructure.
+
+Testing:
+    Test the fix thoroughly in a non-production environment to ensure it doesn't introduce new issues.
+
+Deployment:
+    If the fix is successful in testing, deploy it to the production environment. Be prepared to roll back quickly if there are unexpected issues.
+
+Communication:
+    Keep stakeholders, including team members and affected users, informed about the progress and resolution of the issue.
+
+Post-Mortem:
+    After resolving the issue, conduct a post-mortem to analyze what went wrong and how to prevent similar problems in the future.
+
+Documentation:
+    Document the issue, the fix, and the lessons learned. This documentation can be invaluable for future reference.
+
+Prevention:
+    Implement preventive measures to reduce the likelihood of similar issues occurring in the future. This may involve improving monitoring, code reviews, and automated testing.
+
+Remember that every production issue can be unique, so adapt these steps as necessary. Also, consider using tools and practices such as continuous integration, automated testing, and proper version control to minimize the occurrence of production issues.

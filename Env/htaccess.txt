@@ -36,7 +36,9 @@ Access Control: You can restrict access to certain directories or files by using
 
 Error Handling: Customize error pages for your website using .htaccess. For instance, you can create a custom 404 error page to improve the user experience when a page is not found.
 
-MIME Types: You can configure the server to handle different file types, specify how they should be delivered, or force the download of certain file types.
+ErrorDocument 404 /custom404.html
+
+MIME(Multipurpose Internet Mail Extensions) Types: You can configure the server to handle different file types, specify how they should be delivered, or force the download of certain file types.
 
 Redirects: Use .htaccess to set up permanent or temporary redirects (e.g., 301 and 302 redirects) to handle changes in your website's URL structure.
 

@@ -50,7 +50,7 @@ DEV=> developers perform, unit testing
         (supports 10 developers working partcular sprin that all useing DEV branch write coding and testing on unit teston branch)
         (dev branch url using and tesing on branch all develop functionality working)
 
-SIT(systemica intergration testing/Special Investigation Team) => developers provide separate environment to testers to testing
+SIT(systemica intergration testing/Special Investigation Team) => developers provide separate environment to    testers to testing
         (testers own branch that are working, users create and data testing brnach check all the testcases on branch, also was check on regrestion testing )
         (QA analysic teams one teans working one product another teams another product)
 

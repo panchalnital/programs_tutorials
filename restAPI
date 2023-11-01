@@ -94,3 +94,53 @@ Widely used HTTP Headers:
     Authorization    : used to pass credentials so that server can authenticate
     Access-Control-allow-origin : which origin is allwed to access the resources
     Access-Control-Allow-Method: which methods are allowed to access the cross-origin resorces
+
+
+
+=======================================================================================================
+SOAP (Simple Object Access Protocol) is a protocol designed to exchange data with the security of programs that are built on different platforms or using different programming languages. To get more information about SOAP 
+
+REST (Representational State Transfer), is an API that follows a set of rules through which applications and servers communicate. It was specifically designed for working with components like files, objects, and media components
+
+Factors
+
+REST API
+
+                                                                        RESTful API
+
+Define :	=>Develops APIs to enable client-server interaction.	=> Web application follows REST architecture, providing interoperability between different systems.
+
+Working :	=>Uses web services and is based on request and response.=>Working is completely based on REST applications.
+
+Nature  :	=>Highly adaptable and user-friendly	=>Too flexible
+
+Protocol:	=>Strong protocol and is more secure, built-in architecture layers.	 =>Has a transport protocol, is less secure as compared to REST.
+
+Architecture:	=>Has a cacheable, client-server, stateless, layer system with a uniform interface.   =>All features of REST architecture along with some additional unique features.
+
+Format of Data:	=>Format of data is based on HTTP.	=>Format of data is based on HTTP, text, and JSON.
+Bandwidth:	=>This consumes minimum bandwidth.	=>This consumes less bandwidth.
+
+Cache:	=>It represents cacheable and non-cacheable data and displaces the non-cacheable data when not required.	 =>The client can access cacheable information anytime and anywhere.
+
+==================================================
+RESTful API application list:
+Twitter: Twitter's API allows developers to access and interact with Twitter's data and services in a RESTful manner.
+
+GitHub: GitHub's API provides access to its repository and user data using RESTful principles, making it easier for developers to integrate with the platform.
+
+Facebook: Facebook offers a Graph API that follows RESTful principles, allowing developers to interact with user profiles and social data.
+
+Salesforce: Salesforce provides a REST API that enables developers to integrate with its customer relationship management (CRM) services.
+
+Google Maps: The Google Maps API supports RESTful requests for mapping and location-based services.
+
+Amazon Web Services (AWS): AWS offers a variety of services, such as S3 for storage, that provide RESTful APIs for easy integration with cloud resources.
+
+YouTube: YouTube's API allows developers to access video data and perform various actions in a RESTful manner.
+
+Flickr: Flickr provides a RESTful API for accessing photos and photo-related information.
+
+Instagram: Instagram's API allows developers to interact with user data, photos, and other content using RESTful calls.
+
+Zendesk: Zendesk offers a REST API for integrating with its customer support and help desk services.
