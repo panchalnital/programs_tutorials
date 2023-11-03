@@ -116,16 +116,17 @@ for($i=0;$i<count($arr);$i++){
 
 //Smallest sum of two elements Time complexity O(n)
 
-$arr=[1,10,9,5,15,13];
+$array3=[5,9,8,6,14,12,11,19];
 $max=$smax=2147483647;
-for($i=0;$i<count($arr);$i++){
-    if($arr[$i]>$max){
-        $smax=$max;
-        $max=$arr[$i];
-    }else if($arr[$i]>$smax && $arr[$i]!=$max){
-        $smax=$arr[$i];
-    }
+for($i=0;$i<count($array3);$i++){
+  if($array3[$i]<$max){
+    $smax=$max;
+    $max=$array3[$i];
+  }else if($array3[$i]<$smax && $array3[$i]!=$max){
+    $smax=$array3[$i];
+  }
 }
+echo $max." ".$smax;
 
 class dbconnection{
     private static $instace=null;

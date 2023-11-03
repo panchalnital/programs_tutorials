@@ -14,7 +14,7 @@ select max(emp_salary)as e_salary from employee < (select max(emp_salary) from e
 
 /*find 3rd highest salary*/
 
-select emp_salary from employee order by emp_salary desc 2,1;
+select emp_salary from employee order by emp_salary desc limit 2,1;
 
 /*Arrange sequences*/
 select
@@ -50,4 +50,8 @@ group by dept.name
 /* substring replace abc*/
 
 update users set name=replace(name,'gupta','abc');
+
+
+select name,salary from employee where salary in((select max(salary) from employee) ,
+(select min(salary) from employee))
 

@@ -1,0 +1,20 @@
+vendor/laravel/fremework/src/illuminate/support/facades
+
+non-static interface used ti call ona given class behavior
+
+
+some default facades..
+
+auth::user()
+cache::put()
+route::get()
+DB::table('users')
+log::info('logging')
+view::make('home')
+app
+arr 
+bus 
+
+migrate table on queue
+php artisan queue:table -h
+php artisan queue:work

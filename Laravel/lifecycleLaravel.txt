@@ -1,0 +1,66 @@
+User 
+    ->request http
+        ->web server
+            ->public/index.php
+                ->loads
+                  1 composer autoloads
+                  2 boostraps/app.php
+                    ->app/http/kernal.php
+                        ->loads(service provider)
+                            ->request send to router
+                                ->route process(action-controller-views)
+                                    ->generate response
+                                        ->public/index.php
+                                            ->Http response
+
+
+================================================
+app
+    console
+        kernal.php
+    exceptions
+    http
+        controller
+        middleware
+        kernal.php
+    model
+    provider
+        appserviceprovide.php
+        routeserviceprovide.php
+        evenserviceprovide.php
+boostraps
+config
+    app.php
+    auth.php
+    database.php
+    filesystem.PHP
+    hasing.php
+    logiing.php
+    session.php
+database
+    factories
+    migrations
+    seeders
+public
+    index.php
+    robots.txt
+    .htaccess
+resources
+    css 
+    js
+    views 
+routes
+    consoe.php
+    api.php
+    channels.php
+    web.php
+storage
+test
+vendor
+.env
+.gitignore
+artisan
+composer.json
+composer.lock
+
+

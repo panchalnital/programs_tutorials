@@ -39,4 +39,13 @@ for($i=0;$i<count($arr);$i++){
 
 echo "<pre>";
 print_r($out);
+
+$len=3;
+$characters='ABC';
+$strleng=strlen($characters );
+$randomstr='';
+for($i=0;$i<$len;$i++){
+  $randomstr.=$characters[random_int(0,$strleng-1)];
+}
+echo $randomstr;
 ?>

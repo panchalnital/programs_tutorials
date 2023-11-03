@@ -2,6 +2,11 @@
 
 /*
 
+=> any class and function are dependen another classs r function is called 
+=> any class injeced other class in methods called dependency injection
+=> use __construct,setter methods, interface injection
+=>  interface injection use de-couping for testiblity easiy (type hitting) 
+
 =>dependency injection is a technique whereby one object supplies the dependencies of another objectWhat 
 is Dependency Injection
 
@@ -34,10 +39,12 @@ class DatabaseConnection {
 class UserRepository {
     private $db;
 
-    public function __construct(DatabaseConnection $db) {
+    public function __construct(DatabaseConnection $db) { //(type hitting)
         $this->db = $db;
     }
 }
+
+$obj=new UserRepository(new DatabaseConnection);
 /*In this example, the UserRepository class relies on the DatabaseConnection class, and the dependency is injected into UserRepository via its constructor.
 
 Advantages:

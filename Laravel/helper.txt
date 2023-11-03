@@ -1,0 +1,78 @@
+Custom helper functions in Laravel can: 
+    Improve code reusability
+    Improve code readability
+    Promote code modularity
+    Reduce code duplication
+    Enhance developer productivity
+    Make your application more maintainable
+
+Custom helper functions can be used multiple times throughout your application. They can add a feature to your Laravel application that can be used at multiple locations within your controllers, views, or model files. 
+
+You can create custom helper functions in Laravel to: 
+    Reduce the amount of code duplication
+    Make your code more readable and easier to understand
+    Promote code modularity
+    Extend Laravel's functionality to suit your specific needs
+    Enhance your development experience
+    Improve developer productivity
+    Make your application more maintainable
+======================================
+
+app/helper.php
+
+To create a custom helper in Laravel, you can do the following: 
+    Create a helper file
+    Define the helper functions
+    Include the helper file
+    Run Composer Update
+Utilize the custom helper functions
+
+You can also: 
+    Include the helper file in your composer.json
+    Add the libraries folder to the composer.json file
+    Run composer dump
+    Register all helper files for the application in the register method of the service provider
+    Use the glob() php helper to specify the pathnames for the helper files
+    Match all files with a .php extension as a helper file
+
+You can put helper classes anywhere you want. For example, you can put them in app/helpers.php and then require that file in app/start/global.php. You can also add them in app/helpers (new folder) and then autoload that folder with composer.
+
+
+Creating a custom helper in Laravel is a common task, and it can be really useful for encapsulating commonly used functions or methods. Here's a step-by-step guide on how to create a custom helper in Laravel:
+
+Create a Helper File:
+
+
+===========================
+In your Laravel project, you can create a new helper file or use an existing one. Commonly, these files are placed in the app directory. You can create a new one if needed.
+Write Helper Functions:
+
+Inside the helper file, define your custom helper functions as regular PHP functions. For example:
+Copy
+<?php
+
+function customHelperFunction() {
+    // Your custom code here
+}
+Autoloading the Helper File:
+
+To make your helper functions available throughout your application, you need to autoload the helper file. Open the composer.json file and add your helper file to the files section:
+
+"autoload": {
+    "files": [
+        "app/your-helper-file.php"
+    ]
+}
+After making this change, run composer dump-autoload to load the helper file.
+
+Using the Custom Helper:
+
+You can now use your custom helper functions anywhere in your Laravel application. Simply call the function like this:
+Copy
+customHelperFunction();
+For example, you can use it in your controllers, views, or any other part of your Laravel application.
+
+Autoloading Considerations:
+
+If your custom helper is meant to be used in all parts of your application, you can include it in the composer.json file as mentioned earlier. However, if you want to restrict its usage to specific parts of your application, consider using the app/helpers directory and auto-loading only the necessary helper files.
+Remember to clear the cache if you face any issues by running composer dump-autoload after making changes to the autoloading configuration. This will ensure that your custom helper functions are loaded properly.

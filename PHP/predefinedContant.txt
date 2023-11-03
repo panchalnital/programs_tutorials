@@ -1,0 +1,64 @@
+n PHP, there are several predefined constants that provide useful information or settings for your scripts. Here are some commonly used predefined constants in PHP:
+
+PHP_VERSION: This constant contains the current PHP version.
+
+PHP_OS: It stores the name of the operating system PHP is running on.
+
+PHP_EOL: Represents the end-of-line sequence used in the current environment, which can be useful for generating platform-independent line breaks.
+
+PHP_INT_MAX: The largest integer that can be represented in PHP on your system.
+
+PHP_INT_MIN: The smallest integer that can be represented in PHP on your system.
+
+PHP_FLOAT_DIG: The number of decimal digits that can be accurately represented by a floating-point number in PHP.
+
+PHP_FLOAT_EPSILON: The smallest representable positive number x, such that abs(x) > 0.
+
+PHP_FLOAT_MIN: The smallest positive normalized floating-point number.
+
+PHP_FLOAT_MAX: The largest representable floating-point number.
+
+PHP_VERSION_ID: An integer representation of the PHP version, useful for version comparison.
+
+PHP_BINARY: The path to the PHP binary on your server.
+
+PHP_BINDIR: The directory where PHP is installed.
+
+PHP_DATADIR: The directory for data files used by PHP extensions.
+
+E_ERROR (integer)
+Error reporting constant
+E_WARNING (integer)
+E_PARSE (integer)
+E_NOTICE (integer)
+E_CORE_ERROR (integer)
+E_CORE_WARNING (integer)
+E_COMPILE_ERROR (integer)
+E_COMPILE_WARNING (integer)
+E_USER_ERROR (integer)
+E_USER_WARNING (integer)
+E_USER_NOTICE (integer)
+E_DEPRECATED (integer)
+Available since PHP 5.3.0
+E_USER_DEPRECATED (integer)
+Available since PHP 5.3.0
+E_ALL (integer)
+E_STRICT (integer)
+
+=========================
+PHP's magic constants
+
+__LINE__	The current line number of the file.
+__FILE__	The full path and filename of the file with symlinks resolved. If used inside an include, the name of the included file is returned.
+__DIR__	The directory of the file. If used inside an include, the directory of the included file is returned. This is equivalent to dirname(__FILE__). This directory name does not have a trailing slash unless it is the root directory.
+__FUNCTION__	The function name, or {closure} for anonymous functions.
+__CLASS__	The class name. The class name includes the namespace it was declared in (e.g. Foo\Bar). When used in a trait method, __CLASS__ is the name of the class the trait is used in.
+__TRAIT__	The trait name. The trait name includes the namespace it was declared in (e.g. Foo\Bar).
+__METHOD__	The class method name.
+__NAMESPACE__	The name of the current namespace.
+
+
+CLSCTX_ALL (int)	23	Indicates all class contexts. This definition ORs CLSCTX_INPROC_HANDLER and CLSCTX_SERVER.	 
+VT_NULL (int)	1	NULL pointer reference.	 
+VT_EMPTY (int)	0	A property with a type indicator of VT_EMPTY has no data associated with it; that is, the size of the value is zero.	 
+VT_INT (int)
