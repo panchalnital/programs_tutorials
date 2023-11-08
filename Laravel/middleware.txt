@@ -1,0 +1,25 @@
+
+-->middleware provide a mechianism for inspecting and filering HTTP request enter you applicatioon
+==> we can create a middleware by artisan command:-
+    php artisan make:middleware Testmiddleware
+
+    app/http/middleware/Testmiddleware.php
+    => handle method rigth code
+
+=> and register the middleware kernal.php file 
+
+Route::get('/dashboard',[userController::class])->middleware('testAdmin');
+
+@csrf
+
+default middleware in laravel
+    verifyCsrfToken
+    authenticate
+    redirectifauthenticated
+    trimStrings
+    TrustHosts
+    TrustProcies
+
+$exxcept=[//ingoter the csrf this contus
+    '/contact-us'
+]
