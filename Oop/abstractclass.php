@@ -1,4 +1,5 @@
 <?php 
+//show ony what is necessary
 //show what method the neccersy 
 //cannot create the instand(objects)
 //if you create abstract method then define on signatuetr
@@ -11,6 +12,11 @@
 // abstract class is a half defined parent class or a partially defined parent class
 // abstract method also this override on abstract class
 
+// abstraction heppen durin design phase 
+//what has to be show public 
+//during excution phase 
+//user encapulation to impleemnts of abstraction
+//encapulation implenent abstracton
 // we can't define pur half calss in 
 abstract class customer{
     public $name;

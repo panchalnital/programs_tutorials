@@ -17,7 +17,7 @@
 
 //To change Interface what's the best practice ?
 //=> interface cand extend other interface class and used 
-//=> interface is a ontract by having contract we have better control on impact analysis,change management and breaking changes
+//=> interface is a contract by having contract we have better control on impact analysis,change management and breaking changes
 //=> muliple inheritance helps to add new methods with out affecting the ld intefaces
 
 //=>An abstract class allows you to create functionality that subclasses can implement or override. An interface only allows you to define functionality, not implement it

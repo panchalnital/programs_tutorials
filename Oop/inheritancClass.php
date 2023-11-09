@@ -1,8 +1,9 @@
 <?php 
 
 /***
+ *  parent child reltionship , parent are something common child wil be inheritan property 
  * Inheritance => is property of oop 
- *  : ingeritanc defines a parent child relationship of two classess
+ *  : Inheritance defines a parent child relationship of two classess
  *  : base class and drived class 
  *  : resublity , is a relationship, extends 
  *  : you can access to all property anc methods on child class

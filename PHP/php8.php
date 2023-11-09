@@ -80,3 +80,13 @@ $person->setPerson(gender:'male',name:'rahul',age:35);
    * =>Instead of null check conditions, you can now use a chain of calls with the new nullsafe operator. When the evaluation of one element in the chain fails, the execution of the entire chain aborts and the entire chain evaluates to null.
    */
   $county=$session?->user?->getaddres?->country;
+
+
+  str_contains()
+
+  str_starts_with() and str_ends_with() function
+
+
+
+  str_starts_with('haystack', 'hay'); // true
+str_ends_with('haystack', 'stack'); // true

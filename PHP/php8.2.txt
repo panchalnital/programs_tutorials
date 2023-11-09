@@ -1,0 +1,27 @@
+The latest version of PHP is 8.2, which was released on November 24, 2022. This version includes new features, functions, and methods to help developers and provide a better user experience. Some of the new features include: 
+
+    Readonly classes
+    DNF types
+    Null, false, and true types
+    Sensitive parameter redaction support
+    A new random extension
+
+=========================================================
+There are several differences between PHP 7 and PHP 8, including
+
+=>Performance: PHP 8 is faster than PHP 7. PHP 8's JIT (just-in-time) compilation feature can decrease application run time by up to 30%.
+
+=>Syntax: PHP 8 has better syntax and requires less code.
+=>Type safety: PHP 8 has improved type safety.
+=>Security: PHP 8 has many significant changes from PHP 7 to increase security.
+=>Features: PHP 8 has many new features, including:
+    Named arguments
+    Constructor promotion
+    Match
+    Union types
+    The nullsafe operator
+    Property type-hints
+    Enumerated types
+    Parser Extension API
+    Consistent names for legacy functions/classes
+    str_contains()

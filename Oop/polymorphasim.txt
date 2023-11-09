@@ -1,3 +1,13 @@
+=>objects acts differntly under differernt condition
+=>user become admin and user become adminstracor 
+=>ploy menas many , morph menas change as per situation
+=>its an ability of objects to act differntly under different condtion
+
+two tyepe of polymorphism
+=> static -> compile time polymorphism -> overloading
+
+=> dynamic -> runtime polymorphism -> Overriding
+
 Polymorphism in PHP is a fundamental concept in object-oriented programming (OOP). It allows objects of different classes to be treated as objects of a common superclass. PHP supports polymorphism through method overriding and method overloading. Here are the types of polymorphism in PHP:
 
 Compile-time (Early Binding) Polymorphism:
@@ -35,3 +45,15 @@ class Dog extends Animal {
 $animal = new Dog();
 $animal->makeSound(); // Output: "Dog barks"
 Polymorphism is a key feature of OOP, allowing for flexibility and code reusability by enabling different objects to respond to the same method in a way that makes sense for their specific class.
+
+
+class employee{
+
+}
+class manager extends employee {
+
+}
+
+class supervisor extends employee{
+
+}
