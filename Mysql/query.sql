@@ -50,8 +50,29 @@ group by dept.name
 /* substring replace abc*/
 
 update users set name=replace(name,'gupta','abc');
-
+update custome set name='afasf' where id='1';
 
 select name,salary from employee where salary in((select max(salary) from employee) ,
 (select min(salary) from employee))
 
+
+/*
+To add a column in a table, use the following syntax:
+*/
+ALTER TABLE Customers
+ADD Email varchar(255);
+
+/*
+To delete a column in a table, use the following syntax (notice that some database systems don't allow deleting a column):
+*/
+
+ALTER TABLE Customers
+DROP COLUMN Email;
+
+/*
+MODIFY COLUMN column_name datatype;
+ALTER TABLE - MODIFY COLUMN
+*/
+
+ALTER TABLE Customers
+MODIFY COLUMN Email varchar(255);

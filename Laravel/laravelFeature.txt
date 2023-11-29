@@ -1,0 +1,39 @@
+Here are some features of Laravel, a free and open-source PHP web framework: 
+    Template engine
+    MVC architecture support
+    Authorization technique for coding
+    Eloquent Object Relational Mapping and Implementation
+    Strong application security
+    Artisan tool for automating programming tasks
+    Enable libraries and modular functionalities
+    Modularity
+    Testability
+    Routing
+    Configuration management
+    Query builder and ORM
+    Schema builder
+
+Laravel also has other features, including: 
+    Database migration system 
+    Unit testing
+    Dynamic engine 
+    Authentication 
+    Authorization 
+    Validation
+    Notifications & mail
+    File storage
+    Job queues 
+    Maintenance mode 
+Support for using Redis as a cache for temporary data storage 
+
+Eloquent ORM
+Query builder
+reverse Routing
+resource controllers & resource routes
+migration
+database seeding
+unit testing
+blade template engine
+lazy collection
+Authentication
+artisan
