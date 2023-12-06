@@ -20,3 +20,25 @@ When dealing with databases and multiple connections, there are several importan
 => Connection Leak Detection: Implement mechanisms to detect and handle connection leaks, where a connection is not properly closed after use. Leaked connections can lead to resource exhaustion.
 
 => Database Scaling: As your application grows, you might need to scale your database infrastructure. Consider options like sharding, replication, or moving to a more scalable database system to handle increased connection demands.
+
+
+=================================================
+https://www.youtube.com/watch?v=yPF94QiI2qk
+
+How to scale a web application to a million users in 10 steps
+
+1- Vertically scale your server which means use a faster computer.
+2- Put your database to another server, this will relieve your application server.
+3- Add a load balancer and more back end servers (or basically horizontally scale)
+4- Don’t forget to add a firewall which will protect you from various attacks
+5- Move expensive calculations to front end like rendering web pages. Use a content deliver network
+6-Add read only replicas for expensive queries or analytics
+7-Cache expensive calculations or db queries
+8-Divide monolith to micro services so that you don’t have to deploy every line of code to every machine and you can scale one part of your application independent from others
+9-Where necessary use a queue system to communicate between micro services
+10-Start using non relational databases like Cassandra or elastic search depending on business.
+
+======================
+ I cover load balancing, content delivery networks, mysql query optimization, database master/slave replication, horizontal/vertical sharding, and more.
+
+* Note, these experiences were from projects before I began working at Google, so I'm talking about my individual experiences (Google uses a ton more techniques, though the basic concepts are similar).  I'm sure I missed some things, so please share in the comments below if you have thoughts on how to scale!  I'd love to hear.

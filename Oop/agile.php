@@ -41,7 +41,18 @@
  * 3 hybrid 
  * 4 lean 
  * 
+ * planning->development->testing->deployment->review
  * 
- * 
- * 
+ * sprint : time period define ( commenly 2 week, depend on sprint 1,2,3)
+ * sprint planiing : discuss on which are developemnt and which model done this sperint discuss
+ * pi(program increment planning): 1 pi quartly (yeaerly 4 pi and one pi(6 sperint)) 
+ * diffenece pi: across the teams vs sprint planing menas particular the teams teams planing
+ * Daily standup meeting: update last what activie are working and related update(product owner, scam master , manager and teams lead)
+ * Sprint Retrospective meeting : after sprint compteled which are good achived and what are problem to resloved last sprint
+ * Story point: patricauler story point how much time estimate define
+ * Epic : large semgment of large task are not closed current sprint then you can be divded in subtask and to sarting working
+ * Scrum master : he responsiblity for moniteing for all story wroking on sprint and any difficatly to resolved on 
+ * Zero sprint : 
+ * spike : not clear requriemnt of story and you cannot dealine and no idea of story not clear unstading for story  
+ * Velocity : patricauler teams how much work are done this estimate thought the velocity
  */

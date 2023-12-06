@@ -21,6 +21,9 @@ php ini setting{
 windown for xampp/php/php.ini
 Ubuntu for /etc/php/7.0/apache2/php.ini
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 memory_limit
 enable_safe_mode
 register_globals = on EGPCS (Environment, GET, POST, Cookie, Server) variables are registered as

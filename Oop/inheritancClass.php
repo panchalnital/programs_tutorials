@@ -57,3 +57,16 @@ $man->invokemanger(); //method overriding
 // $man->info();
 // $man->info1(510);
 
+
+/**
+ * why php not support multiple inheritance
+ * 
+ * PHP does not support classical multiple inheritance. 
+ * This is because multiple inheritance can cause complexity and conflicts.
+ *  It can make code harder to understand, maintain, and debug. 
+
+ *why php does not support overloading
+ * Dynamic Typing: PHP is a dynamically typed language, meaning that variable types are determined at runtime. Unlike statically typed languages where method overloading might involve different parameter types, PHP allows variables to change types during runtime. This dynamic typing makes it challenging to implement traditional method overloading based on parameter types.
+
+*Backward Compatibility: PHP has a strong commitment to backward compatibility. Introducing method overloading in a way that aligns with the conventions of statically typed languages could break existing code. Since PHP has historically been a loosely typed language, adding method overloading would require a significant shift in how methods are resolved and called.
+ */

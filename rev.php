@@ -18,6 +18,18 @@ $num=($num/10);
 echo "<br>Reverse number of 565989 is: $revsum";  
 echo "test";
 
+//----------------------- postive and nagtive revest number----------//
+$num=abs(-63563);
+$revsum=0;
+while($num>1){
+  $rem=$num%10;
+  $revsum=($revsum*10)+$rem;
+  $num=($num/10);
+}
+
+echo $revsum*-1;
+//----------------------- postive and nagtive revest number----------//
+
 $data = "Nittal Pravinbhai Panchal";
 $arr=explode(' ',$data);
 $out=[];
