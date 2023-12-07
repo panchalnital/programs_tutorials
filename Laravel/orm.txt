@@ -1,0 +1,92 @@
+php artisan migrate:fresh --seed
+
+php artisan make:migration creater_catehory_post_table
+one to one (one user have one contact number)
+user.php
+public function contact(){
+    return $this->hasOne(Contact::class);
+}
+
+Contact.php
+public function user(){
+    return $this->belogsTo(User::class);
+}
+
+user App\model\User;
+$user =User::with('contact')->first();
+$user->all();
+-----------------------------------------
+
+one to many (one user have many post in )
+
+$table->id();
+$table->foreignId('user_id')->costrained()->onDelete('cascade);
+user.php
+public function posts(){
+    return $this->hasMany(Posts::class);
+}
+
+Contact.php
+public function user(){
+    return $this->belogsTo(User::class);
+}
+
+user App\model\User;
+$user =User::with(['user','post'])find(1);
+$user->toArray();
+-----------------------------------------
+many to many (one user have many post in )
+
+$table->id();
+$table->foreignId('user_id')->costrained()->onDelete('cascade);
+user.php
+public function catehory(){
+    return $this->belogsToMany(Catehory::class);
+}
+
+Contact.php
+public function user(){
+    return $this->belogsToMany(User::class);
+}
+
+user App\model\User;
+$user =User::with(['user','post'])find(1);
+$user->toArray();
+-----------------------------------------
+has oneThrough
+
+users user hasone contact
+contacts  contact belongsTo user
+contactinformations  contactinformation belogsTo contacts
+
+-----------------------
+has manyThrough
+
+countries country hasMany states
+states  state belongsTo country
+cities  city belogsTo satate
+
+-----------------------------------
+-----------------------------------
+one to one(Polymorphic)
+
+users  user hasOne(morphOne) Image
+posts  post hasOne(morphOne) image
+images image morphTo                imageble_type(post_imqage,user_image)
+
+-----------------------------------
+one to many(Polymorphic)
+
+users  user hasOne(morphMany) Image
+posts  post hasOne(morphMany) image
+images image morphTo                imageble_type(post_imqage,user_image)
+
+
+
+-----------------------------------
+many to many(Polymorphic)
+
+
+posts  post morphToMany) taggables
+videos video morphToMany) taggables
+taggables taggable morphedByMany        taggable_type(post_tag,video_tag)
