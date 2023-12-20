@@ -58,3 +58,27 @@ class BMW extends car{
 $bmw=new BMW();
 $bmw->noOfwheels();
 $bmw->price('12LAKH');
+
+================================================
+Response
+Abstract methods are a concept in programming languages, often associated with object-oriented programming (OOP). Here are the advantages and disadvantages of using abstract methods:
+=============================
+Advantages:
+
+dvantages 
+Using abstract methods in Java has several advantages. Some of them are:
+
+=>Abstraction: Using the abstract method in Java helps in achieving abstraction by hiding the implementation details.
+=>Flexibility: Abstract methods provide flexibility to the subclasses to provide their own implementation of the method
+=>Code Reusability: Abstract methods allow you to reuse the code in the superclass by providing a common interface for a group of subclasses.
+=>Encapsulation: Abstract methods help to encapsulate the behavior of an object by defining a common interface for a group of subclasses.
+=>Polymorphism: Abstract methods support polymorphism, which allows you to write code that works with objects of different subclasses.
+
+Limitations of Abstract Methods
+
+Using abstract methods in Java also has some limitations. Some of them are:
+
+=>Limited Functionality: Abstract methods only provide a method signature without any implementation. This limits the functionality of the method and makes it less powerful than a regular method.
+=>Complexity: Abstract methods can make the code more complex because they require the creation of subclasses to provide an implementation for the method.
+=>Inefficiency: Abstract methods can be less efficient than regular methods because they require the use of dynamic binding to call the method at runtime.
+Conclusion

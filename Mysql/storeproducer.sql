@@ -35,3 +35,72 @@ Error Handling: MySQL stored procedures support error handling with constructs l
 Example Use Cases: Stored procedures are often used for tasks like data validation, complex data manipulation, and creating custom APIs for database access.
 
 In summary, MySQL Stored Procedures are a way to encapsulate SQL logic into reusable routines, improving code organization, maintainability, and performance in database applications. They are a valuable feature for developers working with MySQL databases.
+
+====================================
+mysql
+
+delimiter
+
+create procedure MangeData(
+IN action varchar(10),
+IN id int,
+IN F_name varchar(20),
+IN l_name varchar(20),
+IN age int,
+)
+Begin 
+    if action='insert' then
+        insert into student(fname,lname,age)
+        values(f_name,l_name,age);
+    elseif action='update' then
+        update student set fname=f_name, lname=l_name 
+        where id=id;
+    elseif action='delete' then
+        delete from student where id=id;
+    end
+end
+
+//delemiter
+
+
+call MangeData('insert',null,'rahul','patel',30);
+call MangeData('update',1,'rahul','patel',30);
+call MangeData('delete',2,null,null,null);
+
+================================================
+write a code to get last insert id in stored procedure
+//delemiter
+create procedure getRecord(INOUT lastID int,
+IN F_name varchar(20),
+IN l_name varchar(20)
+)
+begin
+    insert into student(fname,lname)
+    values(F_name,l_name);
+
+    set lastID=LAST_INSERT_ID();
+end//
+
+DELIMITER
+
+set @mylastID=0;
+call getRecord(@mylast);
+select @mylastID as lastID
+
+
+
+
+=====================================
+sql user
+create procedure insertData
+@firstName varchar(50),
+@lastName varchar(50),
+@age int
+AS
+Begin
+    Insert into employee(fristname,lastname,age)
+    values(@firstName,@lastName,@age);
+
+End;
+
+exec insertData 'rahul','patel',30;

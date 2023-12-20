@@ -78,3 +78,14 @@ if ($pos !== false) {
 } else {
     echo "\"" . $str1 . "\" does not contain \"" . $str2 . "\"";
 }
+
+//write a function sumation of value in php
+$data=sum(1,2,3,4,5)
+
+function sum(...$values) {
+    return array_sum($values);
+}
+
+$data = sum(1, 2, 3, 4, 5);
+echo array_sum($data);
+echo $data; // Output: 15

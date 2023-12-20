@@ -81,3 +81,42 @@ $myorderpayu->checkout(100);
     By using interfaces multiple inheritance is possible.
  * */ 
 
+
+ ===========================================================
+
+ Advantages :
+
+- Interfaces are mainly used to provide polymorphic behavior.
+- Interfaces function to break up the complex designs and clear the dependencies between objects.
+
+Disadvantages :
+
+- Java interfaces are slower and more limited than other ones.
+- Interface should be used multiple number of times else there is hardly any use of having them.
+
+
+==========================================================
+
+In object-oriented programming, an interface class defines a contract for the behavior that a class must implement. Here are the main advantages and disadvantages of using interface classes:
+
+    Advantages:
+    
+    =>Abstraction and Encapsulation: Interfaces allow for the abstraction of functionality from the implementation. This helps in encapsulating the details of how a particular functionality is achieved.
+    
+    =>Multiple Inheritance: Unlike classes, which cannot inherit from multiple classes in some programming languages, a class can implement multiple interfaces. This facilitates a form of multiple inheritance, allowing a class to provide the implementation for multiple unrelated types.
+    
+    =>Code Reusability: Interfaces promote code reusability by providing a standardized way for classes to implement common behaviors without inheriting a full class hierarchy.
+    
+    =>Polymorphism: Interfaces support polymorphism, enabling objects of different classes that implement the same interface to be treated uniformly through a common interface type.
+    
+    Disadvantages:
+    
+    =>Limited Implementation Details: Interfaces only declare the methods and properties that must be implemented, but they do not provide any implementation details. This lack of implementation can sometimes make it harder to understand the actual functionality.
+    
+    =>Rigidity: Once an interface is defined, it can be challenging to change it without affecting all the classes that implement it. This can lead to a rigid design, especially in cases where changes are frequent.
+    
+    =>Increased Complexity: In some cases, the use of interfaces can lead to increased complexity, especially when dealing with a large number of interfaces and their implementations. This can make the code harder to maintain.
+    
+    =>Learning Curve: For developers new to object-oriented programming or certain programming languages, understanding and implementing interfaces may pose a learning curve.
+    
+    In summary, interfaces provide a powerful mechanism for defining contracts and promoting code reuse, but they also come with certain limitations and complexities that need to be carefully considered in the design and maintenance of a software system.
