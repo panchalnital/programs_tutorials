@@ -60,3 +60,14 @@ Monitor and Analyze Performance:
     Use tools like Google PageSpeed Insights, GTmetrix, or Lighthouse to identify performance bottlenecks.
     Regularly monitor and analyze your website's performance.
 Implementing these optimizations should help improve your website's speed and overall performance. Keep in mind that the impact of each optimization may vary, and it's essential to test and measure the results regularly.
+
+=> error log (xbeduger) thought track the which are query how many time coustimus
+=> maximum no of hit times
+=> maximun take time in query
+=> maximum ajax calls ajax call action 
+=>css/js minified version (not used developer Modifies)
+=>cache concept used 
+=> Z.zip concept
+=> css/js always call in bottom
+=> load balancers
+=>image optimation( comporessing techaniques)
