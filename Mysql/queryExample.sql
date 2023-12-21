@@ -59,3 +59,15 @@ DELIMITER ;
 This trigger will insert a log entry into `log_table` before each INSERT operation on `your_table`.
 
 Please replace `trigger_name`, `table_name`, and customize the trigger's action as per your specific requirements. Additionally, make sure to be cautious when using triggers as they can impact database performance and data consistency if not used carefully.*/
+
+
+
+DELIMITER
+create trigger updateID
+    before insert on employee
+    for each row
+begin 
+    insert into employee(fname,lname)
+    values('rahul','patel')
+end
+delimiter;
