@@ -9,4 +9,28 @@ Storage formats: MyISAM supports three storage formats: fixed, dynamic, and comp
 MyISAM also has the following limitations: 
     Reliable recovery: MyISAM does not support reliable recovery for user-created schemas.
     Data corruption: MyISAM can result in lost or corrupt data when MySQL is restarted after a recovery.
-    Point-in-time restore: MyISAM prevents Point-In-Time restore or snapshot restore from working as intended.
+    Point-in-time restore: MyISAM prevents Point-In-Time restore or snapshot restore from working as intended.============
+
+    =============================
+Type of Storage Engine in mysql
+
+InnoDB: This is the default storage engine for MySQL as of version 5.5. It provides support for transactions, foreign keys, and row-level locking, making it a good choice for applications with high concurrency and reliability requirements.
+
+MyISAM: This storage engine is known for its simplicity and fast read operations. However, it lacks support for transactions and foreign keys, making it less suitable for applications that require these features.
+
+MEMORY (HEAP): This engine stores all data in memory, which can lead to very fast read and write operations. However, data is not persistent, as it is stored only in memory, and is lost when the MySQL server is restarted.
+
+CSV: This engine stores data in text files using the CSV (Comma-Separated Values) format. It is useful for exchanging data between MySQL and other applications that use CSV files.
+
+Archive: The Archive storage engine is designed for high-speed inserting and compresses data to minimize storage space. However, it does not support indexing and is primarily used for storing large amounts of data that is rarely accessed.
+
+NDB (Cluster): This is the storage engine used by the MySQL Cluster technology. It provides high availability and scalability by distributing data across multiple nodes.
+
+When creating tables in MySQL, you can specify the storage engine using the ENGINE option in the CREATE TABLE statement. For example:
+
+Copy
+CREATE TABLE example_table (
+    id INT PRIMARY KEY,
+    name VARCHAR(255)
+) ENGINE=InnoDB;
+This statement creates a table named example_table with the InnoDB storage engine.
