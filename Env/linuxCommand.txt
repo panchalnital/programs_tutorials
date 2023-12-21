@@ -1,5 +1,6 @@
 command database import server
 
+mysql -u username -p database_name < file.sql
 $ mysqldump -u my_username -p database_name > output_file_path.
 $ mysqldump -u book_admin -p books > ~/backup/database/books. sql Enter password:
 $ mysqlimport -u book_admin -p books_production ~/backup/database/books. sql Enter password:

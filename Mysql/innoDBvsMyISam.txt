@@ -1,0 +1,12 @@
+MyISAM supports the following features: 
+
+Storage formats: MyISAM supports three storage formats: fixed, dynamic, and compressed. The first two are chosen automatically based on the type of columns used. The compressed format can only be created with the myisampack utility.
+    VARCHAR type: MyISAM supports a true VARCHAR type.
+    Foreign keys: MyISAM does not support foreign key constraints.
+    Indexing: MyISAM supports indexes for efficient data retrieval.
+    Table-level locking: MyISAM uses table-level locking for concurrent access control.
+
+MyISAM also has the following limitations: 
+    Reliable recovery: MyISAM does not support reliable recovery for user-created schemas.
+    Data corruption: MyISAM can result in lost or corrupt data when MySQL is restarted after a recovery.
+    Point-in-time restore: MyISAM prevents Point-In-Time restore or snapshot restore from working as intended.
