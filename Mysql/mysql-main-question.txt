@@ -1,3 +1,8 @@
+
+https://www.youtube.com/watch?v=xAXLfydR5wM&list=PLF-dIgIiU2fX2HMOkHP-IcVtABXWzrkPn&index=3
+
+https://www.youtube.com/watch?v=9hfjC-BpY20&t=1585s
+
 Normalization and Denormalization:
 
 Question: Explain the difference between normalization and denormalization.

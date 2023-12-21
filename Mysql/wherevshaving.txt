@@ -1,0 +1,10 @@
+difference between where and having clause
+
+1=> where clause : can be used with SELECT,update,DELETE statements
+    having clause : can be used with only SELECT statements
+
+2=> where clause : can't used aggregate function
+    having clause : aggregate function can be used like count(), avg(),sum(),sub()\
+
+3=> where clause : is used for the individual record 
+    having clause : can be used for group of records
