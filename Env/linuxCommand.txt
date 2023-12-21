@@ -1,0 +1,87 @@
+command database import server
+
+$ mysqldump -u my_username -p database_name > output_file_path.
+$ mysqldump -u book_admin -p books > ~/backup/database/books. sql Enter password:
+$ mysqlimport -u book_admin -p books_production ~/backup/database/books. sql Enter password:
+
+============================================
+
+Essential Linux Commands
+
+𝗙𝗶𝗹𝗲 𝗮𝗻𝗱 𝗗𝗶𝗿𝗲𝗰𝘁𝗼𝗿𝘆 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁
+• ls: Lists the contents of the current directory.
+• pwd: Prints the full path of the current working directory.
+• cd: Changes the current working directory.
+• mkdir: Creates a new directory.
+• rmdir: Removes an empty directory.
+• touch: Creates a new empty file.
+• cp: Copies files or directories.
+• mv: Moves or renames files or directories.
+• rm: Removes files or directories.
+
+𝗣𝗿𝗼𝗰𝗲𝘀𝘀 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁
+• ps: Lists currently running processes.
+• top: Dynamically displays active processes in real-time.
+• htop: An interactive process viewer offering more detailed information.
+• kill: Terminates a specified process.
+• killall: Terminates all instances of a process by name.
+• pgrep: Searches for processes by name and prints their PIDs.
+• pkill: Terminates processes by name or other criteria.
+
+𝗨𝘀𝗲𝗿 𝗮𝗻𝗱 𝗚𝗿𝗼𝘂𝗽 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁
+• passwd: Changes a user's password.
+• useradd: Adds a new user to the system.
+• userdel: Removes a user from the system.
+• groups: Displays the groups a user belongs to.
+• usermod: Modifies user account properties.
+• id: Displays user and group ID information.
+• groupadd: Creates a new group.
+• groupdel: Deletes a group.
+
+𝗦𝘆𝘀𝘁𝗲𝗺 𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻
+• uname: Displays basic system information, such as the operating system name and kernel version.
+• df: Reports disk space usage of file systems.
+• du: Estimates file and directory space usage.
+• free: Displays memory usage information.
+• lscpu: Displays CPU architecture information.
+• lshw: Lists detailed hardware information.
+• lsblk: Lists information about block devices.
+
+𝗡𝗲𝘁𝘄𝗼𝗿𝗸 𝗖𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗮𝘁𝗶𝗼𝗻 𝗮𝗻𝗱 𝗠𝗼𝗻𝗶𝘁𝗼𝗿𝗶𝗻𝗴
+• ifconfig: Displays and configures network interfaces.
+• ip: Shows and manipulates routing, devices, policy routing, and tunnels.
+• ping: Tests the reachability of a network host.
+• netstat: Displays network connections, routing tables, and interface statistics.
+• ss: Another utility for investigating sockets.
+• traceroute: Displays the route and transit delays of packets.
+• ssh: Securely logs into remote machines.
+• nc: A versatile tool for network communication, often dubbed the "Swiss army knife" for TCP/IP.
+
+𝗣𝗮𝗰𝗸𝗮𝗴𝗲 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁
+• apt-get, apt: Package management tools for Debian-based systems.
+• yum, dnf: Package management tools for RPM-based systems.
+• rpm: Package manager for RPM packages (Red Hat Package Manager).
+• dpkg: Package manager for Debian packages.
+• snap: Universal Linux package system.
+• zypper: Package manager for openSUSE.
+
+𝗙𝗶𝗹𝗲 𝗩𝗶𝗲𝘄𝗶𝗻𝗴 𝗮𝗻𝗱 𝗘𝗱𝗶𝘁𝗶𝗻𝗴
+• cat: Displays the contents of a file.
+• less: Views the contents of a file with navigation capabilities.
+• more: Another file viewer with basic navigation.
+• vim: A powerful text editor with extensive features.
+• nano: A simple and user-friendly text editor for the terminal.
+
+============================================================
+
+The scp command is a secure copy protocol that allows users to securely copy files and directories between two locations, usually between Unix or Linux systems. It is a command line utility that uses SSH to transfer data, so it requires a password or passphrase for authentication. Unlike rcp or FTP, scp encrypts both the file and any passwords exchanged so that anyone snooping on the network cannot view them.
+To use the scp command, you will need to know the following information:
+    =>The username and password for the source and target systems
+    =>The path to the file or directory you want to copy
+    =>The IP address or hostname of the source and target systems
+
+Once you have this information, you can use the following syntax to copy a file from one server to another:
+
+scp username@source_host:source_file destination_host:destination_directory
+
+scp -r user@destination_host:/backup/ /local_backup/
