@@ -1,5 +1,7 @@
 // new Features in ES6
 
+//https://www.youtube.com/watch?v=Gir551orcPw&list=PLjVLYmrlmjGe3fUTOCarulICb3R8iAh4t&index=11
+
 /*
 
 1 The Let Kayword
@@ -173,3 +175,54 @@ const person={
             Resloved:ompleted promise
             Rejected:fauiled promise
     */
+
+            const myPromise=new Promise((resolved,rejected)=>{
+                const a=2,b=2;
+                const c=a+b;
+                if(c===4){
+                  resolved(`yes!, ${a} + ${b}=4`);
+                }else{
+                  rejected(`No! ${a} + $ {b} !=4`);
+                }
+              });
+              
+              myPromise.then((m)=>{
+                console.log(m);
+              }).catch((error)=>{
+                console.log(error);
+              })
+
+/*
+    array spread
+    
+*/
+const oldarray=[1,2,3,4];
+const newarr=["a","b","c",...oldarray,5,6,7,8,10];
+console.log(newarr);
+
+
+/*
+    array rest
+*/
+const sum = (...arr) =>{
+    let total=0;
+    arr.forEach((n)=>{
+      total +=n;
+    });
+    console.log(total);
+  }
+  sum(1,2,3,4,5,6,7,8,9);
+
+  /**
+   * map
+   */
+
+  const courses=['SHIV','OM','SHIVAYI'];
+const newArr= courses.map((c)=>{
+  return `<li> ${c} </li`;
+});
+console.log(newArr);
+
+const arr=[1,2,3,4,5,6];
+const sum= arr.map((s)=>s*5);
+console.log(sum);

@@ -1,5 +1,6 @@
 <?php
 //write a program is Fibonacci Series and (revet order)
+//0 1 1 2 3 5 8 13 21......
 $cnt=0;
 $n1=0;$n2=1;
 
