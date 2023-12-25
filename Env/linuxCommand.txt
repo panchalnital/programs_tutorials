@@ -19,6 +19,11 @@ Essential Linux Commands
 • cp: Copies files or directories.
 • mv: Moves or renames files or directories.
 • rm: Removes files or directories.
+• chmod: file perm directories.
+    -R: Recursively change the permissions of all files and directories in the specified directory.
+    -v: Verbosely output the changes that are being made.
+    -h: Display a help message.
+    chmod -R 755 file/directories
 
 𝗣𝗿𝗼𝗰𝗲𝘀𝘀 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁
 • ps: Lists currently running processes.
@@ -86,3 +91,17 @@ Once you have this information, you can use the following syntax to copy a file 
 scp username@source_host:source_file destination_host:destination_directory
 
 scp -r user@destination_host:/backup/ /local_backup/
+
+==================================================
+
+Search for a specific text in files:
+    grep "search_term" /path/to/directory
+
+Search recursively in subdirectories:
+    grep -r "search_term" /path/to/directory
+
+Case-insensitive search:
+    grep -i "search_term" /path/to/directory
+
+Display line numbers along with matching lines:
+    grep -n "search_term" /path/to/directory
