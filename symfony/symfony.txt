@@ -1,0 +1,108 @@
+2:09 - What is Symfony?
+It is a set of PHP components and leading PHP framework to create websites and productive web applications. It follows the MVC design pattern and released under the MIT license.
+
+2:36 - What do you know about descriptors in Symfony?
+Descriptors are objects to render documentation on Symfony Console Apps.
+
+2:48 - Can you tell me what rules do you follow at the time of creating methods within the controller in a symphony?
+Some general rules that we follow:
+
+* Action methods must have the Action suffix
+* Action methods should return a valid response object
+* Only action methods should be public
+* Controller method should be short
+
+3:25 Which template engine Symfony supports?
+Symphony default template engine is Twig; however, one can also use plain PHP code if required.
+
+3:43 - What are the benefits of Symfony?
+Symfony has various benefits which are:
+
+* MVC Pattern
+* Fast development
+* Unlimited Flexibility
+* Ease of use
+* Expandable
+* Stable and sustainable 
+
+4:07 - In which technology, routing configuration files are written?
+Routing configuration files are written in the following technology:
+
+* PHP as annotations
+* XML files 
+* YAML files
+
+4:31 - State the Symfony framework application?
+There are various Symfony framework applications:
+
+Thelia
+Drupal 8
+Daily motion
+
+4:58 - What is Twig?
+Twig is a powerful templating language of Symfony which performs whitespace control, sandboxing and automatic HTML escaping.
+
+5:24 - What is the form helper function in Symfony?
+In Symfony, the form of helper functions are given below:
+
+Form_start
+Form_end
+Text area
+Checkbox
+Input_password_tag etc.
+
+5:39 - What is the use of Flash Bag?
+Flash bag is used to hold the data during the page redirections.
+
+5:49 - Tell me the default port of Symfony?
+The default port of Symfony is 8000
+
+5:56 - Does Symfony use a controller?
+Yes, Symfony framework use controller. A controller is a PHP function that is used to handle HTTP request and response. The response could be in the form of an HTML page, an XML document, an image, a 404 error etc.
+
+6:21 - When Symfony denies user access?
+Symfony denies user access when an unauthorized user tries to access web application; it throws a 403 HTTP status and error page.
+
+6:40 - What do you think is Symfony is a configuration or convention-based framework?
+Symfony is the convention-based framework.
+
+6:51 - How to set and get the session in symfony2?
+Session interface object set and get method is used to set and get sessions in symfony2.
+
+7:17 -  What is  List of features?
+Major Key Features of Symfony Framework are
+
+* Easy to install
+* Highly scalable
+* Open Source
+* Large and active Community.
+* Flexible routing.
+* Based on the MVC design pattern.
+* Clean and elegant template engine.
+* Easy testing and long-term support.
+* Good documentation
+
+7:50 - What are symfony bundles?
+Symfony bundles are a directory or folder where we put all related files of a module. 
+
+8:18 - What are components in symfony?
+Symfony Components are a set of decoupled and reusable PHP libraries. It is open-source software that aims to speed up the creation and maintenance of web applications and to replace repetitive coding tasks and also building robust applications in an enterprise context and aims to give developers full control over the configuration.
+
+8:46 - Does laravel use symfony?
+Yes, Laravel uses Symfony components internally. Around 30% of Laravel framework is built on Symfony.
+
+8:58 - Symfony logs are stored in which directory?
+Symfony stores all logs in log directory of your project.
+
+9:18 - How to clear cache in Symfony?
+To clear cache in Symfony you can use cache:pool:clear command. This command will delete all data from the project storage directory. By default, Symfony comes with 3 cache clearers. They are
+
+cache.global_clearer
+cache.system_clearer
+cache.app_clearer
+
+9:30 - How to create a bundle in Symfony?
+The Symfony bundle is a group of files and directories that are organized into a specific structure.
+
+9:37 - What are annotations in Symfony?
+Annotations in Symfony are used for configuration of validation and mapping Doctrine information. Annotations are easy and convenient to use. In Standard Edition of Symfony, we have two additional bundles SensioFrameworkExtraBundle and JMSSecurityExtraBundle which provide better support for annotations. Using these bundles you can use annotations for controller configuration, routing, cache, security, template, etc
