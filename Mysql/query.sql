@@ -15,6 +15,11 @@ select max(emp_salary)as e_salary from employee <> (select max(emp_salary) from 
 
 select max(emp_salary)as e_salary from employee < (select max(emp_salary) from employee)
 
+select * from employee 
+where salary=(select max(salary) from employee where salary < 
+            (select max(salary) from employee where salary < 
+            (select max(salary) from employee)));
+
 /*find 3rd highest salary*/
 
 select emp_salary from employee order by emp_salary desc limit 2,1;
