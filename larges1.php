@@ -20,3 +20,62 @@ $arr=explode(' ',$out);
 for($i=count($arr)-1;$i>=0;$i--){
   echo $arr[$i]." ";
 }
+
+
+
+/********************find the multdimaton search value ************** */
+
+$multiArray=array(
+  array("name"=>"nital","age"=>32),
+  array("name"=>"rahul","age"=>30),
+  array("name"=>"mehul","age"=>33),
+  );
+
+  $searchCriteria = array("name" => "nital");
+  //$searchCriteria = array("name" => "nital", "city" => "New York");
+  
+$result = array_filter($multiArray, function ($item) use ($searchCriteria) {
+      foreach ($searchCriteria as $key => $value) {
+          if ($item[$key] != $value) {
+              return false;
+          }
+      }
+      return true;
+});
+  
+  print_r($result);
+
+  ===========================================================
+$multidimensionalArray = array(
+    array('name' => 'Alice', 'age' => 30),
+    array('name' => 'Bob', 'age' => 20),
+    array('name' => 'Bhai', 'age' => 30),
+    array('name' => 'Charlie', 'age' => 35)
+);
+
+// Selection sort
+$n = count($multidimensionalArray);
+for ($i = 0; $i < $n - 1; $i++) {
+    $maxIndex = $i;
+
+    for ($j = $i + 1; $j < $n; $j++) {
+        // Compare ages in descending order
+        if ($multidimensionalArray[$j]['age'] > $multidimensionalArray[$maxIndex]['age']) {
+            $maxIndex = $j;
+        } elseif ($multidimensionalArray[$j]['age'] == $multidimensionalArray[$maxIndex]['age']) {
+            // If ages are equal, compare names in descending order
+            if ($multidimensionalArray[$j]['name'] > $multidimensionalArray[$maxIndex]['name']) {
+                $maxIndex = $j;
+            }
+        }
+    }
+
+    // Swap elements
+    $temp = $multidimensionalArray[$i];
+    $multidimensionalArray[$i] = $multidimensionalArray[$maxIndex];
+    $multidimensionalArray[$maxIndex] = $temp;
+}
+
+// Display the sorted array
+print_r($multidimensionalArray);
+

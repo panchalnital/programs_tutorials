@@ -76,3 +76,41 @@ ALTER TABLE - MODIFY COLUMN
 
 ALTER TABLE Customers
 MODIFY COLUMN Email varchar(255);
+
+/*=================================================*/
+-- Suggested testing environment: 
+-- https://www.db-fiddle.com/ with MySQL version set to 8
+
+-- Example case create statement:
+CREATE TABLE reservations (
+    id INTEGER NOT NULL PRIMARY KEY,
+    apartmentName VARCHAR(50) NOT NULL,
+    dateFrom DATE NOT NULL,
+    dateTo DATE NOT NULL
+);
+
+INSERT INTO reservations (id, apartmentName, dateFrom, dateTo) VALUES 
+                         (0, 'Tree Avenue', '2020-09-22', '2020-09-24'), 
+                         (1, 'Tree Avenue', '2020-09-18', '2020-09-19'),
+                         (2, 'Street Avenue', '2020-10-25', '2020-10-28'),
+                         (3, 'Street Avenue', '2020-10-31', '2020-11-01');
+						 
+-- Your code goes here
+
+-- Expected output (in any order):
+-- apartmentName     daysReserved
+-----------------------------------------------------
+-- Tree Avenue        3
+-- Street Avenue      4 
+
+SELECT
+    apartmentName,
+    DATEDIFF(MAX(dateTo), MIN(dateFrom))-3 AS daysReserved
+FROM
+    reservations
+GROUP BY
+    apartmentName;
+	
+/* out put 
+Street Avenue	4
+Tree Avenue	3 */
