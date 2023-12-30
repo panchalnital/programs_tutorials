@@ -44,3 +44,16 @@ where salary=(select max(salary) from employee where salary >
         select id,name
         from empdept
         where id not in(select manager_id from empdept);
+
+/*6 What Is The SQL Query Used To Find The Names Of The Employees That Begin With ‘A’?*/
+select name from empdept where name like 's%' or name like 'r%';
+
+/*7 What Is The SQL Query Used To Display The Current Date?*/ 
+
+select now(); /* 2023-12-30 18:58:15 */
+
+select current_date(); /* 2023-12-30*/
+
+select date(now()); /* 2023-12-30 */
+
+select date(current_timestamp()); /* 2023-12-30*/
