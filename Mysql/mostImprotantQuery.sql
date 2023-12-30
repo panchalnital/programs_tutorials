@@ -23,14 +23,24 @@ select * from employee;
     select name,salary 
     from employee order by salary desc limit 1 offset 2;
 
-    /*4 write is the sql query same records 2 highest salary in employee table */
+/*4 write is the sql query same records 2 highest salary in employee table */
+select name,salary
+from employee e1
+where (1)=(select count(distinct(e2.salary)) from employee e2 where e2.salary>e1.salary);
 
-    select name,salary
-    from employee e1
-    where (1)=(select count(distinct(e2.salary)) from employee e2 where e2.salary>e1.salary);
+/* or */
+select name,salary
+from employee 
+where salary=(select max(salary) from employee where salary > 
+            (select max(salary) from employee));
 
-    /* or */
-    select name,salary
-    from employee 
-    where salary=(select max(salary) from employee where salary > 
-                (select max(salary) from employee));
+/*5) 5. What Is The SQL Query Used To Find All Employees Who Also Hold The Managerial Position?
+        5.1 Find All Employees Who Also Hold The Managerial Position
+*/
+        select id,name
+        from empdept
+        where id in (select manager_id from empdept);
+    /* 5.2 Find All Employees Who Also Hold The not a Managerial Position*/
+        select id,name
+        from empdept
+        where id not in(select manager_id from empdept);
