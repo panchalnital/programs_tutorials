@@ -18,6 +18,22 @@ DROP INDEX index_name;
 Sql 
 DROP INDEX table_name.index_name;
 
+
+/*MySQL indexing has several advantages and disadvantages: 
+
+Pros 
+    ->Performance Indexes can improve performance when searching, sorting, grouping, and maintaining unique columns.
+    ->Speed Indexes can speed up WHERE conditional queries and sorting with ORDER BY clauses.
+    ->Uniqueness Indexes can enforce value uniqueness.
+
+Cons 
+    ->Disk space Indexes can increase disk space.
+    ->Data modification Indexes can slow down INSERT, UPDATE, and DELETE queries.
+    ->Clustered index Updating records in the clustered index can be slower.
+Indexes are used to retrieve data from a database faster. However, updating a table with indexes takes longer than updating a table without indexes
+*/
+
+
 /* In MySQL, a "trigger" is a database object that is associated with a table and automatically fires (or activates) in response to specific events, such as INSERT, UPDATE, DELETE, or other data manipulation actions. Triggers are often used to enforce data integrity rules, auditing, or performing specific actions when certain events occur in the database.
 
 Here's a basic example of how to create a MySQL trigger:
@@ -71,3 +87,24 @@ begin
     values('rahul','patel')
 end
 delimiter;
+
+/*
+MySQL triggers have several advantages and disadvantages. 
+
+Here are some advantages of MySQL triggers: 
+    •	Automation
+    Triggers can automatically execute predefined actions in response to data changes or events. This can reduce the need for manual intervention.
+    •	Database management
+    Triggers can automate actions like updating or inserting data in one table based on changes made to another table. This can save time and reduce the risk of human error.
+    •	Data integrity
+    Triggers can provide another way to check the integrity of data. They can also force security approvals on tables in the database.
+    •	Error handling
+    Triggers can handle errors from the database layer.
+
+Here are some disadvantages of MySQL triggers: 
+    •	Invisibility: Triggers are invoked and executed invisibly from client applications. This can make it difficult to figure out what is happening in the database layer.
+    •	Troubleshooting: Triggers can be difficult to troubleshoot because they execute automatically in the database.
+    •	Overhead: Triggers may increase the overhead of the MySQL server.
+    •	Validations: Triggers can only provide extended validations, not all validations.
+
+*/

@@ -107,4 +107,22 @@ End;
 
 exec insertData 'rahul','patel',30;
 
+/*
 
+MySQL stored procedures have several advantages and disadvantages: 
+
+Pros 
+    •	Reduced network traffic Stored procedures keep all programming logic on the server, so apps only need to send the procedure name and parameter input instead of multiple query results.
+    •	Improved security Stored procedures provide controlled access and the ability to grant specific privileges to applications without exposing underlying database structures.
+    •	Improved performance Once created, stored procedures are compiled and stored in a pre-optimized form, which eliminates the need for repetitive query parsing and optimization.
+    •	Modular programming Stored procedures can be created once, stored, and called multiple times when needed. This supports faster execution and provides better security to the data.
+
+Cons 
+    •	Difficult to debug Stored procedures are executed as a single unit, and MySQL does not provide facilities for debugging stored procedures.
+    •	Increased memory consumption Increasing the number of stored procedures in the application increases memory consumption.
+    •	Inflexible and not portable Stored procedures are typically written to perform a specific task and are not portable between different database systems.
+
+MySQL stored procedures also provide a "public interface" to a database and group all queries at the same location. This makes it easier for DBAs to see how the database is queried and optimize it accordingly
+
+
+*/
