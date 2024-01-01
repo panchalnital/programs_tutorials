@@ -6,5 +6,20 @@ difference between where and having clause
 2=> where clause : can't used aggregate function
     having clause : aggregate function can be used like count(), avg(),sum(),sub()\
 
-3=> where clause : is used for the individual record 
+3=> where clause : it is used implemented in row operation
+    having clause: it is used implemented in column operation
+
+4=> where clasuse : it can be used without the group by clause
+    having calause: it cannot be used without the group by calause
+=> where clause : is used for the individual record 
     having clause : can be used for group of records
+
+
+difference between the truncate and Deletes
+1 delete : delete is DML 
+2 delete : You can roll back data after using the DELETE.
+3 delete : DELETE query takes more space
+4 delete : used order by and where and limit in calause
+The Delete statement removes single or multiple rows from an 
+existing table depending on the specified condition
+

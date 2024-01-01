@@ -45,7 +45,7 @@ $result = array_filter($multiArray, function ($item) use ($searchCriteria) {
   
   print_r($result);
 
-  ===========================================================
+ // ===========================================================
 $multidimensionalArray = array(
     array('name' => 'Alice', 'age' => 30),
     array('name' => 'Bob', 'age' => 20),

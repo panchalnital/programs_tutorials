@@ -140,3 +140,6 @@ order by dept;
 /*16. How Will You Change The Datatype Of A Column?*/
 alter table employee
 modify column name varchar(50);
+
+
+ALTER TABLE `emp1` ADD PRIMARY KEY(`id`);

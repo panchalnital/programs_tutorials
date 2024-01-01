@@ -54,7 +54,7 @@ Essential Linux Commands
 • lsblk: Lists information about block devices.
 
 𝗡𝗲𝘁𝘄𝗼𝗿𝗸 𝗖𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗮𝘁𝗶𝗼𝗻 𝗮𝗻𝗱 𝗠𝗼𝗻𝗶𝘁𝗼𝗿𝗶𝗻𝗴
-• ifconfig: Displays and configures network interfaces.
+• ifconfig: Displays and configures network interfaces .
 • ip: Shows and manipulates routing, devices, policy routing, and tunnels.
 • ping: Tests the reachability of a network host.
 • netstat: Displays network connections, routing tables, and interface statistics.

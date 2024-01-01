@@ -6,7 +6,9 @@ Definition: A MySQL Stored Procedure is a precompiled collection of one or more 
 Advantages:
 
 Reusability: You can define a procedure once and execute it multiple times, which reduces code duplication.
+
 Modularity: Stored procedures allow you to break down complex tasks into smaller, manageable procedures.
+
 Performance: They can be faster than executing individual SQL statements because the procedure is precompiled and stored in the database.
 Syntax: To create a stored procedure in MySQL, you use the CREATE PROCEDURE statement. Here's a simplified example:
 
@@ -104,3 +106,5 @@ Begin
 End;
 
 exec insertData 'rahul','patel',30;
+
+
