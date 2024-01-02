@@ -82,3 +82,15 @@ Using abstract methods in Java also has some limitations. Some of them are:
 =>Complexity: Abstract methods can make the code more complex because they require the creation of subclasses to provide an implementation for the method.
 =>Inefficiency: Abstract methods can be less efficient than regular methods because they require the use of dynamic binding to call the method at runtime.
 Conclusion
+
+
+Here are some differences between abstract classes and interfaces in PHP: 
+    Properties: Abstract classes can have properties, but interfaces cannot.
+    Methods: All methods in an interface must be public, while abstract class methods can be public or protected. All methods in an interface are abstract, so they cannot be implemented in code.
+    Implementation: Abstract classes can contain default implementation, but interfaces cannot.
+    Inheritance: Interfaces support multiple inheritances, but abstract classes do not.
+    Constructors: Abstract classes can have a constructor, but interfaces cannot.
+    Overriding: Abstract classes can override Object class methods, but interfaces cannot.
+    Variables: Abstract classes can declare instance variables, but interfaces can only have public, static, and final variables.
+    Interfaces are pure templates, while abstract classes let you provide some degree of implementation. Interfaces are completely empty shells that expect child classes to implement everything for them. 
+    Interfaces allow developers to create objects of different classes that may be used interchangeably because they implement the same interface or interfaces
