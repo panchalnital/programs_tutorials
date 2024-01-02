@@ -50,3 +50,16 @@ class base{
 $test=new base();
 $test->sayhello();
 $test->newhi();
+
+/*
+Advantages: 
+    Reduce code duplication:=> Traits can help reduce code duplication and prevent complicated class inheritance.
+    Improve maintainability:=> Traits can help improve the cleanliness and maintainability of code.
+    Code reuse:=> Traits allow developers to reuse code without using inheritance.
+    Simplified code:=> Traits can simplify code and make it easier to read and maintain.
+
+Disadvantages: 
+    Diverge from single responsibility principle:=> Traits can make it easy to diverge from the single responsibility principle.
+    Not seeing all methods:=> Traits can make it difficult to see all the methods of a class when looking at the source code.
+    Method conflicts:=> Traits can cause method conflicts or duplication of logic.
+*/

@@ -120,3 +120,29 @@ In object-oriented programming, an interface class defines a contract for the be
     =>Learning Curve: For developers new to object-oriented programming or certain programming languages, understanding and implementing interfaces may pose a learning curve.
     
     In summary, interfaces provide a powerful mechanism for defining contracts and promoting code reuse, but they also come with certain limitations and complexities that need to be carefully considered in the design and maintenance of a software system.
+
+
+Here are some advantages and disadvantages of using interface classes: 
+Advantages
+    Multiple inheritance
+    Loose coupling
+    Contract-based programming
+    Space efficiency
+    Compiler optimization
+    Efficient multiple inheritance
+    Object creation efficiency
+    Forces a clean separation of interface and implementation
+    Not type intrusive
+    Objects can implement the same interface in different ways
+    Avoidance of heap allocations
+Disadvantages
+    Implementation overhead
+    Limited functionality
+    Complexity
+    Slower and more limited than other interfaces
+    Interfaces should be used multiple times
+    Interfaces do not provide any implementation code
+    Can lead to redundant code in classes that implement multiple interfaces
+    Some overhead associated with the creation and casting of objects
+    More code is required to first specify the interface and then code the class that implements the interface
+Interfaces can be used to achieve 100% abstraction. They can also break up complex designs and clear the dependencies between objects

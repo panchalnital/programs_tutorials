@@ -59,4 +59,9 @@
  * Zero sprint : 
  * spike : not clear requriemnt of story and you cannot dealine and no idea of story not clear unstading for story  
  * Velocity : patricauler teams how much work are done this estimate thought the velocity
+ * 
+ * jira
+ * https://www.youtube.com/watch?v=T8uYNNyiKkk&list=PL8p2I9GklV44XfvmcdiB8vDq8HgGJmy5U
+ * https://www.youtube.com/@codestepbystep/playlists
+ * https://www.youtube.com/watch?v=z5xM5_UGkZI&list=PL8p2I9GklV46u2iTiJzW0DA0M9HRjAXuf&index=2
  */
