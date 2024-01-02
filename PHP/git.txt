@@ -1,0 +1,19 @@
+Certainly! Git is a version control system widely used for tracking changes in source code during software development. Here are some commonly used Git commands:
+
+git init: Initializes a new Git repository.
+git clone [repository URL]: Clones a repository into a new directory.
+git add [file(s)]: Adds changes in the working directory to the staging area.
+git commit -m "[commit message]": Commits changes from the staging area to the repository.
+git status: Shows the status of changes as untracked, modified, or staged.
+git pull: Fetches changes from a remote repository and merges them into the current branch.
+git push: Pushes local changes to a remote repository.
+git branch: Lists all branches in the repository.
+git checkout [branch name]: Switches to the specified branch.
+git merge [branch name]: Merges changes from one branch into the current branch.
+git log: Displays a log of all commits.
+git remote -v: Lists all remote repositories.
+git fetch [remote]: Fetches changes from a remote repository.
+git reset [file(s)]: Unstages changes, or resets the working directory to a specific commit.
+git config: Configures Git settings.
+
+git cheery-pick vesionid : particular commit marge on master branch

@@ -41,6 +41,10 @@
  * 3 hybrid 
  * 4 lean 
  * 
+ * https://www.youtube.com/watch?v=hGY4CE7Ecfw
+ * 
+ * https://www.youtube.com/watch?v=cA24gN-J9Vg
+ * 
  * planning->development->testing->deployment->review
  * 
  * sprint : time period define ( commenly 2 week, depend on sprint 1,2,3)
