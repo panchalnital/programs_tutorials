@@ -1,5 +1,5 @@
 php Array function 
-1 . 
+1 .  array_intersect
     array_intersect
     array_intersect_key =>Compare the keys of two arrays, and return the matches:
     array_intersect_assoc
@@ -64,3 +64,4 @@ else
 array_search()=>Search an array for the value "red" and return its key:
 $a=array("a"=>"red","b"=>"green","c"=>"blue");
 echo array_search("red",$a);
+search
