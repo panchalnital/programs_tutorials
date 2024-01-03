@@ -15,6 +15,25 @@ foreach ($uniqueme as $key => $value) {
 }
 //print_r($uniqueme);
 print_r($final);
+//or
+
+/** find the duplicate values */
+$Array1 = [123,124,125,127,128];
+$Array2 = [126,129,130,131,132];
+$Array3 = [125,128,129,130,140];
+
+$merge=array_merge($Array1,$Array2,$Array3); // merge the array 
+$count=array_count_values($merge);//find the duplicate the values of count
+$duplicate=array_filter($count,function($key){
+    return $key>1;
+});
+
+echo implode(",",array_keys($duplicate));//array to covert string
+
+
+
+
+//===================================================
 
 
 /* max value find in array */

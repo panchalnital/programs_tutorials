@@ -7,6 +7,23 @@ for($i=($len-1);$i>=0;$i--){
     echo $str[$i];
 }
 
+//or
+
+
+$str = "nital";
+$characters = str_split($str);
+$reversedStr = "";
+
+foreach (array_reverse($characters) as $char) {
+    $reversedStr .= $char;
+}
+
+echo $reversedStr;
+
+
+
+
+/************************** */
 
 $num=565989;
 $revsum=0;
