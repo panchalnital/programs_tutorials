@@ -79,3 +79,27 @@ for ($i = 0; $i < $n - 1; $i++) {
 // Display the sorted array
 print_r($multidimensionalArray);
 
+
+/******************************************** */
+// find the maximum number in array
+function findMaxValue($array) {
+    $maxValue = PHP_INT_MIN;
+
+    foreach ($array as $row) {
+        $maxInRow = max($row);
+        if ($maxInRow > $maxValue) {
+            $maxValue = $maxInRow;
+        }
+    }
+
+    return $maxValue;
+}
+
+// Example usage:
+$twoDArray = array(
+    array(3, 7, 2),
+    array(9, 12, 5),
+    array(6, 1, 8)
+);
+
+echo "Maximum value: " . findMaxValue($twoDArray);

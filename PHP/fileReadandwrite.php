@@ -49,5 +49,19 @@ if ($file) {
     fwrite($file, "This is some additional data.");
     fclose($file);
 }
+//________________________________________________________________
+/*
+    file reading csv and file writing on csv
 
+*/
+//read file 
+$file =fopen("expamle.csv","r");
+while(($row=fgetcsv($file))!=false){
+    print_r($row);
+}
+// write the file 
 
+$file=fopen("expample.csv","w");
+$data=array("shiv","infinit","shiv@shakti.word");
+fputcsv($file,$data);
+fclose($file);
