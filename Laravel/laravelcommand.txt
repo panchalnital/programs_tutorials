@@ -54,3 +54,48 @@
 
     $guarded :  Specifies which fields can't be mass assigned. For example, if you use fill() with properties that are guarded, they won't be saved in the database.
     $hidden :   Specifies which fields won't be shown when a model is serialized to JSON or an array. The returned JSON will skip all fields mentioned in hidden.
+
+=> Throttling is a process to rate-limit
+    Route::middleware('auth:api','thottle:60,1')->group(function(){
+        route::get('/user',function(){});
+    });
+
+=> facade :  facade is a class that wraps a non-static function and turns it into a static function. Facades provide a "static" interface to            classes that are available in the application's service container
+
+    -> step 1 : app/facade
+    invoice.php
+    namespace App/facades;
+
+    class Invoice{
+        public functin companyName(){
+            return 'ABC PVT LTD..';
+        }
+    }
+
+    -> step 2 : app/facade
+
+    invoice.php
+    namespace App/facades;
+
+    class InvoiceFacade{
+        protected static functin getFacadeAccessor(){
+            return 'Invoice';
+        }
+    }
+
+-> step 3 : app/provide/appServiceProvider.php
+        use App\Facades\Invoice;
+        public function register(){
+            $this->bind('Invoice',function($app){
+                return new Invoice();
+            });
+        }
+-> step 4 : config/app.php
+
+        'aliases'=>
+        [
+            'Invoice' => App\facade\InvoiceFacade::class,
+        ]
+use 
+    echo Invoice::companyName();
+
