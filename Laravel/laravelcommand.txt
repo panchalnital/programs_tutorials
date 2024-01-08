@@ -1,0 +1,56 @@
+=> packages for authentication will be Passport
+    composer requires laravel/Passport
+    It generates a file(composer.json) in your project directory to keep track of all your packages. A default composer.json file of your laravel project will look something like below
+
+=> php artisan make:controller      make controller file
+=> php artisan make:model           Make a Model file
+=> php artisan make:migration       Make Migration file
+=> php artisan make:seeder          Make Seeder file
+=> php artisan make:factory         Make Factory file
+=> php artsian make:policy          Make Policy file
+=> php artian make:command          Make a new artisan command
+
+=> php artisan down                 maintenance mode om
+=> php artisan up                   application again on live
+
+=> php atisan make:migration createusertable  make migration file
+
+    two methods used 
+    1) up  php artisan migrate
+        public function up(){
+            schema::create('user',function(bludeprint $table)
+            {
+                $table->id();
+                $table->string('name');
+            });
+        }
+       
+    2) down php artisan migrate:rollback
+         public function down(){
+            schema::dropifExits('user);
+        }
+
+=> php artisan migrate:rollback     only rolls back the previously run migration
+=> php artisan migrate:reset        rollback all migrations
+=> php artsian migrate:rfersh       rollback and run migrations
+=> php artisan migrate:fersh        drop the tables first and then run migrations from the start
+
+=> php artisan make:seeder usertableseeder      create a new Seeder
+=> php artisan db:seed
+
+=> php artisan make:factory UserFactory --class=User        create a new factor
+
+
+
+=> model file 
+
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = []; // use the access in insert data in databse 
+                            Specifies which fields can be mass assigned. For example, you can use the fill() method to mass assign fields.
+
+    $guarded :  Specifies which fields can't be mass assigned. For example, if you use fill() with properties that are guarded, they won't be saved in the database.
+    $hidden :   Specifies which fields won't be shown when a model is serialized to JSON or an array. The returned JSON will skip all fields mentioned in hidden.
