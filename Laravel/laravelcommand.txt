@@ -99,3 +99,57 @@
 use 
     echo Invoice::companyName();
 
+=> php artisan make:event Postcreated
+=> php artisan make:listener NotifyUser
+or
+=> php artisan make:listener NotifyUser --event=Postcreated
+
+=>Http request
+    Interacting With The Request
+        $request->input('name');
+        $request->query('name')
+        $request->string('name')->trim()
+        $request->date('birthday')
+        $request->merge(['votes' => 0]);
+        $request->path();
+        $request->header('X-Header-Name');
+        $request->hasHeader('X-Header-Name')
+         $request->ip();
+        $request->getAcceptableContentTypes();
+        $request->accepts(['text/html', 'application/json'])
+        $request->expectsJson()
+        $request->is('admin/*')
+        $request->routeIs('admin.*'
+        $request->url()
+        $request->fullUrl()
+        $request->host();
+        $request->httpHost();
+        $request->schemeAndHttpHost();
+
+=>HTTP Responses
+        response($content)
+            ->header('Content-Type', $type)
+            response('Hello World')->cookie
+            response('Hello World')->withoutCookie('name')
+            response()
+            ->view('hello', $data, 200)
+            response()->json()
+            response()->download($pathToFile);
+            response()->streamDownload();
+            response()->file($pathToFile);
+
+=> CSRF Protection
+        //route call to the token
+        Route::get('/token', function (Request $request) {
+            $token = $request->session()->token();
+            $token = csrf_token();
+        });
+        // from 
+        @csrf
+
+        // ajax 
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
