@@ -1,0 +1,45 @@
+In Laravel, the task scheduling feature allows you to schedule various tasks to run automatically at specified intervals. The task scheduler is built on top of the cron scheduling system and provides a fluent interface to define the schedule.
+
+To set up task scheduling in Laravel:
+
+1. **Define Tasks:**
+   - Create the tasks you want to schedule as Artisan commands. These tasks can be created using the `make:command` Artisan command.
+
+2. **Configure the Scheduler:**
+   - The task scheduler is defined in the `app/Console/Kernel.php` file. You can find the `schedule` method in this file, where you can define your scheduled tasks.
+
+   ```php
+   protected function schedule(Schedule $schedule)
+   {
+       $schedule->command('your:command')->daily(); // Example daily scheduled command
+   }
+   ```
+
+3. **Run Scheduler:**
+   - Laravel uses the cron to run scheduled tasks. You need to add the following Cron entry to your server:
+
+   ```
+   * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
+   ```
+
+   This will run the Laravel scheduler every minute.
+
+4. **Task Frequency:**
+   - You can use various methods like `daily()`, `hourly()`, `everyMinute()`, etc., to specify how often the task should run.
+
+Here's an example of a task that runs every day at midnight:
+
+```php
+$schedule->command('your:command')->daily();
+```
+
+Remember to replace 'your:command' with the actual name of your Artisan command.
+
+5. **Check Task Schedule:**
+   - To view the list of scheduled tasks, you can use the following command:
+
+   ```
+   php artisan schedule:list
+   ```
+
+This basic setup should help you get started with task scheduling in Laravel. Make sure to refer to the [official Laravel documentation](https://laravel.com/docs/8.x/scheduling) for more details and advanced scheduling options.

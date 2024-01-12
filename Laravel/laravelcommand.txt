@@ -153,3 +153,20 @@ or
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+
+=> task scheduler
+    php artisan make:command
+    app/console/kernel.php
+
+
+    notifaction class to add 
+        implements shouldQueue
+
+    creater the queue table 
+        php artisan queue:table
+        php artisan migrate 
+    .env file set 
+        queue_connection=syne/database
+
+    php artisan queue:listen (display the which take currenlty working)
+    php artisan queue:work 

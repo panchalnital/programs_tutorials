@@ -19,6 +19,26 @@ Sql
 DROP INDEX table_name.index_name;
 
 
+/* clusterd index :Clustered indexes define the way records are physically sorted in a database table. A clustered index is very similar to the table of contents of a book. In the table of contents, you can see how the book has been physically sorted*/
+
+CREATE CLUSTERED INDEX <index_name>
+ON <table_name>(<column_name> ASC/DESC)
+
+CREATE CLUSTERED INDEX IX_tblBook_Price
+ON Books(price ASC)
+
+/* nocluster index : A non-clustered index is an index that doesn’t physically sort the database records. Rather, a non-clustered index is stored at a separate location from the actual database table. It is the non-clustered index which is actually similar to an index of a book. A book index is stored at a separate location, while the actual content of the book is separately located.*/
+
+CREATE NONCLUSTERED INDEX IX_tblBook_Name
+ON Books(name ASC)
+
+
+
+/*about full-text search in SQL Server:
+SELECT * FROM CONTAINSTABLE(articles, title, 'machine learning')
+
+*/
+
 /*MySQL indexing has several advantages and disadvantages: 
 
 Pros 
