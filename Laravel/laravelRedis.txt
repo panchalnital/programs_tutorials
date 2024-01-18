@@ -1,0 +1,69 @@
+redis default port : 6379
+config/database.php file set 
+    'redis' => [
+
+
+    ]
+
+use Illuminate\Support\Facades\Redis;
+
+'user' => Redis::get('user:profile:'.$id)
+
+Redis::set('name', 'Taylor');
+ 
+$values = Redis::lrange('names', 5, 10);
+
+-------------------------------------------
+
+Database
+
+Schema::create('cache', function (Blueprint $table) {
+    $table->string('key')->unique();
+    $table->text('value');
+    $table->integer('expiration');
+});
+
+config/cache.php
+'memcached' => [
+    'servers' => [
+        [
+            'host' => env('MEMCACHED_HOST', '127.0.0.1'),
+            'port' => env('MEMCACHED_PORT', 11211),
+            'weight' => 100,
+        ],
+    ],
+],
+------------------------------------
+
+use Illuminate\Support\Facades\Cache;
+
+ $value = Cache::get('key');
+
+ Accessing Multiple Cache Stores
+
+ $value = Cache::store('file')->get('foo');
+ 
+Cache::store('redis')->put('bar', 'baz', 600); // 10 Minutes
+
+
+=> Retrieving Items From the Cache
+$value = Cache::get('key');
+$value = Cache::get('key', 'default');
+
+=>Retrieve and Delete
+    $value = Cache::pull('key');
+
+-------------------------------------
+php artisan cache:clear
+php artisan cache:forget <key> [store]
+
+Here are some other Artisan commands for clearing cache in Laravel: 
+    php artisan route:clear: Clears the route cache
+    php artisan config:clear: Clears the configuration cache
+    php artisan optimize:clear: Clears all Laravel's cache
+-------------------------------
+Clear Laravel cache programmatically
+    Cache::flush()
+    cache()->flush()
+
+    cache()->store('redis')->tags('awesome-tag')->flush()

@@ -70,3 +70,15 @@ while($cnt<10){
     $n2=$n3;
     $cnt++;
 }
+
+// convert mobile format 
+$number='98658956323';
+echo preg_replace('/(/d{3})(/d{3})(/d{4})/','$1-$2-$3',$number);
+
+$mail="shiv@gmail.com";
+$patten='/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
+if(preg_match($patten,$mail)){
+    echo "true";
+}else{
+    echo "false";
+}
