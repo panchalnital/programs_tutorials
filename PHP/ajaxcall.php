@@ -32,7 +32,7 @@ Here are some steps for submitting AJAX forms with jQuery:
             var data=$(this).serialize();
             $.ajax({
                 url:'tets.php',
-                0:'post',
+                type:'post',
                 data:data,
                 dataType:'json',
                 success:function(response){

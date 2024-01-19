@@ -82,3 +82,26 @@ if(preg_match($patten,$mail)){
 }else{
     echo "false";
 }
+
+function maskCreditCard($creditCardNumber) {
+    if (empty($creditCardNumber)) {
+        return '';
+    }
+    if (strlen($creditCardNumber) < 6) {
+        return $creditCardNumber;
+    }
+    $firstDigit = substr($creditCardNumber, 0, 1);
+    $lastFourDigits = substr($creditCardNumber, -4);
+    $middleDigits = substr($creditCardNumber, 1, -4);
+    $middleDigits = preg_replace('/\D/', '', $middleDigits);
+    $maskedDigits = str_repeat('#', strlen($middleDigits));
+    return $firstDigit . $maskedDigits . $lastFourDigits;
+}
+
+// Examples
+echo maskCreditCard("1234 1234 1234 1234");  // Output: 1### #### #### 1234
+echo "\n".maskCreditCard("1234 ABCD 1234");        // Output: 1### ABCD 1234
+echo "\n".maskCreditCard("12AB3");                 // Output: 12AB3
+echo "\n".maskCreditCard("xxxx xxxx");             // Output: xxxx xxxx
+echo "\n".maskCreditCard("1234123412341234");      // Output: 1###########1234
+echo "\n".maskCreditCard("");  
