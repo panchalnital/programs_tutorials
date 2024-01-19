@@ -83,6 +83,44 @@ if(preg_match($patten,$mail)){
     echo "false";
 }
 
+
+/**
+ * Write a function which will mask the credit card numbers with '#' with following conditions:
+ *  a) Do not mask the first digit and the last four digits
+ *  b) Do not mask non-digit chars
+ *  c) Do not mask if the input is less than 6 char length
+ *  d) Return '' when input is empty
+ */
+
+function maskCreditCardnumber($number){
+	$out='';
+    $strlenchar=strlen($number);
+	if($strlenchar>=6 && !empty($number)){
+	$lastchar=$strlenchar-4;
+	for($i=0;$i<$strlenchar;$i++){
+	  if($i==0){
+		$out.=is_numeric($number[$i]);
+		}
+		if($i>=1 && $i<$lastchar){
+			if(is_numeric($number[$i])){
+			  $out.='#';
+			}else{
+			  $out.=$number[$i];
+			}
+		}
+		if($i>=$lastchar){
+		  $out.=$number[$i];
+		}			
+	}
+	
+	}
+	return $out;
+}
+
+$number='1234123412341234';
+echo $result=maskCreditCardnumber($number);
+
+//or
 function maskCreditCard($creditCardNumber) {
     if (empty($creditCardNumber)) {
         return '';
