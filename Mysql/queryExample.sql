@@ -51,8 +51,24 @@ Cons
     ->Data modification Indexes can slow down INSERT, UPDATE, and DELETE queries.
     ->Clustered index Updating records in the clustered index can be slower.
 Indexes are used to retrieve data from a database faster. However, updating a table with indexes takes longer than updating a table without indexes
-*/
 
+type of index
+    unique index
+*/
+create unique index salary on emp(emp_id);
+
+/*  composite index */
+create index depsalary on emp(DEPT,SALARY);
+
+/* Function based index */
+create index fidx on emp(UPPER(name));
+
+/* Bitmap index*/
+
+/* databse in which table are create index */
+select * from user_indexes where table_name='emp';
+/*column */
+select * from user_id_column where table_name='emp';
 
 /* In MySQL, a "trigger" is a database object that is associated with a table and automatically fires (or activates) in response to specific events, such as INSERT, UPDATE, DELETE, or other data manipulation actions. Triggers are often used to enforce data integrity rules, auditing, or performing specific actions when certain events occur in the database.
 
