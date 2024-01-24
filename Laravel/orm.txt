@@ -9,7 +9,7 @@ public function contact(){
 
 Contact.php
 public function user(){
-    return $this->belogsTo(User::class);
+    return $this->belogsTo(User::class); // belogsTo: means inverst realtionship define
 }
 
 user App\model\User;
