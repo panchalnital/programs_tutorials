@@ -105,3 +105,64 @@ Case-insensitive search:
 
 Display line numbers along with matching lines:
     grep -n "search_term" /path/to/directory
+
+=========================================================
+List Running Processes:
+    ps aux
+    This command displays a list of all running processes on the server.
+
+Check System Resource Usage:
+    top
+    The top command provides a dynamic, real-time view of the system's processes and resource usage.
+
+Display System Information:
+    uname -a
+    This command shows detailed information about the system, such as the kernel version, architecture, and hostname.
+
+List Open Ports:
+    netstat -tuln
+    This command lists all the open ports and associated services on the server.
+
+View System Logs:
+    tail /var/log/syslog
+    Check system logs for any recent events or issues.
+
+Check Disk Usage:
+    df -h
+    This command provides information about disk space usage on the server.
+
+Check Memory Usage:
+    free -m
+    Display information about free and used memory on the server.
+
+List Installed Packages:
+    dpkg -l
+    This command lists all installed packages on a Debian-based system. For Red Hat-based systems, you can use rpm -qa.
+
+Check Network Configuration:
+    ifconfig
+    Display information about network interfaces.
+
+List Users and Groups:
+    cat /etc/passwd
+    This command shows a list of user accounts on the system.
+
+Remember to use these commands with caution, especially if you are working in a production environment. Some commands may require elevated privileges, so you may need to use sudo to execute them.
+
+=======================================================
+
+wget command 
+    :use the wget command to download file from the internet using HTTP,HTTPS,or FTP protocol 
+    wget https://wordpress.org/latest.zip
+
+apt-get :
+    is a command line tool for handling Advanced Package Tool (APT) libraries in Debian-based Linux, like Ubuntu. It requires sudo or root privileges.
+
+    This Linux command lets you manage, update, remove, and install software, including its dependencies. Here’s the main syntax:
+
+    apt-get [options] (command)
+    These are the most common commands to use with apt-get:
+
+    update – synchronizes the package files from their sources.
+    upgrade – installs the latest version of all installed packages.
+    check – updates the package cache and checks broken dependencies
