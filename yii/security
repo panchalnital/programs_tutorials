@@ -1,0 +1,5 @@
+Avoiding XSS
+
+<?= \yii\helpers\Html::encode($username) ?>
+
+<?= \yii\helpers\HtmlPurifier::process($description) ?>

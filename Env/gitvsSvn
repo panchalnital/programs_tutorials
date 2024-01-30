@@ -37,3 +37,59 @@ Certainly! Git and SVN (Subversion) are both version control systems used for tr
    - **SVN:** As the repository size grows, performance may degrade.
 
 Ultimately, the choice between Git and SVN depends on the specific needs of a project or development team. Git is more popular in the open-source community, while SVN is still used in some enterprise settings.
+
+========================================================================================================
+
+Certainly! Here is a list of commonly used SVN (Subversion) commands:
+
+1. **svn checkout**: Create a working copy of a repository.
+   ```
+   svn checkout <repository_url>
+   ```
+
+2. **svn update**: Bring changes from the repository into your working copy.
+   ```
+   svn update
+   ```
+
+3. **svn commit**: Send changes from your working copy to the repository.
+   ```
+   svn commit -m "Commit message"
+   ```
+
+4. **svn add**: Schedule files or directories to be added to the repository.
+   ```
+   svn add <file_or_directory>
+   ```
+
+5. **svn delete**: Schedule files or directories for removal from the repository.
+   ```
+   svn delete <file_or_directory>
+   ```
+
+6. **svn status**: Show the status of working copy files and directories.
+   ```
+   svn status
+   ```
+
+7. **svn log**: Display the commit history.
+   ```
+   svn log
+   ```
+
+8. **svn diff**: Display the differences between two revisions or paths.
+   ```
+   svn diff -r <revision1>:<revision2> <file_or_directory>
+   ```
+
+9. **svn revert**: Revert changes in your working copy.
+   ```
+   svn revert <file_or_directory>
+   ```
+
+10. **svn info**: Display information about a working copy or repository.
+    ```
+    svn info
+    ```
+
+These are just a few examples, and there are many more SVN commands and options available. You can find more details and options in the SVN documentation or by using the `svn help` command.

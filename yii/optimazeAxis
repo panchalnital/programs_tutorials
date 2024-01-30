@@ -1,0 +1,104 @@
+https://www.interviewbit.com/php-interview-questions/
+
+Tips to Boost Your Website's Performance
+
+Slow-loading websites not only frustrate users but can also impact your search engine rankings. To ensure your website runs smoothly and efficiently, here are some tips to enhance its performance:
+
+✅ Image optimization
+Optimize your images to reduce file sizes without compromising quality. Use formats like WebP and lazy loading to speed up page load times.
+
+✅ Cutting Down on HTTP Requests
+Minimize the number of HTTP requests by consolidating resources like scripts and stylesheets, and consider using sprites for icons.
+
+✅ Minify CSS and JavaScript
+Minify and compress your CSS and JavaScript files to make them smaller and more efficient.
+
+✅ Managing Critical Path and Blocking Resources
+Prioritize the loading of critical resources to prevent render-blocking and improve the overall page load speed.
+
+✅ Lowering Latency with a Content Delivery Network (CDN)
+Utilize a CDN to serve content from servers geographically closer to your users, reducing latency and improving load times.
+
+✅ Time to First Byte (TTFB) Optimization
+Optimize your server's response time to decrease the time it takes for a webpage to start loading.
+
+✅ Steering Clear of 301 Redirects
+Minimize the use of 301 redirects to maintain efficient page loading and user experience.
+
+✅ Utilizing Browser and Server Caching
+Implement caching mechanisms to store frequently used resources on the user's device or server, speeding up subsequent visits.
+
+✅ Prefetching and Preconnecting
+Specify resources that should be loaded in advance, such as DNS preconnect and prefetch hints, to reduce waiting times.
+
+✅ Implementing HTTP/2
+- Upgrade to the HTTP/2 protocol to enhance data transfer speed and efficiency.
+
+✅ Enhancing Web Font Performance
+- Optimize the delivery and rendering of web fonts to improve page speed and visual consistency.
+
+✅ Enabling Gzip Compression
+- Reduce file sizes by enabling Gzip compression on your server, facilitating quicker downloads.
+
+By implementing these tips, you can significantly enhance your website's performance, ensuring that visitors have a seamless and enjoyable browsing experience.
+
+Do share your insights, experiences, or any additional performance tips you've used in the comments below.
+
+=====================================================================================================================
+About the Role
+
+Looking for a PHP Developer with experience in building and maintaining high-performing, scalable, enterprise-grade
+applications.
+
+You will be part of a talented software team that works on mission-critical applications. You will be responsible for PHP
+application development while providing expertise in the full software development lifecycle, from concept and design to
+
+testing.
+
+Hands on knowledge on Collection systems - Payment Gateway/ Bill Payment / (Preferred)
+
+
+Key Responsibilities
+
+	* Understanding client requirements & functional specifications
+
+	* Design and develop high-volume, low-latency applications for mission-critical systems, delivering high-availability and
+	performance.
+
+	» Contribute in all phases of the development lifecycle.
+
+	* Write well designed, testable, efficient code.
+
+	» Ensure designs are in compliance with specifications.
+
+	» Prepare and produce releases of software components.
+
+	* Support continuous improvement by investigating alternatives and technologies and presenting these for architectural
+	review.
+
+	* Coordinating with co-developers and other related departments
+
+	¢ Sending regular updates about project status
+
+
+Role Proficiencies:
+	® Proven hands-on Software Development experience
+
+	¢ Hands on experience in designing and developing applications using PHP platforms
+
+	¢ Object Oriented analysis and design using common design patterns.
+
+	¢ Profound insight of PHP palforms yii/yii2 preferable (Classloading, Memory Management,
+	Transaction management etc)
+
+	e Excellent knowledge of Relational Databases,
+
+	® Experience in the Framework methodology
+
+	e Should be Hands on Experience — PHP and domain knowledge of payments landscape
+
+	e Ajax ,Jquery,WebServices is added advantage
+
+	* Experience with test-driven development
+
+	® Finance and Banking domain will be preferred.

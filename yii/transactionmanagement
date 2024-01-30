@@ -1,0 +1,43 @@
+In the Yii framework, transaction management plays a crucial role in ensuring the consistency and reliability of database operations. Yii provides a robust mechanism for handling database transactions, allowing you to perform multiple database operations as a single unit of work. Here are some key points related to transaction management in Yii:
+
+1. **Database Transactions:**
+   - Yii supports both manual and automatic database transactions.
+   - Manual transactions involve explicitly starting, committing, or rolling back transactions using the `beginTransaction()`, `commit()`, and `rollBack()` methods.
+
+2. **Automatic Transactions:**
+   - Yii also supports automatic transactions through the use of the `yii\db\Transaction` class.
+   - Transactions are automatically started when you perform a database operation within the scope of a transaction.
+
+3. **Example: Manual Transaction Handling:**
+   ```php
+   $transaction = Yii::$app->db->beginTransaction();
+   try {
+       // Perform database operations
+       $model1->save();
+       $model2->update();
+       
+       // Commit the transaction if all operations are successful
+       $transaction->commit();
+   } catch (\Exception $e) {
+       // Roll back the transaction if an error occurs
+       $transaction->rollBack();
+       throw $e;
+   }
+   ```
+
+4. **Isolation Levels:**
+   - Yii allows you to set the isolation level for transactions, controlling the visibility of changes made by one transaction to other concurrent transactions.
+
+5. **Nested Transactions:**
+   - Yii supports nested transactions, allowing you to start a new transaction within an existing one.
+
+6. **Database Connection:**
+   - Transaction management is typically performed on the database connection component (`Yii::$app->db`), which is an instance of `yii\db\Connection`.
+
+7. **Database Access Object (DAO):**
+   - Yii provides a Database Access Object (DAO) that abstracts the underlying database access and provides a high-level interface for working with databases.
+
+8. **Official Documentation:**
+   - The Yii documentation is a valuable resource for detailed information and examples on transaction management in Yii. You can refer to the official documentation at [Yii Transaction](https://www.yiiframework.com/doc/guide/2.0/en/db-transaction).
+
+When working with Yii framework, it's important to refer to the specific version's documentation as features and implementations may vary between versions.

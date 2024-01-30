@@ -1,0 +1,15 @@
+Here are some tips for managing memory in Yii:
+
+Enabling the PHP opcode cache: This can improve the performance of any PHP application and significantly lower memory usage.
+
+Avoid fetching too much data from the database: This can exhaust the memory allocated to PHP.
+Use a foreach instead of readAll: ReadAll returns all the rows in a single array, which can be a memory problem.
+Turn off logging and debug: This can make AR less memory consuming. 
+
+Here are some other things to consider:
+PHP memory limit
+    The default value is 128MB, but this is often raised depending on the amount of memory needed for the web application.
+Memory limit setting
+    This fixes a memory size for executing a script. It prevents ineffectively coded scripts on the server that designate superfluous space.
+Dynatrace Hub
+    This provides comprehensive out-of-the box metrics that can give insights into memory allocation, garbage collection, and thread behavior.

@@ -1,0 +1,56 @@
+
+Yii is a PHP framework for developing large-scale web applications. Some of its features include:
+
+    MVC architectural pattern: Yii applications are organized according to the model-view-controller (MVC) pattern.
+
+    Extensibility: Yii is extremely extensible, and provides features for both relational and NoSQL databases.
+    
+    Performance: Yii2's exceptional performance, code generation tools, and security features make it a preferred choice for high-performance applications and backend systems.
+    
+    Security: Yii has great security features, and is a preferred choice for high-performance applications and backend systems.
+    
+    CRUD feature: Yii has a CRUD feature and easy form validation.
+    
+    Error handling: Yii effectively handles errors.
+    
+    Growth friendly: Yii is growth friendly. 
+Yii also provides multi-tier caching support and RESTful API development support. 
+Yii requires PHP 5.1, and has been tested with Apache HTTP server on Windows and Linux. 
+=======================================================================================
+Yii is a high-performance PHP framework used for developing modern web applications. Here are some of the key features of Yii:
+
+1. **Model-View-Controller (MVC) Design Pattern:** Yii follows the MVC architectural pattern, making it easy to manage and organize code for better maintainability.
+
+2. **Database Access Objects (DAO) and Active Record:** Yii provides both DAO and Active Record for database access. Active Record allows you to interact with databases using a more object-oriented approach.
+
+3. **Code Generation:** Yii includes a powerful code generator that helps streamline the development process by automating the creation of models, controllers, forms, and more.
+
+4. **Form Input and Validation:** Yii provides a set of tools for creating and validating forms, making it easier to handle user input securely.
+
+5. **Ajax Integration:** Yii supports AJAX features, allowing developers to create more dynamic and interactive user interfaces.
+
+6. **Authentication and Authorization:** Yii includes robust authentication and authorization components, making it easier to implement user authentication and control access to different parts of the application.
+
+7. **Security Measures:** Yii comes with built-in security measures, such as input validation, output filtering, and protection against common web vulnerabilities like SQL injection and cross-site scripting (XSS) attacks.
+
+8. **Internationalization and Localization:** Yii supports internationalization (i18n) and localization (l10n), making it easier to create applications that can be adapted to different languages and regions.
+
+9. **RESTful API Development:** Yii provides tools for building RESTful APIs, allowing developers to create web services that follow the principles of Representational State Transfer (REST).
+
+10. **Caching:** Yii includes a caching system that helps improve application performance by storing and retrieving frequently used data.
+
+11. **Error Handling and Logging:** Yii offers a flexible logging and error-handling mechanism to help developers identify and address issues in their applications.
+
+12. **Extensibility:** Yii is designed to be highly extensible, allowing developers to customize and extend its features to meet specific project requirements.
+
+These features make Yii a popular choice for web developers seeking a framework that combines performance, flexibility, and ease of use.
+
+==================================================
+Yii2 feature 
+The following things are newly added in Yii version 2.0:
+
+The Yii 2.0 framework supports PSR-4 class autoloading, simpler namespaces, faster loading, and improved usability for developers.
+The Yii 2.0 framework added performance and security improvements.
+The Yii 2.0 framework added RESTful API integration.
+The Yii 2.0 framework added improvement on URL handling and processing.
+Now Yii 2.0 framework, Translations of core messages available in 26 languages.

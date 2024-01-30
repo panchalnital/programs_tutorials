@@ -1,0 +1,11 @@
+In Yii 2.0, the PSR-4 autoloading is typically configured in the composer.json file. You would find a "autoload" section in the file where you can specify the PSR-4 namespace-to-directory mapping. For example:
+
+composer.json
+{
+    "autoload": {
+        "psr-4": {
+            "app\\": "src/"
+        }
+    }
+}
+In this example, it's saying that classes in the app namespace should be autoloaded from the src/ directory

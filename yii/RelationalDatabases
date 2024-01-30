@@ -1,0 +1,42 @@
+In the Yii framework, which is a PHP framework for building web applications, relational databases play a crucial role in managing and storing data. Yii provides a powerful and flexible ActiveRecord implementation for working with relational databases. ActiveRecord is an Object-Relational Mapping (ORM) system that allows developers to interact with the database using PHP objects.
+
+Here are some key points about working with relational databases in Yii:
+
+1. **Database Configuration:**
+   - Yii uses a configuration file (typically `config/db.php`) to specify database connection details. You'll need to configure parameters such as 'dsn', 'username', 'password', and 'charset' to connect to your database.
+
+2. **ActiveRecord Models:**
+   - Models in Yii represent database tables. Each model class extends `yii\db\ActiveRecord`. The attributes of the model correspond to the columns in the database table.
+
+3. **CRUD Operations:**
+   - Yii provides built-in methods for performing CRUD (Create, Read, Update, Delete) operations on the database. These methods are inherited from the `ActiveRecord` class and include `save()`, `delete()`, `find()`, and more.
+
+4. **Query Building:**
+   - Yii supports a query builder that allows you to construct SQL queries using a PHP-friendly syntax. This can be useful for more complex queries or situations where ActiveRecord may not be suitable.
+
+5. **Migrations:**
+   - Yii supports database migrations, which are a way to version control your database schema. Migrations allow you to evolve your database schema over time and keep it in sync with your application code.
+
+6. **Relational Data:**
+   - Yii's ActiveRecord supports defining relationships between models, such as `hasOne`, `hasMany`, `belongsTo`, etc. This simplifies the process of working with related data in a relational database.
+
+7. **Data Validation:**
+   - Yii provides tools for data validation within models. This ensures that the data being saved to the database meets specified criteria.
+
+Here is a simple example of a Yii model:
+
+```php
+<?php
+namespace app\models;
+
+use yii\db\ActiveRecord;
+
+class Post extends ActiveRecord
+{
+    // ... model attributes and methods ...
+}
+```
+
+This `Post` model would correspond to a 'post' table in the database. You can then use methods like `find()`, `save()`, and relationships to interact with the database.
+
+For more detailed information, you can refer to the official Yii documentation on database access: [Yii Database Access](https://www.yiiframework.com/doc/guide/2.0/en/db-query-builder).
