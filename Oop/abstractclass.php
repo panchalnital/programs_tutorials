@@ -58,7 +58,16 @@ class BMW extends car{
 $bmw=new BMW();
 $bmw->noOfwheels();
 $bmw->price('12LAKH');
+/*======================================
+main user : An abstract class's main purpose is to provide a common definition for a base class that multiple derived classes can share
 
+Here are some other purposes of abstract classes:
+    Provide a blueprint : Abstract classes provide a blueprint for derived classes and set some rules that the derived classes must implement when they inherit an abstract class.
+    
+    Define behaviors :Abstract classes let you define some behaviors; they force your subclasses to provide others.
+    
+    Provide default services : For example, if you have an application framework, an abstract class may provide default services such as event and message handling
+*/
 ================================================
 Response
 Abstract methods are a concept in programming languages, often associated with object-oriented programming (OOP). Here are the advantages and disadvantages of using abstract methods:

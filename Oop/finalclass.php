@@ -7,8 +7,8 @@ class abc{
     public function __contract(){
         echo "call abc class";
     }
-    final function noofwheel(){
-        echo 4;
+    final function noofwheel(){ // if you deacler the final methods you can't be overried for child class
+        echo 4; 
     }
 }
 final class BMW{ // class BMW may not inherit from final class 
@@ -19,7 +19,7 @@ final class BMW{ // class BMW may not inherit from final class
 $BMW=new BMW;
 $BMW->noofwheel();
 class tesla extends abc{
-    public function noofwheel(){
+    public function noofwheel(){ //
         echo 5;
     }
 }

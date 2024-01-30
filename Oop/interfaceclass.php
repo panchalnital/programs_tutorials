@@ -63,6 +63,8 @@ $myorderpayu->checkout(100);
 
 /**************************************************************************** */
 /***
+ The main purpose of an interface class is to define a contract for the behavior of a class. Interfaces are used to achieve abstraction, support multiple inheritances, and improve code readability. They also help in capturing similarities among unrelated classes without forcing a class relationship, thus promoting loose coupling.
+ * 
  * Abstract class  vs interface class
  * 
  *  Abstract class comes under partial abstraction.
