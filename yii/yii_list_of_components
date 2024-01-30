@@ -1,0 +1,27 @@
+In Yii, components are key building blocks that help you organize and modularize your web application. Here is a list of some commonly used components in Yii:
+
+1. **Yii\web\Application:** Represents a web application and is responsible for handling incoming requests, managing user sessions, and coordinating various components.
+
+2. **Yii\web\UrlManager:** Manages URL rules and provides URL parsing and creation functionalities.
+
+3. **Yii\web\Request:** Represents an HTTP request and provides access to request data such as GET, POST, and server variables.
+
+4. **Yii\web\Response:** Represents an HTTP response and is responsible for sending output to the client.
+
+5. **Yii\db\Connection:** Manages database connections and provides an interface for interacting with databases.
+
+6. **Yii\base\View:** Handles the rendering of views and layouts.
+
+7. **Yii\caching\Cache:** Provides caching functionalities to improve application performance.
+
+8. **Yii\log\Logger:** Handles logging and allows you to record messages for debugging purposes.
+
+9. **Yii\web\Session:** Manages user sessions and provides a way to store and retrieve session data.
+
+10. **Yii\base\Security:** Offers security-related functionalities such as password hashing and encryption.
+
+11. **Yii\base\Widget:** Serves as the base class for creating reusable and configurable UI components.
+
+12. **Yii\helpers\Html:** Provides a set of HTML helper functions for generating HTML elements.
+
+These are just a few examples, and Yii offers many more components to help you with various aspects of web development. You can explore the official Yii documentation for detailed information on each component and how to use them effectively in your application.

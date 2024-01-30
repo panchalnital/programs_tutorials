@@ -1,0 +1,101 @@
+Yii is a PHP framework that supports the use of extensions to enhance its functionality. Here is a list of some popular Yii extensions as of my last knowledge update in January 2022:
+
+1. **Yii2-Debug:** A powerful debugging and profiling toolbar for Yii 2.
+
+2. **Yii2-Bootstrap:** Integrates the Bootstrap CSS framework with Yii 2.
+
+3. **Yii2-Gii:** A web-based code generation tool for Yii 2.
+
+4. **Yii2-Swiftmailer:** Integrates the SwiftMailer library for sending emails.
+
+5. **Yii2-User:** A flexible user management module for Yii 2.
+
+6. **Yii2-Gridview:** An enhanced gridview widget for Yii 2.
+
+7. **Yii2-Redactor:** Integrates the Redactor WYSIWYG editor with Yii 2.
+
+8. **Yii2-Imagine:** Provides a simple wrapper for the Imagine image manipulation library.
+
+9. **Yii2-Excel:** Allows the export of data to Excel and other spreadsheet formats.
+
+10. **Yii2-Authclient:** Enables third-party authentication through OAuth and other protocols.
+
+Please note that the availability and popularity of extensions may change over time, so it's a good idea to check the Yii extensions repository or other community sources for the most up-to-date information. Additionally, make sure the extensions are compatible with the version of Yii you are using.
+
+yiisoft/yii2-faker      Fixture generator. The Faker integration for the Yii framework
+
+yiisoft/yii2-redis      Redis Cache, Session and ActiveRecord for the Yii framework
+
+yiisoft/yii2-httpclient  HTTP client extension for the Yii framework
+
+yiisoft/yii2-queue      Yii2 Queue Extension which supported DB, Redis, RabbitMQ, Beanstalk, SQS and Gearman
+
+yiisoft/yii2-jui        The Jquery UI extension for the Yii framework
+
+yiisoft/yii2-shell      The interactive shell extension for Yii framework
+
+yiisoft/yii2-mongodb    MongoDB extension for the Yii framework
+
+yiisoft/yii2-twig       The Twig integration for the Yii framework
+
+yiisoft/yii2-smarty     The Smarty integration for the Yii framework
+
+yiisoft/yii2-elasticsearch  Elasticsearch integration and ActiveRecord for the Yii framework
+
+yiisoft/yii2-captcha    Yii Framework CAPTCHA Extension
+
+yiisoft/yii2-apidoc     API Documentation generator for the Yii framework 2.0
+
+===================================================
+php composer.phar require --prefer-dist yiisoft/yii2-redis:"~2.0.0"
+
+Configuration
+To use this extension, you have to configure the Connection class in your application configuration:
+
+return [
+    //....
+    'components' => [
+        'redis' => [
+            'class' => 'yii\redis\Connection',
+            'hostname' => 'localhost',
+            'port' => 6379,
+            'database' => 0,
+        ],
+    ]
+];
+
+=============
+// keep the data in cache for at most 45 seconds
+$cache->set($key, $data, 45);
+
+
+get(): retrieves a data item from cache with a specified key. A false value will be returned if the data item is not found in the cache or is expired/invalidated.
+set(): stores a data item identified by a key in cache.
+add(): stores a data item identified by a key in cache if the key is not found in the cache.
+getOrSet(): retrieves a data item from cache with a specified key or executes passed callback, stores return of the callback in a cache by a key and returns that data.
+multiGet(): retrieves multiple data items from cache with the specified keys.
+multiSet(): stores multiple data items in cache. Each item is identified by a key.
+multiAdd(): stores multiple data items in cache. Each item is identified by a key. If a key already exists in the cache, the data item will be skipped.
+exists(): returns a value indicating whether the specified key is found in the cache.
+delete(): removes a data item identified by a key from the cache.
+flush(): removes all data items from the cache.
+
+
+// Assuming you're inside a controller or some Yii2 component
+
+// Get the cache component
+$cache = Yii::$app->cache;
+
+// Try to retrieve data from cache
+$data = $cache->get('exampleKey');
+
+// Check if data is not found in cache
+if ($data === false) {
+    // Data is not in cache, fetch it from the source (e.g., database, API, etc.)
+    $data = /* Your logic to fetch the data */;
+
+    // Save the data in cache for future use
+    $cache->set('exampleKey', $data, 3600); // Cache for 1 hour (you can adjust the duration as needed)
+}
+
+// Now you can use $data knowing that it might be from cache or freshly fetched

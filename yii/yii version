@@ -3,3 +3,57 @@ Yii 3 Requires PHP 7.3 Augest 2022
 Yii 2.0: Requires PHP 5.4 or above, ideally the latest PHP 7 
 Yii 1.1: Requires PHP 5.1 or above  2014 or 2015
 
+
+Yii	Yii2
+*Yii requires PHP 5.2.	Yii 2.0 requires PHP 5.4.0 or higher, which makes use of the latest features of PHP.
+*In Yii, prefix C was used, and the classes were in global namespaces.	In Yii2, prefix C is not used in namespaces. And classes based on the directory structure.
+Yii uses the On-event method, where custom event names are not allowed to use.	In Yii 2.0, any name can be used for the event with a handler attached to it, and event handling can be done using J-query.
+*Yii uses PHP as the primary template language.	Yii 2.0 is equipped with PHP and two more template engines- TWIG and SMARTY.
+
+===========================================================================
+yii
+
+Assets − This folder includes all .js and .css files referenced in the web page.
+
+Commands − This folder includes the controllers that can be used from the terminal.
+
+Config − This folder contains config files for managing database, application and application parameters.
+
+Mail − This folder includes the mail layout.
+
+Models − This folder includes the models used in the application.
+
+Runtime − This folder is for storing runtime data.
+
+Tests − This folder includes all the tests (acceptance, unit, functional).
+
+Vendor − This folder contains all the third-party packages managed by Composer.
+
+Views − This folder is for views, that are displayed by the controllers. The layout folder is a for page template.
+
+Web − The entry point from web.
+
+======================================
+Explain request Life Cycle in Yii2 framework?
+
+web/index.php
+    1=>entryscript
+       -load app config
+       -run application
+    2=>application
+        -reslove route
+        -create  controller
+    3=>request componets
+    4=>controller
+        -create action
+
+    5=>perfom filters -------> 6=>response component
+        !
+        !
+    7=>action
+        -load model    ------> 8=> model(database)
+        -render view   ------> 9=> view
+            !
+            !
+    10=> response components
+    11=> response user
