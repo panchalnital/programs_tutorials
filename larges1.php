@@ -103,3 +103,17 @@ $twoDArray = array(
 );
 
 echo "Maximum value: " . findMaxValue($twoDArray);
+
+//==============
+//program string manipulation frequency count in php code
+
+
+$string="this is data";
+$string=strtolower($string);
+$str_split=str_split($string);
+$count=array_count_values($str_split);
+print_r($count);
+
+foreach($count as $keys=>$value){
+  echo "charater  ".$keys." countr ".$value. "\n ";
+}

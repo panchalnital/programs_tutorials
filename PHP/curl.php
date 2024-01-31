@@ -25,6 +25,7 @@ curl_setopt($ch,CUROPT_RETURNTRANFER,TRUE);
 curl_setopt($ch,CURLOPT_FIFELDS,$data);
 curl_setopt($ch,CURLOPT_SSL_VERFICATION,TRUE);
 curl_setopt($ch,CURLOPT_USERPWD,"$username:$password");
+curl_setopt($ch, CURLOPT_TIMEOUT, 10); // Set
 
 $res=curl_exec($ch);
 if(curl_error($res)){

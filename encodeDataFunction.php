@@ -110,4 +110,10 @@ echo "Time taken to encode = " . $tenc . " sec <br>";
 echo "Time taken to verify = " . $tdec . " sec <br>";
 echo "Total time taken = " . $ted . " sec <br><br>";
 
+//error handing in 
+header('HTTP/1.1 503 Service Temporarily Unavailable');
+header('Status: 503 Service Temporarily Unavailable');
+header('Retry-After: 300');//300 seconds
+
+
 ?>
