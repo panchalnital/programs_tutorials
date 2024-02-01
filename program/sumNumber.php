@@ -73,7 +73,9 @@ while($cnt<10){
 
 // convert mobile format 
 $number='98658956323';
-echo preg_replace('/(/d{3})(/d{3})(/d{4})/','$1-$2-$3',$number);
+$formatted_number = substr($number, 0, 3) . '-' . substr($number, 3, 3) . '-' . substr($number, 6);
+
+echo preg_replace('/(\d{3})(\d{3})(\d{4})/','$1-$2-$3',$number);
 
 $mail="shiv@gmail.com";
 $patten='/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
