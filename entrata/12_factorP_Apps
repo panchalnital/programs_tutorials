@@ -1,0 +1,29 @@
+Certainly! The "12 Factor App" methodology is a set of best practices and principles for building modern, scalable, and maintainable software-as-a-service (SaaS) applications. These principles were formulated by developers at Heroku, a cloud platform as a service (PaaS) provider, and are widely accepted in the software development community.
+
+Here's a brief overview of the 12 factors:
+
+1. **Codebase:** Keep one codebase per application, tracked in version control.
+
+2. **Dependencies:** Explicitly declare and isolate dependencies.
+
+3. **Config:** Store configuration in the environment, separate from the code.
+
+4. **Backing Services:** Treat backing services (databases, caches, etc.) as attached resources.
+
+5. **Build, Release, Run:** Strictly separate the build and run stages of the application.
+
+6. **Processes:** Execute the app as one or more stateless processes.
+
+7. **Port Binding:** Export services via port binding.
+
+8. **Concurrency:** Scale out via the process model.
+
+9. **Disposability:** Maximize robustness with fast startup and graceful shutdown.
+
+10. **Dev/Prod Parity:** Keep development, staging, and production as similar as possible.
+
+11. **Logs:** Treat logs as event streams.
+
+12. **Admin Processes:** Run admin/management tasks as one-off processes.
+
+Adhering to these factors can lead to applications that are easier to develop, deploy, and scale. It promotes good practices such as maintaining a clean codebase, using environment variables for configuration, and minimizing differences between development and production environments. The 12 Factor App principles are often referenced in discussions around microservices architecture and containerization.

@@ -68,9 +68,11 @@ Rest Guidelines:
 
             *200 OK Indicates that the request has succeeded.
             *201 Created Indicates that the request has succeeded and a new resource has been created as a result.
-            202 Accepted Indicates that the request has been received but not completed yet. It is typically used in log running requests and batch processing.
+            202 No found Accepted Indicates that the request has been received but not completed yet. It is typically used in log running requests and batch processing.
 
+             301 Move Permanenlty
             *302 Found a Cache-Control or Expires header field.
+             304 Not modify 
 
             *400 Bad Request The request could not be understood by the server due to incorrect syntax. The client SHOULD NOT repeat the request without modifications.
             *401 Unauthorized Indicates that the request requires user authentication information. The client MAY repeat the request with a suitable Authorization header field

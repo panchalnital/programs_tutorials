@@ -1,0 +1,77 @@
+header() is used to send a raw HTTP header. See the » HTTP/1.1 specification for more information on HTTP headers.
+
+// This example illustrates the "HTTP/" special case
+// Better alternatives in typical use cases include:
+// 1. header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
+//    (to override http status messages for clients that are still using HTTP/1.0)
+// 2. http_response_code(404); (to use the default message)
+header("HTTP/1.1 404 Not Found");
+
+
+header("Location: http://www.example.com/"); /* Redirect browser */
+
+/* Make sure that code below does not get executed when we redirect. */
+
+replace
+The optional replace parameter indicates whether the header should replace a previous similar header, or add a second header of the same type. By default it will replace, but if you pass in false as the second argument you can force multiple headers of the same type. For example:
+
+<?php
+header('WWW-Authenticate: Negotiate');
+header('WWW-Authenticate: NTLM', false);
+
+// We'll be outputting a PDF
+header('Content-Type: application/pdf');
+
+// It will be called downloaded.pdf
+header('Content-Disposition: attachment; filename="downloaded.pdf"');
+
+// The PDF source is in original.pdf
+readfile('original.pdf');
+
+
+//Example #2 Caching directives
+
+//PHP scripts often generate dynamic content that must not be cached by the client browser or any proxy caches between the server and the client browser. Many proxies and clients can be forced to disable caching with:
+
+
+header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+
+header('Set-Cookie: name=value; Secure; Path=/; SameSite=None; Partitioned;');
+
+/* Redirect to a different page in the current directory that was requested */
+$host  = $_SERVER['HTTP_HOST'];
+$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+$extra = 'mypage.php';
+header("Location: http://$host$uri/$extra");
+exit;
+
+header( "refresh:5;url=wherever.php" );
+
+echo 'You\'ll be redirected in about 5 secs. If not, click <a href="wherever.php">here</a>.';
+
+// 301 Moved Permanently
+header("Location: /foo.php",TRUE,301);
+
+// 302 Found
+header("Location: /foo.php",TRUE,302);
+header("Location: /foo.php");
+
+// 303 See Other
+header("Location: /foo.php",TRUE,303);
+
+// 307 Temporary Redirect
+header("Location: /foo.php",TRUE,307);
+
+
+$content = file_get_contents('test_download.png') ;
+$name = 'test.png' ;
+$size = strlen($content) ;
+    
+header('Content-Description: File Transfer');
+header('Content-Type: application/octet-stream');
+header('Cache-Control: no-cache, must-revalidate');
+header('Expires: 0');
+header('Content-Disposition: attachment; filename="'.$name.'"');
+header('Content-Length: ' . $size);
+header('Pragma: public');
