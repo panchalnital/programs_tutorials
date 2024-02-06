@@ -61,13 +61,25 @@ echo "Time taken to verify = " . $tdec . " sec <br>";
 echo "Total time taken = " . $ted . " sec <br><br>";
 
 // (B) OPENSSL (AES-128-ECB)
-$start = microtime(true);
-$clear = "MyPassw@rd!23";
-$hash = openssl_encrypt($clear, "AES-128-ECB", "mysecretkey1234");
-$endA = microtime(true);
-$decrypt = openssl_decrypt($hash, "AES-128-ECB", "mysecretkey1234");
-$verified = $decrypt == $clear;
-$endB = microtime(true);
+$text = "this is testing";
+$cipher = "AES-128-ECB";
+$secert="1234567890123456";//16 bite
+$enchash = openssl_encrypt($text, $cipher,$secert);
+
+$decrypt = openssl_decrypt($enchash,$cipher,$secert);
+
+
+// 
+// (B) OPENSSL (AES-256-CBC)
+$text = "this is testing";
+$cipher = "AES-256-CBC";
+$secert="12345678901234567890123456789012";//32 bite
+$option=0;
+$iv=str_repeat("0",openssl_cipher_iv_lenght($cipher));
+$enchash = openssl_encrypt($text, $cipher,$secert,$option,$iv);
+
+$decrypt = openssl_decrypt($enchash,$cipher,$secert,$option,$iv);
+
 
 $tenc = $endA - $start;
 $tdec = $endB - $endA;
@@ -116,4 +128,11 @@ header('Status: 503 Service Temporarily Unavailable');
 header('Retry-After: 300');//300 seconds
 
 
+
+/*
+strip_tags(): Removes HTML and PHP tags from a string. It is designed to sanitize user input or text containing markup tags to prevent security vulnerabilities. The function accepts two parameters and returns a string with all NULL bytes, HTML, and PHP tags stripped from a given $str.
+htmlspecialchars(): Converts special HTML entities back to characters. It can be used when the input is allowed to contain HTML that you want to be able to display as such in the web page.
+htmlentities(): Converts all applicable characters to HTML entities.
+html_entity_decode(): Converts HTML entities in the string to their corresponding characters
+ */
 ?>

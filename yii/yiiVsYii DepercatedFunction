@@ -1,0 +1,8 @@
+Here are some deprecated functions in Yii 2.0:
+    yii\BaseYii::powered(): This method has been deprecated since 2.0.14 and will be removed in 2.1.0.
+    
+    XCache and Zend data cache support: These have been deprecated as caching backends.
+    
+    yii\base\InvalidParamException: This has been deprecated and replaced with yii\base\InvalidArgumentException.
+    
+    yii\BaseYii::trace(): This has been deprecated and replaced with yii\BaseYii::debug(). 
