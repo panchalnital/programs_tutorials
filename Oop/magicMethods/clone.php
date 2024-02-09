@@ -14,7 +14,7 @@ call by reference
 
  e.g 
         $a=5;
-        $b=&$a //copy the memory address of $a
+        $b=&$a //copy the memory address of $a // call by referance
         $b=10; // 
         echo $a= //10
 
