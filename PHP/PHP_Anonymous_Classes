@@ -1,0 +1,44 @@
+In PHP, anonymous classes are a way to create a class without defining it first. They are useful for creating one-off classes or classes that are only needed for a short period of time. 
+
+Here are some features of anonymous classes:
+    Anonymous classes are useful when simple, one-off objects need to be created.
+    Anonymous classes are not associated with a name.
+    Anonymous classes are created using the new keyword and a closure.
+    Anonymous classes can accept arguments through the constructor.
+    Anonymous classes can be extended from others classes, can use interfaces etc.. 
+
+To create an anonymous class, you can use the class keyword combined with the new keywords:
+    Use the new keyword
+    Use the class keyword without the name
+    Open close curly braces with a semicolon
+    Put your regular class structure inside this curly braces 
+
+----------------------------------------------------------------
+PHP Anonymous Classes allow you to create classes on the fly without explicitly defining their names. They are useful for situations where you need a simple, one-off class that doesn't need to be reused elsewhere in your code.
+
+Here's a basic example of how you can use anonymous classes in PHP:
+
+```php
+<?php
+
+// Define an interface
+interface Logger {
+    public function log($message);
+}
+
+// Create an anonymous class that implements the Logger interface
+$logger = new class implements Logger {
+    public function log($message) {
+        echo $message;
+    }
+};
+
+// Use the anonymous class
+$logger->log("Hello, world!");
+```
+
+In this example, we define an interface called `Logger` with a single method `log()`. Then, we create an anonymous class that implements this interface. We can then instantiate the anonymous class and use it just like any other class.
+
+Anonymous classes are particularly handy for situations where you need to pass a class as an argument to a method or function, but you don't want to define a separate named class for it. They're also useful for quickly prototyping or testing code.
+
+Keep in mind that anonymous classes are only available in PHP 7 and later versions.
