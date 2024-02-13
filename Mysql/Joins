@@ -1,0 +1,70 @@
+SQL JOINs
+
+Here are the different types of the JOINs in SQL:
+
+-(INNER) JOIN:          Returns records that have matching values in both tables
+        SELECT ProductID, ProductName, CategoryName
+        FROM Products
+        INNER JOIN Categories ON Products.CategoryID = Categories.CategoryID;
+
+-LEFT (OUTER) JOIN:     Returns all records from the left table, and the matched records from the right table
+        SELECT Customers.CustomerName, Orders.OrderID
+        FROM Customers
+        LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+        ORDER BY Customers.CustomerName;
+
+-RIGHT (OUTER) JOIN:    Returns all records from the right table, and the matched records from the left table
+        - The RIGHT JOIN keyword returns all records from the right table (table2), and the matching records from the left table (table1). The result is 0 records from the left side, if there is no match.
+        SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
+        FROM Orders
+        RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+        ORDER BY Orders.OrderID;
+
+-FULL (OUTER) JOIN:     Returns all records when there is a match in either left or right table
+        The FULL OUTER JOIN keyword returns all records when there is a match in left (table1) or right (table2) table records.
+        Tip: FULL OUTER JOIN and FULL JOIN are the same.
+        SELECT Customers.CustomerName, Orders.OrderID
+        FROM Customers
+        FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
+        ORDER BY Customers.CustomerName;
+
+        SELECT *  
+        FROM table1  
+        FULL OUTER JOIN table2  
+        ON table1.column_name = table2.column_name;  
+
+-Self Join: A self join is a regular join, but the table is joined with itself.
+        SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
+        FROM Customers A, Customers B
+        WHERE A.CustomerID <> B.CustomerID
+        AND A.City = B.City
+        ORDER BY A.City;
+
+-Cross Join  : Join operation in SQL is used to combine multiple tables together into a single table.
+    eg If there are two records in table 1 and three records in table 2, then after performing cross join operation, we will get six records in the final table.
+
+        SELECT *FROM employee CROSS JOIN department;  
+    
+        SELECT Customers.CustomerName, Orders.OrderID
+        FROM Customers
+        CROSS JOIN Orders;
+
+======================================================================
+UNION : 
+    The UNION operator selects only distinct values by default.
+    The UNION operator is used to combine the result-set of two or more SELECT statements.
+
+    Every SELECT statement within UNION must have the same number of columns
+    The columns must also have similar data types
+    The columns in every SELECT statement must also be in the same order
+
+    SELECT column_name(s) FROM table1
+    UNION 
+    SELECT column_name(s) FROM table2;
+
+UNION ALL :
+     The UNION All operator selects To allow duplicate values, use UNION ALL:
+
+    SELECT column_name(s) FROM table1
+    UNION ALL
+    SELECT column_name(s) FROM table2;
