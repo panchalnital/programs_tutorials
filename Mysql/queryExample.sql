@@ -1,4 +1,7 @@
-/*The CREATE INDEX command is used to create indexes in tables (allows duplicate values).
+/*
+https://www.youtube.com/watch?v=oe_k_smHIZo
+
+The CREATE INDEX command is used to create indexes in tables (allows duplicate values).
 
 Indexes are used to retrieve data from the database very fast. The users cannot see the indexes, they are just used to speed up searches/queries.
 
@@ -19,7 +22,13 @@ Sql
 DROP INDEX table_name.index_name;
 
 
-/* clusterd index :Clustered indexes define the way records are physically sorted in a database table. A clustered index is very similar to the table of contents of a book. In the table of contents, you can see how the book has been physically sorted*/
+/* clusterd index :Clustered indexes define the way records are physically sorted in a database table. A clustered index is very similar to the table of contents of a book. In the table of contents, you can see how the book has been physically sorted
+
+            : Cluster index is a type of index which sort the data rows in the table on their key values, in 
+            database, 
+            :there is only one clustered index per table
+*/
+
 
 CREATE CLUSTERED INDEX <index_name>
 ON <table_name>(<column_name> ASC/DESC)
@@ -27,11 +36,21 @@ ON <table_name>(<column_name> ASC/DESC)
 CREATE CLUSTERED INDEX IX_tblBook_Price
 ON Books(price ASC)
 
-/* nocluster index : A non-clustered index is an index that doesn’t physically sort the database records. Rather, a non-clustered index is stored at a separate location from the actual database table. It is the non-clustered index which is actually similar to an index of a book. A book index is stored at a separate location, while the actual content of the book is separately located.*/
+/* nocluster index : A non-clustered index is an index that doesn’t physically sort the database records. Rather, a non-clustered index is stored at a separate location from the actual database table. It is the non-clustered index which is actually similar to an index of a book. A book index is stored at a separate location, while the actual content of the book is separately located.
+            
+        :stores the data at one location and indicaes at another location the index cotains pointers to the location of the data.
+        : A single table can have many non-clustered indexes as index in the non-clustered index is stored in different places            
+
+        type of scan:
+        1) Table scan(when index is not there): does linear search where seraches for each and every record
+        2) indexes unique scan :unique index or index on primary key
+        3) index Range scan : where condtion has equlity or range prdicate
+
+        defualt index: Btree(binary tree index) user wide range menas unqiue data avaiable 
+*/
 
 CREATE NONCLUSTERED INDEX IX_tblBook_Name
 ON Books(name ASC)
-
 
 
 /*about full-text search in SQL Server:
@@ -69,6 +88,20 @@ create index fidx on emp(UPPER(name));
 select * from user_indexes where table_name='emp';
 /*column */
 select * from user_id_column where table_name='emp';
+/*
+    - index are generally reated on columns that are frequently used in where caluse
+    - index for primary key and unique constaints are automatically created and dropped 
+        durinng table create and deletion.
+    - index improve perfomance in select but hamper insert update delete so not good indea
+        to create index on every column
+    - index conatains redundeant data already existing in table henace consumers space
+    - each table can be have only one clustered index usally created on a primary key
+    - no limit on non clusterd index
+
+*/
+
+
+
 
 /* In MySQL, a "trigger" is a database object that is associated with a table and automatically fires (or activates) in response to specific events, such as INSERT, UPDATE, DELETE, or other data manipulation actions. Triggers are often used to enforce data integrity rules, auditing, or performing specific actions when certain events occur in the database.
 

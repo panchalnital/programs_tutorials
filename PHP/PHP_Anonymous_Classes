@@ -2,10 +2,10 @@ In PHP, anonymous classes are a way to create a class without defining it first.
 
 Here are some features of anonymous classes:
     Anonymous classes are useful when simple, one-off objects need to be created.
-    Anonymous classes are not associated with a name.
+    *Anonymous classes are not associated with a name.
     Anonymous classes are created using the new keyword and a closure.
     Anonymous classes can accept arguments through the constructor.
-    Anonymous classes can be extended from others classes, can use interfaces etc.. 
+    *Anonymous classes can be extended from others classes, can use interfaces etc.. 
 
 To create an anonymous class, you can use the class keyword combined with the new keywords:
     Use the new keyword

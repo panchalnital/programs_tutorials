@@ -1,0 +1,96 @@
+An anonymous function is a function that does not have a name. It is also sometimes referred to as a lambda function or a function literal.
+Anonymous functions are often used for short, one-time tasks, or as arguments to higher-order functions.
+In JavaScript, you can create anonymous functions using the function keyword without specifying a name.
+Copy
+const anonymousFunction = function() {
+    console.log("This is an anonymous function.");
+};
+anonymousFunction(); // Outputs: This is an anonymous function.
+Anonymous functions are commonly used in functional programming and event handling.
+In summary, a closure function is a function that "closes over" its containing scope, allowing it to access variables from that scope even after the containing function has completed. An anonymous function is a function without a name, often used for short tasks or as arguments to other functions. They are two distinct concepts, but you can use anonymous functions as closures in some cases to capture and encapsulate state
+
+** anonymous function ** : anonymous function also its lambda function 
+** anonymous function ** : it not define name of function 
+** anonymous function ** : anonymous function aslo need to end with a semicolon
+                          function as arguments to nother function any uyou cloud even rteurn them
+
+$sum=function(...$number){
+    return array_sum($number);
+};
+
+echo $sum(1,2,3,4,5);
+
+
+
+/**
+ * Closure Function:
+*/
+/* 
+Closure functiion means used out of variable (gobale veriable use on Anonymous function )*
+closure use local variable in after compelted local variable intizal define variable avaiable 
+*/
+
+$g="Hello";
+$fun=function($w) use ($g){
+    return $g ." ".$w;
+}
+echo $fun('world'); // hello world
+
+//eg.2
+
+function hello($h){
+    return function ($w) use($h){
+        return $g ." ".$w;
+    }
+}
+$b=hello('Hello');
+echo $b('world');//Hello world
+
+/*A closure is a function in programming that has access to variables from its containing (enclosing) function's scope, even after that containing function has finished executing.
+Closures are often used to create private data and encapsulation in languages like JavaScript. They allow you to maintain state between function calls without exposing it globally.
+Here's a simple JavaScript example:
+Copy
+function outerFunction() {
+    let outerVariable = 10;
+
+    function closureFunction() {
+        console.log(outerVariable); // Accessing outerVariable from the enclosing scope
+    }
+
+    return closureFunction;
+}
+
+const closure = outerFunction();
+closure(); // Outputs: 10
+*/
+
+/* callable(call back function) function  Function:
+**callable or call back function ** : when a function is passed to another function as an argumrnt and then  is called is bcallback function
+    : php have a build function that expect callback function is an arguments like array 
+        array_map, array_filter, sort so on or example 
+
+    1 first way is that you colud define a nonymous function direclty 
+
+        eg, $arrya=[1,2,3,4,5];
+        
+        $arr=array_map(function($item){
+            return $item*2;
+        },$arrye);
+
+        print_r($arr);
+
+    2)
+        $arr=[1,2,3,4,5];
+        $x=function($item){
+            return $item*2;
+        };
+        $reult=array_map($x,$arr);
+        print_r($reult);
+
+    3)  $arr=[1,2,3,4,5];
+        function sum($item){
+            return $item*2;
+        };
+        $reult=array_map('sum',$arr);
+        print_r($reult);
+

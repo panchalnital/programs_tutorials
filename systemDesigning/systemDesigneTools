@@ -1,0 +1,10 @@
+** Containers :     **  Docker, Podman
+** Security :       **  JWT, Oauth 2.0,Api Authorization,TLS 
+** Message Broker   **  Kafka,RabbitMQ,Amazon SQS
+** Language:        **  Java,PHP,.net,python,nodeJS
+** Container Orchestreation ** kubernetes,ECS,open shift,hashCorp
+** Database         ** Sql  : PostgreSQL,Mysql
+                       NoSql: MongoDB,Cassandra,DynamicDB,Hbase
+** Cloud Provider   ** AWS,Azure,GCP,Linode,Digital Ocean
+** Monitoring       ** Graphana,kibana,Prometheus
+** CI/CD            ** Github,jenkins,teamCity,gitlab,circleCi
