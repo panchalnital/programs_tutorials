@@ -1,0 +1,17 @@
+Section 2.2: DATE, DATETIME, TIMESTAMP, YEAR, and TIME
+The DATE datatype comprises the date but no time component. Its format is 'YYYY-MM-DD' with a range of
+'1000-01-01' to '9999-12-31'.
+
+**The DATETIME type includes the time with a format of 'YYYY-MM-DD HH:MM:SS'. It has a range from '1000-01-01
+00:00:00' to '9999-12-31 23:59:59'**
+
+** The TIMESTAMP type is an integer type comprising date and time with an effective range from '1970-01-01 00:00:01'
+UTC to '2038-01-19 03:14:07' UTC.**
+
+The YEAR type represents a year and holds a range from 1901 to 2155.
+The TIME type represents a time with a format of 'HH:MM:SS' and holds a range from '-838:59:59' to '838:59:59'
+
+Storage
+DATETIME is stored in the database as two columns: one for the date and one for the time. TIMESTAMPs are stored in the database as a single column.
+
+=====================================

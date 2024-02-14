@@ -1,0 +1,95 @@
+Here are some advantages of partitioning MySQL tables:
+    -Faster queries: MySQL can run queries more quickly because it only needs to scan the relevant partitions rather than the entire table.
+    -Simpler maintenance: Partitioning can make maintenance easier.
+    -Increased scalability: Partitioning can increase scalability.
+    -Parallel query operations: Query operations can be performed in parallel if you need to query across partitions.
+    -More data in one table: Partitioning makes it possible to store more data in one table than can be held on a single disk or file system partition.
+    -Remove useful data: Data that loses its usefulness can often be easily removed from a partitioned table by dropping the partition (or partitions) containing only that. 
+
+Here are some disadvantages of partitioning MySQL tables:
+
+Query optimization complexity:
+Partitioning can enhance query performance, but it requires queries to be designed with partitioning key considerations in mind.
+
+Increased maintenance efforts:
+You need a new update rule for each logical partition (cube), then you need to manually add/delte cubes from the multiprovider, filtering data in the update rules to reach the correct cube based on time characteristic etc
+==========================================================
+
+**Database partitioning in MySQL is a technique used to improve the performance and manageability of large databases by dividing them into smaller, more manageable parts called partitions. These partitions can be spread across different storage devices or servers, allowing for more efficient querying and data management.**
+
+In MySQL, partitioning can be done at different levels:
+
+1. **Horizontal Partitioning:** This involves splitting a table into multiple partitions based on rows. Each partition contains a subset of the rows in the table. This can be useful for distributing data across different storage devices or servers, or for managing historical data.
+
+2. **Vertical Partitioning:** This involves splitting a table into multiple partitions based on columns. Each partition contains a subset of the columns in the table. This can be useful for improving query performance by reducing the amount of data that needs to be accessed for certain queries.
+
+3. **Subpartitioning:** Both horizontal and vertical partitioning can be further divided into subpartitions. This allows for even more granular control over how data is stored and accessed.
+
+MySQL provides several partitioning types, including:
+
+- **Range Partitioning:** Data is divided based on a specified range of values.
+- **List Partitioning:** Data is divided based on a specified list of values.
+- **Hash Partitioning:** Data is divided based on a hashing algorithm applied to one or more columns.
+- **Key Partitioning:** Similar to hash partitioning, but the hashing algorithm is applied to a key value.
+
+To implement partitioning in MySQL, you typically define the partitioning scheme when creating or altering a table. Here's a basic example of how range partitioning might be implemented:
+
+```sql
+CREATE TABLE sales (
+    id INT NOT NULL,
+    sale_date DATE,
+    amount DECIMAL(10,2)
+)
+PARTITION BY RANGE (YEAR(sale_date)) (
+    PARTITION p1 VALUES LESS THAN (2010),
+    PARTITION p2 VALUES LESS THAN (2015),
+    PARTITION p3 VALUES LESS THAN (2020),
+    PARTITION p4 VALUES LESS THAN MAXVALUE
+);
+
+SELECT * FROM table_name PARTITION (partition_name);
+```
+```php
+    $data="testing";
+
+    foreach($data $key)
+```
+
+
+In this example, the `sales` table is partitioned by the year of the `sale_date` column. Data from before 2010 will be stored in partition `p1`, data from 2010 to 2014 will be stored in partition `p2`, and so on.
+
+Keep in mind that partitioning can significantly improve performance for certain types of queries, but it also adds complexity to your database schema and maintenance tasks. Therefore, it's important to carefully consider whether partitioning is the right solution for your specific use case.
+
+==========================================================
+
+Database partitioning in MySQL refers to the process of splitting large database tables into smaller, more manageable parts. This can offer several advantages and disadvantages.
+
+Advantages:
+
+1. **Improved Performance**: By distributing data across multiple partitions, database queries can be executed faster as only relevant partitions need to be scanned.
+
+2. **Scalability**: Partitioning allows for easier horizontal scaling by distributing data across multiple servers or storage devices.
+
+3. **Efficient Data Management**: Partitioning can help in efficiently managing large volumes of data by segregating it into smaller chunks.
+
+4. **Easier Maintenance**: Partitioning can make maintenance tasks such as backup, recovery, and index rebuilds more manageable, as operations can be performed on individual partitions rather than the entire table.
+
+Disadvantages:
+
+1. **Complexity**: Implementing partitioning requires careful planning and understanding of the data distribution, which can add complexity to the database design and administration.
+
+2. **Limited Query Optimization**: While partitioning can improve performance for certain queries, it may not always be beneficial for all types of queries, and improper partitioning strategies can degrade performance.
+
+3. **Increased Overhead**: Partitioning adds some overhead to query processing and maintenance tasks, such as managing partitioned indexes and ensuring data consistency across partitions.
+
+4. **Dependency on Partition Key**: The effectiveness of partitioning heavily depends on selecting an appropriate partition key. If the partition key is poorly chosen, it may lead to uneven data distribution or inefficient query execution.
+
+In summary, while database partitioning in MySQL can offer performance and scalability benefits, it also introduces complexity and overhead. Careful consideration should be given to the specific requirements and characteristics of the database before deciding to implement partitioning.
+
+
+Brute Force Distributed Processing 2:30 
+2. Working with a Subset of table 3:35
+    2.1 Indexing 3:55 
+    2.2 Partitioning 5:30 
+    2.3 Sharding 7:30
+3. Avoid it all together (reshuffle the whole design
