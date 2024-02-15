@@ -193,7 +193,7 @@ const person={
               })
 
 /*
-    array spread
+    array spread : marge the array 
     
 */
 const oldarray=[1,2,3,4];
