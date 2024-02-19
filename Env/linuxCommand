@@ -248,6 +248,7 @@ error_reporting = E_ALL | E_STRIC
 .htaccess file is created in order to enable extra features for that subdirectory.
 1 Change the default start page
 DirectoryIndex index.html home.html config.php
+
 2 Block a specific IP or range of IPs
 Denying specific IP
 
@@ -258,6 +259,7 @@ Denying list of IPs
 Order Deny,Allow
 Deny from 185.120.120.120
 Deny from 192.190.190.190
+
 3 301 Permanent Redirect
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^domain1.com [NC,OR]

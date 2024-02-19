@@ -1,0 +1,9 @@
+Definition
+define() is a function for defining global constants with runtime evaluation and dynamic nature. 
+const is a language construct for defining class constants with compile-time evaluation and a static value that cannot be modified
+
+Case sensitivity
+const is always case-sensitive, but define() has a case-insensitive option.
+
+Block scope
+const cannot be created inside another block scope, like inside a function or inside an if statement. define() can be created inside another block scope.

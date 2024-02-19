@@ -1,0 +1,202 @@
+install laravel 
+
+1 composer create-project laravel/laravel app-name
+
+2 composer global require laravel/install
+    larvel new app-name
+
+
+What is Laravel?
+**Laravel is open soruce framework**
+**PHP framework**
+**To develop web app and api**
+**MVC Pattern**
+**Easy to use and learn**
+**Most used PHP Framework**
+
+The Differnce in laravel?
+
+**Larevl is a srver-side Fremwork**
+**You can not make sigble page app directlry**
+**it can connect wit DB**
+**Anguar etc can not connect with db**
+**angular etc neew api**
+**angular ect need a backed framework**
+
+composer
+
+**A dependency Manager for PHP**
+**Insatll-Package with singl command**
+**Can update version package ,framework**
+**composer can b used with nay freworks**
+**simliar lik NPM in Node**
+Pakage List Laravel 
+
+    dompdf
+    Laravel Email Packages:
+        • Beauty Email
+        • Sendgrid
+        • Mailgun
+        • Spatie Laravel Mail Preview
+    Laravel Ecommerce Packages:
+        • Bagisto
+        • GetCandy
+        • Aimeos
+        • AvoRed
+    Laravel Blogging Packages:
+        • PJ Blog
+        • Canvas
+    Laravel Authentication and Authorization:
+        Oauth
+        Jwt token
+        UUID
+        • Laravel Jetstream
+        • Breeze
+        • Socialite
+        • Entrust
+        • Rinvex
+        • Passport
+        • Sanctum
+    Laravel Testing & Debugging:
+        • Behat
+        • Laravel Dusk
+        • Codeception
+        • Atoum
+        • Laravel Debugbar
+Excel 
+
+What is a Routing:
+**Mapping laravel page the speacial URL** 
+
+@Csrf remove 
+1) app\http\middeleware\VerifyCsrfToken.php
+     protected $except = [
+        // write here route name not check the CSRF token
+        '/from'
+    ];
+2) app\http\Kernel.php
+    commet this line //\App\Http\Middleware\VerifyCsrfToken::class,
+
+
+URL
+-----------------------------------------------
+
+    Illuminate\Routing\UrlGenerator
+   1) current page url user
+        {{URL::current()}}
+        output: http://127.0.0.1:8000/home
+    2) move one page to another page how idenitify to previous url 
+
+        {{URL::previous()}}
+
+    3) if you want to form how to idenitify 
+
+    <from action="{{URL:to('/save_data')}}" method="post">
+
+    // Get the current URL without the query string...
+    echo url()->current();
+    
+    // Get the current URL including the query string...
+    echo url()->full();
+    
+    // Get the full URL for the previous request...
+    echo url()->previous();
+
+    //  temporary signed route URL that expires after a specified amount of time, you may use the temporarySignedRoute method
+
+    return URL::temporarySignedRoute(
+    'unsubscribe', now()->addMinutes(30), ['user' => 1]
+    );
+
+    => Validating Signed Route Requests
+     if (! $request->hasValidSignature()) {
+        abort(401);
+    }
+
+    URL::defaults
+
+**what is Components**
+    :component is pice of code to the use when where if want in entried projects the re-sue the is called is components
+    e.g header and footer components,sing-up and sing-in,feedback compenets
+    [
+        Components are similar to Dusk’s “page objects”, but are intended for pieces of UI and functionality that are re-used throughout your application, such as a navigation bar or notification window. As such, components are not bound to specific URLs.
+    ]
+
+    php artisan make:component header
+
+    two file genetor 
+    1)view file resouce/view/component/
+                header.blade.php
+    2) app/view/component/
+                header.php
+
+
+    when where we use this component page just 
+    <x-header> // just type component name
+    <x-header component="name"> // Dyanimce value pass in components
+
+------------------------------------------------------
+Laravel 8 tutorial # Blade Template
+
+    this is tamplate engine in laravel ,that is plan text convert into php 
+    why that do: beacuse that is php tag some time deficate to in code 
+            
+            @csrf 
+            e.g:<?php ?> in php
+                {{}}---- in laravel
+
+                <?php echo $i;>
+                {{$i}}---karavel
+                ----------------------
+                @if($user=='admin')
+                <h1>hi {{$user}}
+                @elseif($user="user")
+                    <h>thso admin
+                @end
+                ---------------------
+                @for($i=0;$i<10;$i++)
+                @end
+                ---------------
+                @foreach($suer as $row)
+                #endforeach
+
+                =====================
+                **include another file in blade.php**
+
+                @include('inner')
+
+                **Js in php**
+                <script>
+                    var data=@json($users);
+                    console.log(data);
+                </script>
+
+    inline blade Tamplate
+------------------------------------
+⇂ make:cast     
+  ⇂ make:channel  
+  ⇂ make:command  
+  ⇂ make:component
+  ⇂ make:controller
+  ⇂ make:event
+  ⇂ make:exception
+  ⇂ make:factory
+  ⇂ make:job
+  ⇂ make:listener
+  ⇂ make:mail
+  ⇂ make:middleware
+  ⇂ make:migration
+  ⇂ make:model
+  ⇂ make:notification
+  ⇂ make:observer
+  ⇂ make:policy
+  ⇂ make:provider
+  ⇂ make:request
+  ⇂ make:resource
+  ⇂ make:rule
+  ⇂ make:scope
+  ⇂ make:seeder
+  ⇂ make:test
+****
+****
+****

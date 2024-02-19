@@ -117,3 +117,12 @@ print_r($count);
 foreach($count as $keys=>$value){
   echo "charater  ".$keys." countr ".$value. "\n ";
 }
+
+
+// find max number repearted count charater find in the string 
+$str="welcome the india in world is";
+$strchar=str_split(str_replace(" ","",$str));
+$countArr=array_count_values($strchar);
+$max=max($countArr);
+$char=array_search($max,$countArr);
+echo $char."=".$max;
