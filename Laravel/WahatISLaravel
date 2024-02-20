@@ -35,9 +35,9 @@ Pakage List Laravel
     dompdf
     Laravel Email Packages:
         • Beauty Email
-        • Sendgrid
-        • Mailgun
-        • Spatie Laravel Mail Preview
+        • S
+        • Spatie Larendgrid
+        • Mailgunavel Mail Preview
     Laravel Ecommerce Packages:
         • Bagisto
         • GetCandy
@@ -172,6 +172,64 @@ Laravel 8 tutorial # Blade Template
                 </script>
 
     inline blade Tamplate
+
+    => use Illuminate\Support\Facades\Blade;
+             return Blade::render('<h1>Welecome The Inline Tamplate {{$total}}</h1>',['total'=>$total]);
+
+----------------------------------------------------
+form validation 
+1) controller file 
+
+$request->validate(
+    'username'=>$req->uername,
+    'password'=>$req->passord
+);
+
+2) blade.php
+    @if($error->any())
+        @foreach($error->all() as $err)
+            <li>{{$err}}</li>
+        @endforeach
+    @endif
+
+===========================================================
+What is a middleware 
+
+    -Middleware is piace of code to fiter out user request 
+    -eg . if user is login then the can access the website outwide not access
+    - to speciey the user condition check access to patricauler page to access other page not access
+    - eg age check 
+
+    Three type of middleware 
+    1) route middleware
+    2) group midlleware
+    3) gobal middleware
+
+    custom middleware create the thought this command
+
+    php artisan make:middlewar ageCheck
+
+    group 
+    step 1 ) add to kerna.php in array of middlewareGroups
+
+      'ageCheck'=>[
+            \App\Http\Middleware\AgeCheck::class,
+        ],
+
+    Route::middleware('ageCheck')->group(function(){
+        Route::view("test221",'test2');
+        Route::view("page1",'page1');
+    });
+
+    route middleware add 
+    add
+    'ageCheck'=>\App\Http\Middleware\AgeCheck::class,
+    use 
+    Route::get('/', function () {
+        return view('welcome');
+    })->middleware('ageChek');
+    
+
 ------------------------------------
 ⇂ make:cast     
   ⇂ make:channel  

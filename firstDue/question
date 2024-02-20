@@ -1,0 +1,168 @@
+PHP / Laravel:
+Static methods
+Abstract classes
+Laravel Database migrations
+Laravel Events
+Laravel Jobs and Queues
+PDOs
+Design patterns (Abstract Factory, Singleton, Facade, etc.)
+Laravel Mutators and Accessors
+Database drivers in Laravel
+Laravel Eloquent Relationships
+
+JavaScript:
+var/let difference
+Event delegation
+Callbacks
+Asynchronous requests
+Promises
+Async/Await
+Vue Lifecycle Hooks
+Vue Watchers
+Vue props
+Vue events
+Vue Component v-model
+
+RDBMS:
+Stored Procedures
+Transactions
+SQL injection prevention
+Relationship types
+Database Indexing
+
+=====================================
+https://www.youtube.com/watch?v=UFdv0DDVGrs&t=947s
+1) Promises:
+    What is promises
+        4 javascript Promises
+        [
+            - you writen lot of code then the excute the this code 
+                they take may be lot time take excuttion in case javascript not wait excuttion another code  
+            - javascript is always synchronous and signle-threaded language,it means 
+                javascript never wait for code or function result when they take sometime js direct c
+                excute nexs code
+
+        ]
+    type for delacer two path promise
+        i) promsing path(producing code)
+            let data=new Promise(function(resolved,rejecte){
+                resolved('done');
+            });
+        2) consuming code
+            data.then((resp)=>{
+                return resp;
+            }).catch((error)=>{
+                return error;
+            });   
+
+        3) promise chaning 
+
+            let data=fetch("https://dummyjson.com/users");
+          
+            data.then((item)=>{
+                return items.json();
+            }).then((result)=>{
+                console.log(result);
+            });
+
+        4) finally 
+            both case working in finally () reject and resolve
+
+            data.finally((item)=>{
+                console.log("fianl");
+            });
+
+        5) promis.all 
+                when where use 3 promise 1 promise take 1 second
+                                        2 promise take 1 secon
+                                        3 promise take 1 
+                after all promise completd then display result or wise 
+                    1 promise fail to display promise display error
+         6)promise.allsettled : display how much promise fail and which promise is suuces all promose display result
+            promise.race = frist which promise is excute that will display result
+         lat data=Promise.all([
+                new Promise(()=>{
+                    setTimeout(()={
+                    resolve("2 econde");
+                    },2000);
+                });
+                    new Promise(()=>{
+                    setTimeout(()={
+                    resolve("2 econde");
+                    },3000);
+                });
+                ]);
+
+        :A promise in javascript is similar to a promise in real life
+        :when we make a promise in real life it is a guarantee that we are going to do somthing in the future
+        :beacuse promise can only be made for the future
+        :a promise is an object there are 3 states of the succeeds or fail
+            Pending: initial state before the promise succeed or ails
+            Resloved:ompleted promise
+            Rejected:fauiled promise
+    
+            code..
+            **const myPromise=new Promise((resolved,rejected)=>{
+                const a=2,b=2;
+                const c=a+b;
+                if(c===4){
+                  resolved(`yes!, ${a} + ${b}=4`);
+                }else{
+                  rejected(`No! ${a} + $ {b} !=4`);
+                }
+              });
+              
+              myPromise.then((m)=>{
+                console.log(m);
+              }).catch((error)=>{
+                console.log(error);
+              })**
+===================================
+2) Event delegation
+        [
+            event means like onClick , onchange,onmouseover,onkeydown,onload
+
+            event bubbling work like innerDive onclick call then middele and topdiv event call autoically in javascript is call event bubbling 
+                but one case in inner event onclick and topdiv onchange event that time not working 
+
+            if you use event.Propagation() that time not call paraent event (means stop the paraent click event)
+            
+        1) event.Propagation()
+            function topDiv(){
+                alert('TopDiv');
+            }
+            function middleDiv(){
+                event.stopPropagation();
+                alert('middleDiv');
+            }
+            function InnerDiv(){
+                event.stopPropagation();
+                alert('innerDiv');
+            }
+        ]
+
+        2) 
+            document.getElementById('greandparent').addEventListener('click',functio(){
+                if(event.target.id="child"){
+                    console.log("child clciked")
+                }else if(event.target.id="parent"){
+                    console.log("parent clciked")
+                }else{
+                     console.log("greandparent clciked")
+                }
+            });
+
+        Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.
+
+    Let’s see an example with and without event delegation
+
+    const customUI = document.createElement('ul');
+
+    for (var i = 1; i <= 10; i++) {
+        const newElement = document.createElement('li');
+        newElement.textContent = "This is line " + i;
+        newElement.addEventListener('click', () => {
+            console.log('Responding')
+        })
+        customUI.appendChild(newElement);
+}
