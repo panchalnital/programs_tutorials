@@ -1,0 +1,194 @@
+1) Database drivers in Laravel
+
+Laravel supports five database systems by default:
+    
+    MySQL 5.7+
+    PostgreSQL 11.0+
+    SQLite 3.8.8+
+    SQL Server 2017+ 
+    MariaDB 10.10+
+
+Laravel's database component uses PDO internally, so it can only work with the databases that PDO supports. 
+To configure a database in Laravel, you can:
+    Open the config/database.php file
+    Find the connections array
+    This array contains all of the available connection configurations 
+A driver is a specific implementation of a component's contract to a software system. It provides an interface to an underlying infrastructure upon which the component's service is built.
+
+2) Laravel Eloquent Relationships
+Laravel Eloquent relationships are a feature that allows developers to work with related data. Eloquent relationships are defined as methods on Eloquent model classes. They support a variety of common relationships, including:
+One to one
+One to many
+Many to many
+Has one through
+Has many through
+One to one (polymorphic)
+One to many (polymorphic)
+Many to many (polymorphic) 
+
+3) PDOs
+PHP Data Objects (PDO) is a way to access databases. It is a data access layer that uses a unified API (Application Programming Interface). 
+In Laravel, PDO::FETCH_OBJ is always used, and the ability to customize the PDO "fetch mode" from configuration files is no longer included. However, to customize the fetch mode, you can listen for the new Illuminate\Database\Events\StatementPrepared event. 
+
+Here are some methods of Illuminate\Database\PDO\Connection in Laravel:
+    __construct(PDO $connection): Creates a new PDO connection instance
+    exec(string $statement): Executes an SQL statement
+    prepare(string $sql): Prepares a statement
+    query(string $sql): Queries a result
+    lastInsertId(string|null $name = null): Returns a mixed value
+    createStatement(PDOStatement $stmt): Creates an statement
+    beginTransaction(): A void method
+    commit(): A void method 
+
+4)
+    Laravel Events
+
+    [
+        event means the user are registation that time user send mail automatically though the lister 
+    ]
+
+   1) App/provider/eventseriverProvide/php
+     protected $listen = [
+        'App\Event\UserCreated'=>[
+            'App\Listeners\SendMail',
+        ],
+     ];
+
+    2) php artisan event:generate
+
+
+
+    event(new UserCreated("you account has been created"));
+
+    ---------------------------------------------------
+
+    Certainly! Laravel provides a robust job handling system through its Jobs and Queues feature. Here's an example of how you can use Laravel Jobs and Queues:
+
+1. **Create a Job**: First, create a job class using Artisan command `php artisan make:job ProcessPodcast`. This will generate a new job class in the `app/Jobs` directory.
+
+```php
+<?php
+
+namespace App\Jobs;
+
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+
+class ProcessPodcast implements ShouldQueue
+{
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
+    protected $podcast;
+
+    public function __construct($podcast)
+    {
+        $this->podcast = $podcast;
+    }
+
+    public function handle()
+    {
+        // Process the podcast...
+    }
+}
+```
+
+2. **Dispatch the Job**: Now, you can dispatch this job from your controller, route, or any other location where you want to trigger this job.
+
+```php
+use App\Jobs\ProcessPodcast;
+
+ProcessPodcast::dispatch($podcast);
+```
+
+3. **Queue Configuration**: Make sure your `.env` file is configured properly for queue connections. Laravel supports various queue drivers like Redis, Beanstalkd, Database, etc.
+
+```
+QUEUE_CONNECTION=redis
+```
+
+4. **Run Queue Worker**: To process queued jobs, you need to run the Laravel queue worker. You can do this using the `queue:work` Artisan command.
+
+```
+php artisan queue:work
+```
+
+5. **Monitor Queued Jobs**: You can monitor queued jobs using Laravel Horizon or by checking the queued jobs table in your database.
+
+This example demonstrates how Laravel Jobs and Queues can be used to handle time-consuming tasks asynchronously, improving the performance and responsiveness of your application.
+
+Here are some examples of Laravel jobs and queues:
+    -Pushing a job to the queue: Use the Queue::push method, such as Queue::push(new SendEmail($message)).
+    -Creating a new job: Run the artisan command create App/Jobs/NewUserWelcomeMail into your terminal. This creates a new job instance that extends the Illuminate\Contracts\Queue\ShouldQueue interface. The ShouldQueue interface contains logic that needs to be executed asynchronously.
+    -Dispatching a job: Use Laravel's dispatch method to dispatch a job, specifying the job class and any required parameters.
+    -Processing a queue: Use the queue:work Artisan command to run the queue worker, which processes new jobs as they are pushed onto the queue. The queue:work command continues to run until it is manually stopped or you close your terminal.
+    -Listening to a queue: Use queue:listen to continue working after altering your code
+
+    1).env
+    queue-connection=databse
+    php artisan queue:table
+        create table in jobs
+    php artisan migrate
+        two table create
+            fail_job
+            job
+
+    2) php artisan make:mail SendMail // create queue name
+        create the folder n app mail in create file sendMail
+
+        direct handle 
+            build(){
+                return $this->subject('Test the laravel queue')->view('email.testmail')
+            }
+    3)view folder 
+        create one file testmail.blade.php
+
+    4) php artisan make:job SendMailJob   // job name
+
+        use App\Mail\SendMail  
+
+        public $sendMail
+        __contruct($sendMail){
+            $this->$sendMail;
+        }
+
+        public handle(){
+            $email=new SendMail();
+            Mail::to($this->sendMail)->send($email);
+        }
+
+    5) route
+
+        dispatch()// use this method which job fire karna chale ho 
+                    // job ka objects pass in methos
+                    // use run jobs and object pass 
+
+        route::get('send-mail',function(){
+            $userMail="abc@gmail.com";
+            dispatch(new app\jobs\SendMailJob($userMail));
+        }); 
+
+
+    php artisan queue:work
+    queue:listen:
+            1#: Set the connection name
+            2php artisan queue:listen sync
+            4#: Log a job as failed if processing fails five times
+            5php artisan queue:listen --tries=5
+            7#: Set the process timeout to two minutes
+Queue::push:
+    Queue::push(new SendEmail($message))
+Queue::later:
+$date = Carbon::now()->addMinutes(15)
+    php artisan queue:work:
+    php artisan queue:work --queue=low,high
+    php artisan queue:work command 
+Here are some other things you can do with Laravel queues:
+    Run all queues at once:
+    php artisan queue:work --queue=low,high,:
+    Start a new worker:
+    php artisan queue:work command
+    Delay the execution of a queued job
+    Deploy with daemon queue listener
