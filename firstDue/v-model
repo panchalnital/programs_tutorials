@@ -1,0 +1,80 @@
+In Vue.js, the `v-model` directive is used for two-way data binding on form input elements or components. When used with a component, it allows you to create custom form controls that work seamlessly with `v-model` just like native inputs.
+
+Here's how you typically use `v-model` with a Vue component:
+
+1. Define a custom component, let's say `CustomInput`.
+2. Within this component, you would typically have an input element or any other form element.
+3. You'll use `v-model` on the custom component tag in the parent component, binding it to a piece of data.
+4. Inside the `CustomInput` component, you need to accept a `value` prop and emit an `input` event whenever the value changes.
+
+Here's a basic example:
+
+```html
+<!-- ParentComponent.vue -->
+<template>
+  <div>
+    <custom-input v-model="message"></custom-input>
+    <p>Message: {{ message }}</p>
+  </div>
+</template>
+
+<script>
+import CustomInput from './CustomInput.vue';
+
+export default {
+  components: {
+    CustomInput
+  },
+  data() {
+    return {
+      message: ''
+    };
+  }
+}
+</script>
+```
+
+```html
+<!-- CustomInput.vue -->
+<template>
+  <input :value="value" @input="$emit('input', $event.target.value)">
+</template>
+
+<script>
+export default {
+  props: ['value']
+}
+</script>
+```
+
+In this example, changes made within the `CustomInput` component will be reflected in the `message` data property of the parent component, thanks to `v-model`. And vice versa, changes to `message` in the parent component will be reflected in the `CustomInput` component.
+
+====================================
+Vue Watchers
+
+[
+    - watches are Obhveio on data property on any change then peformance action
+    - peroperty and watcher name are same 
+    -
+]
+
+
+<tamplate>
+<button v-on:click="count=count+1">+</button>
+<button v-on:click="count=count-1">-</button>
+</tamplate>
+<script>
+export default{
+    name:"home",
+    data(){
+        return {
+            count:0
+        }
+    },
+    watch:{ // here is automatically call for peroperty $count call 
+        count(){
+            alert("value f changes") // herer 
+        }
+    }
+}
+</script>

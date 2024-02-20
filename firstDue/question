@@ -166,3 +166,132 @@ https://www.youtube.com/watch?v=UFdv0DDVGrs&t=947s
         })
         customUI.appendChild(newElement);
 }
+
+============================
+Async/Await
+    [
+        async mainly user javascript asyniconic working and not wait another code
+        use await and not useed async geting error
+        async user in function and body path not declaer any think return promise objects
+        async user in function before prefix in body path muiltple await it can decaler
+    ]
+
+    Async/await in JavaScript is a powerful feature used for handling asynchronous code in a more synchronous-looking manner, making asynchronous code easier to read and write. Here's a brief explanation:
+
+1. **Async Function**: 
+   - An async function is a function declared with the `async` keyword before the function declaration. This keyword allows you to use the `await` keyword within the function body.
+   - Async functions always return a promise. If the function returns a value, the promise will be resolved with that value. If the function throws an exception, the promise will be rejected with the thrown value.
+
+2. **Await Operator**:
+   - The `await` keyword can only be used inside an async function. It pauses the execution of the async function until the promise is settled (either fulfilled or rejected), and then resumes the async function's execution.
+   - When awaiting a promise, the resolved value of the promise is returned. If the promise is rejected, an error will be thrown, which can be caught using try/catch.
+
+Example:
+
+```javascript
+async function fetchData() {
+  try {
+    // The code here will pause until the promise returned by fetch resolves
+    let response = await fetch('https://api.example.com/data');
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+
+fetchData();
+```
+
+In this example:
+- `fetchData` is an async function that fetches data from an API.
+- Inside `fetchData`, `await fetch(...)` pauses the execution until the HTTP request is complete and the promise returned by `fetch` is settled.
+- Once the promise is resolved, `response.json()` returns another promise, which is also awaited to get the parsed JSON data.
+
+Async/await simplifies the handling of asynchronous operations in JavaScript, especially when dealing with multiple asynchronous tasks or when chaining asynchronous operations.
+
+===============================================
+Vue Lifecycle Hooks
+
+main.js 
+    new vue.js() 
+        |
+        init 
+    events & lifecycle
+        |---------------[beforeCreater (component ceater )]
+        init 
+    injections & re-activity (data property bind in  )
+        |---------------[created] 
+        Has
+        "el" option?------------No (when vm.$mount(El(entalal element)) is called)
+        |
+        |Yes
+        |
+        Has
+    'Tamplate" option?---------No (compile el's outerHtml as template)
+        |                             |
+        |yes                          |
+    Compoleteplate                    |
+        into                          |
+    render function                   |
+        |-----------------------------
+        |----------------[BeforeMount] (means component mount in dom )
+    Create Vm.Sel
+    and replace
+    "el" with it
+        |---------------- [mounted]
+        |
+        |
+        |                                               beforeupdate
+        |                                                    |
+        mounted----------------Virtal Dom re-enderand patch--|
+        |                                                    |
+        |                                                   updated
+        |
+        when 
+        vm.$destory
+        is called
+        |
+        |---------------------[beforeDestory]
+        |
+    teardown
+    watchers,child
+    components and event
+    listeners
+        |
+        |
+        destory----------------[Destroyed]
+
+===========================================
+props
+
+[
+    props means child component to parent component data ecxhange means props(menas parent to child or child to parent componet data exchage) 
+]
+
+==========================
+
+Vue events
+
+<button v-on:click="test()">Click Me</button>
+<button v-on:click="clickHandler"></button>   
+<button @click="clickHandler"></button> 
+v-on:submit.
+v-on:keyup.
+v-on:drag.
+v-on:scroll.
+v-on:error.
+v-on:abort.
+v-on:mouseover.
+v-on:mouseout.
+
+<script>
+    export default{
+        name:"home",
+        method:{
+            test(){
+                alert("test eevnt");
+            }
+        }
+    }
+</script>
