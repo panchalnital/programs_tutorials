@@ -1,0 +1,19 @@
+-Observer are used to group event listeners for a model.Obsevers classes methods namers refer to the eloquent ebent you want to lisetn for.
+-these method receieve the model as thier only argument
+-Laravel does  not include a default directory for observers
+
+php artsian make:observer observer_name
+
+Eloquent model fire serveral events,allowing you to hook into the foolowing a model lifecyscle:
+
+->Retrieved - after a recored has been retrieved
+->Creating   -before a record has been created
+->Created    -after a recored has been retrieved
+->Updating    -before a record has been Updating
+->Updated    -after a recored has been Updated
+->Saving        -before a record has been Saving
+->Saved      -after a recored has been Saved
+->Deleting      -before a record has been soft-Deleting
+->Deleted       -after a recored has been soft- Deleted
+->restoring     -before a record has been restoring
+->restored      -after a recored has been restored

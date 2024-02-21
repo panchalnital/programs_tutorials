@@ -297,3 +297,26 @@ v-on:mouseout.
         }
     }
 </script>
+
+------------------------------
+<script>
+
+function fetrchadata(callback){
+
+    setTimeout(()=>{
+        let data="test is data";
+    },500);
+
+    callback(data);
+
+}
+
+function passData(data){
+    console.log("test"+data);
+
+}
+
+fetrchadata(passData);
+
+
+</script>

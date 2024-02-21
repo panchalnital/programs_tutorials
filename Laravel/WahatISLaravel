@@ -229,7 +229,10 @@ What is a middleware
         return view('welcome');
     })->middleware('ageChek');
     
+--------------------------------------------------------
+Stub 
 
+php artisan stub:publish
 ------------------------------------
 ⇂ make:cast     
   ⇂ make:channel  

@@ -1,0 +1,44 @@
+what id scheduler:
+    -> if want to every week data cleaning
+    -> if suppoed want to mail send every moning
+    -> Laravel's command scheduler allows users to schedule commands and tasks to run on specific days and times
+    -> Users can schedule tasks to run every minute, every hour, every day, or every week. They can also schedule tasks to run at specific times or on a recurring schedule based on the day of the week
+
+
+    The Laravel scheduler is configured using the 
+    App\Console\Kernel
+
+    php artisan schedule:run
+
+    Here's a basic example of scheduling a task in Laravel:
+
+        Copy
+        protected function schedule(Schedule $schedule)
+        {
+            $schedule->command('emails:send')->daily();
+        }
+        In this example, the emails:send command will be executed daily according to the schedule defined.
+
+    1)
+         php artisan make:command everyMinute
+
+        app\console\commands  one files create on 
+        everyMinute.php
+                                command_name
+        protected $signature = 'minute:update';
+
+        handle(){
+            pass the any operation in performac here
+            //DB::table('emps')->delete();
+        }
+
+    2) app\console\kernal.php add command
+
+         protected function schedule(Schedule $schedule)
+        {
+            // $schedule->command('inspire')->hourly();
+            $schedule->commands('minute:update')->everyMinute();
+        }
+
+    3) php artisan minute:update
+

@@ -56,6 +56,10 @@ ON Books(name ASC)
 /*about full-text search in SQL Server:
 SELECT * FROM CONTAINSTABLE(articles, title, 'machine learning')
 
+SELECT ProductID, ProductName, Description
+FROM Products
+WHERE CONTAINS((ProductName, Description), 'phone');
+
 */
 
 /*MySQL indexing has several advantages and disadvantages: 

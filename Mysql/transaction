@@ -1,0 +1,46 @@
+In SQL (Structured Query Language), transactions are units of work performed against a database. These units of work are executed as a single, logical operation. Transactions are essential for ensuring data integrity and consistency in a database system, especially in scenarios where multiple operations need to be executed as a single atomic operation.
+
+Here are some key points about transactions in SQL:
+
+1. **ACID Properties**: Transactions in SQL adhere to the ACID properties:
+   - **Atomicity**: Transactions are atomic, meaning they are either fully completed or fully aborted, leaving the database in a consistent state.
+   - **Consistency**: Transactions ensure that the database remains in a consistent state before and after the transaction.
+   - **Isolation**: Transactions are isolated from each other, meaning that the operations within one transaction are invisible to other transactions until the transaction is committed.
+   - **Durability**: Once a transaction is committed, its changes are permanent and will survive system failures.
+
+2. **Begin, Commit, and Rollback**: In SQL, transactions are typically started with a `BEGIN TRANSACTION` statement. After executing the necessary SQL statements, the transaction can be committed using `COMMIT`, which makes the changes permanent. Alternatively, if there is an issue or if the transaction needs to be canceled, it can be rolled back using `ROLLBACK`, reverting any changes made within the transaction.
+
+3. **Transaction Control Commands**: SQL provides various commands to control transactions:
+   - `BEGIN TRANSACTION` or `START TRANSACTION`: Begins a new transaction.
+   - `COMMIT`: Commits the transaction, making its changes permanent.
+   - `ROLLBACK`: Rolls back the transaction, undoing any changes made.
+   - `SAVEPOINT`: Sets a point within a transaction to which you can later roll back.
+   - `SET TRANSACTION`: Sets characteristics for the transaction, such as isolation level.
+
+4. **Implicit Transactions**: Some database systems, such as SQL Server, automatically start a transaction if one has not already been started. These are known as implicit transactions. However, it's generally recommended to explicitly begin and commit transactions for clarity and control.
+
+5. **Concurrency Control**: Transactions in SQL also handle concurrency control to ensure that multiple transactions can operate on the same data without interfering with each other. Techniques such as locking, isolation levels, and optimistic concurrency control are used to manage this.
+
+Understanding transactions is crucial for database developers and administrators to ensure data consistency, integrity, and reliability in SQL databases.
+
+
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=your_database', 'username', 'password');
+    
+    // Begin transaction
+    $pdo->beginTransaction();
+    
+    // Perform SQL queries within the transaction
+    $pdo->exec("INSERT INTO table_name (column1, column2) VALUES ('value1', 'value2')");
+    $pdo->exec("UPDATE table_name SET column1 = 'new_value' WHERE condition");
+    
+    // Commit the transaction
+    $pdo->commit();
+    
+    echo "Transaction successfully completed.";
+} catch(PDOException $e) {
+    // Rollback the transaction if any error occurs
+    $pdo->rollback();
+    
+    echo "Transaction failed: " . $e->getMessage();
+}
