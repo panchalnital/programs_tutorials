@@ -1,4 +1,11 @@
+[
+    https://www.youtube.com/watch?v=fUqrE9ZBH_Q
+]
 what id scheduler:
+    Database cleanup
+    Sending notifications
+    Running commands
+    Performing other predefined operation
     -> if want to every week data cleaning
     -> if suppoed want to mail send every moning
     -> Laravel's command scheduler allows users to schedule commands and tasks to run on specific days and times
@@ -40,5 +47,12 @@ what id scheduler:
             $schedule->commands('minute:update')->everyMinute();
         }
 
-    3) php artisan minute:update
+    option 3) php artisan minute:update
 
+    4) php artisan schedule:run
+crontab -e
+* * * * * php /path-to-your-project/artisan schedule:run >> /dev/null 2>&1
+
+ 5) crontab set the command
+
+    /usr/local/bin/php/home1/hospital/public_html/artisan schedule:run >> /dev/null 2>&1

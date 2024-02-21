@@ -1,7 +1,14 @@
+[
+
+https://www.youtube.com/watch?v=_LyEayVdqUM&list=PLT51dtioU1pO7YgLOyNY0KF_3ny79D0BV
+
+]
 php artisan migrate:fresh --seed
 
 php artisan make:migration creater_catehory_post_table
-one to one (one user have one contact number)
+
+=>one to one (one user have one contact number)
+
 user.php
 public function contact(){
     return $this->hasOne(Contact::class);
@@ -12,12 +19,21 @@ public function user(){
     return $this->belogsTo(User::class); // belogsTo: means inverst realtionship define
 }
 
-user App\model\User;
+use App\model\User;
+
 $user =User::with('contact')->first();
-$user->all();
------------------------------------------
+$user->all(); //$user->toArray();
+or
+// display inverst realtion conatct which user ka he 
+
+$contact=Contact::with('user')->first();
+$user->all(); //$user->toArray();
+--==================================================================================
 
 one to many (one user have many post in )
+            table
+                ->users
+                ->posts
 
 $table->id();
 $table->foreignId('user_id')->costrained()->onDelete('cascade);
@@ -32,38 +48,78 @@ public function user(){
 }
 
 user App\model\User;
-$user =User::with(['user','post'])find(1);
+$user =User::with(['post'])find(1);
 $user->toArray();
+
+// display inverst realtion conatct which user ka he 
+$Post=Post::with('user')->first(); //display post to which user name get
+$Post->all(); //$user->toArray();
+
 -----------------------------------------
+
+php artisan migrate:fresh --seed
 many to many (one user have many post in )
+            table
+            ->posts
+            ->categories
+            ->category_post
 
 $table->id();
 $table->foreignId('user_id')->costrained()->onDelete('cascade);
-user.php
+
+Post.php
+public function categories(){
+    return $this->belogsToMany(Catehory::class);
+}   
+
+categories.php
+public function post(){
+    return $this->belogsToMany(post::class);
+}
+
+category_post.php
 public function catehory(){
     return $this->belogsToMany(Catehory::class);
 }
 
-Contact.php
-public function user(){
-    return $this->belogsToMany(User::class);
-}
+
 
 user App\model\User;
-$user =User::with(['user','post'])find(1);
-$user->toArray();
+
+$categories=Category:all();
+$post=Post::with('categoies')->first();
+
+$post->categories->attach([1,2]); // attche data 1 and 2 id category 
+$post->categories->detach([1,2]); // detele attche data 1 and 2 id category 
+
 -----------------------------------------
+=============================================================================
 has oneThrough
 
+[
+    - user have one conatct
+    - conatct have one contactinformation
+]
+
+
 users user hasone contact
+    user.php
+    $this->hasOneThroghr(contactinformation::class,contacts::class); //direct access
 contacts  contact belongsTo user
 contactinformations  contactinformation belogsTo contacts
+
+$user=user::with('conatct.contactinformation')->first(); //display data one user and  one conatct and contactinformation
+//direct access contactinformation
+$user=user::with('contactinformation')->first();
+
 
 -----------------------
 has manyThrough
 
 countries country hasMany states
+    $this->hasMayThroghr(city::class,state::class,); //direc
 states  state belongsTo country
+        state hasmany cities
 cities  city belogsTo satate
 
 -----------------------------------
