@@ -15,7 +15,6 @@ what id scheduler:
     The Laravel scheduler is configured using the 
     App\Console\Kernel
 
-    php artisan schedule:run
 
     Here's a basic example of scheduling a task in Laravel:
 

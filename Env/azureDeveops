@@ -1,0 +1,140 @@
+Sure, here's a step-by-step tutorial for beginners on using Azure DevOps:
+
+1. **Introduction to Azure DevOps:**
+   - Understand the basic concepts of Azure DevOps, which is a set of development tools for planning, collaborating on code development, and deploying applications.
+
+2. **Creating an Azure DevOps Account:**
+   - Sign up for an Azure DevOps account if you don't already have one. You can use your existing Microsoft account or create a new one.
+
+3. **Creating Projects:**
+   - Once logged in, create a new project in Azure DevOps. Give your project a name, description, and choose appropriate settings like version control options.
+
+4. **Setting up Repositories:**
+   - Decide on your version control system (Git or Team Foundation Version Control). Create a repository to store your project's source code.
+
+5. **Working with Boards:**
+   - Use Azure Boards for planning and tracking work items such as user stories, tasks, bugs, etc. Learn how to create and manage work items on your board.
+
+6. **Setting up Pipelines:**
+   - Azure Pipelines allow you to automate builds, tests, and deployments. Create a pipeline to define the steps for building and deploying your application.
+
+7. **Creating Builds:**
+   - Configure your pipeline to build your application from the source code stored in your repository. Define the build tasks, such as compiling code, running tests, and generating artifacts.
+
+8. **Running Tests:**
+   - Integrate testing into your pipeline by adding tasks to run unit tests, integration tests, or any other automated tests you have for your application.
+
+9. **Setting up Deployment:**
+   - Define the deployment tasks in your pipeline to deploy your application to various environments like development, staging, and production.
+
+10. **Monitoring and Continuous Improvement:**
+    - Use Azure Monitor and Application Insights to monitor the performance and usage of your application. Analyze the data to identify areas for improvement and iterate on your development process.
+
+11. **Collaboration and Integration:**
+    - Explore features for collaborating with team members, such as code reviews, pull requests, and integration with other tools like Visual Studio, JIRA, Slack, etc.
+
+12. **Learning Resources:**
+    - Take advantage of online resources, tutorials, documentation, and community forums to deepen your understanding of Azure DevOps and stay updated with best practices.
+
+Remember, Azure DevOps is a powerful platform with many features, so don't hesitate to explore and experiment with different functionalities to find what works best for your team and project.
+
+=======================================================================
+
+What id DevOPS:
+DevOps word menas word which is fromed from the coobimation of two world example smog
+(Development(developer)+operations)
+
+developer                       Operation
+             ________
+        Plan     ___|______________UAT
+Excution       __|  |                   Live
+        Test __|    |______________Assistence
+
+
+
+=> The dev and operation sholud work like Unit
+
+=>Philosophy
+    (Dev & OPs Team work together)
+=>Process
+    (Palnning,Excution & Testing)
+=>Tools
+    (Like azure & AWS DevOps for Automattion)
+
+
+=========================================
+Mapping Boards,Repos,pipelines,testPlan & Artifats with DevOps life sycle
+
+1) Planing (Boards)
+        WorkItems
+        Board
+        backlogs
+        sprints
+        queries
+        deleievry plan 
+        analysic View
+2)Excution (Ropos) (write code,check the code,build the code)
+        file
+        commit
+        push
+        branches
+        tag
+        pull request
+        advance security
+3)Testing (Test Plans) (manulay testing,internal testing,re)
+        test plans
+        progress report
+        run
+4)pipelines         (apk,exc,javascript file)
+        Pipelines
+        Envirom=nmnets
+        releases
+        library
+        task group
+        Deployment groups
+5)Artifacts (UAT)
+
+================================
+1) Planing (Boards)
+
+Setp 1 the planning phase:
+        unserstanding boards and work items:
+        1.1 WorkItems:
+                New work items:
+                    1)Epic
+                    2)issue
+                    3)taks
+step 2 exution check simple mvc projects code ,cloning,commit, synch in aure repos
+
+    commit ->push code on branche
+    ->build->publish
+
+step 3 defining and understanding Agents in azure Devops
+
+    => Agent :Agent is a software which run inside machine annd executes the pipeline task
+
+    -> go setting -> agent pools -> Azure pipelines->agents
+            -> hosted agent
+
+    =>Now create the pipeline
+        ->azure reporti git 
+        ->gitlab
+        ->git 
+
+       ->azure reporti git -> select projects repoet
+        after select YAML file save
+
+        type agent
+        ->hosted agent (mircsoft)
+        ->self agent(local machine)
+        ->azure virtal machine (mircsoft)
+
+
+        PS C:\agent> .\config.cmd
+
+        PS C:\agent> .\run.cmd
+
+
+
+
+

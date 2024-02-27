@@ -71,6 +71,28 @@ while($cnt<10){
     $cnt++;
 }
 
+//A number which is only divisible by 1 and itself is called prime number. 
+//Numbers 2, 3, 5, 7, 11, 13, 17, etc. are prime numbers.
+
+function checkPrime($number){
+    if($number<2){
+        return false;
+    }
+    for($i=2;$i<$number/2;$i++){
+        if($number%2==0){
+            return false;
+        }
+    }
+    return true;
+}
+
+
+$numberChek=checkPrime(17);
+if($numberChek==true){
+    echo "prime";
+}else{
+    echo "Not prime";
+}
 // convert mobile format 
 $number='98658956323';
 $formatted_number = substr($number, 0, 3) . '-' . substr($number, 3, 3) . '-' . substr($number, 6);

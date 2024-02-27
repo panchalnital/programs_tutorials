@@ -126,3 +126,20 @@ $countArr=array_count_values($strchar);
 $max=max($countArr);
 $char=array_search($max,$countArr);
 echo $char."=".$max;
+
+// matrix output 1 5 9;
+
+$a = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+];
+
+$cout=count($a);
+
+for($i=0;$i<$cout;$i++){
+  //echo $a[$i][$i].",";
+echo $a[$i].",";
+}
+
+$output="1,5,9"; 

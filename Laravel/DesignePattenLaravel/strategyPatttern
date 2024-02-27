@@ -1,0 +1,11 @@
+
+
+php artisan spatie/laravel-permission
+
+prvider in include pakage config/app.php
+    spatie\permission\permissionServiceProvide:class
+
+model file addd filed 
+    use spatie\permission\Trails\hasRoles;
+
+    use HasRole;

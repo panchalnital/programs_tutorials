@@ -1,0 +1,76 @@
+=> **The repository design pattern in Laravel is a software development approach that acts as an abstraction layer between the application logic and the data persistence layer**
+
+=>The repository design pattern is a powerful tool for managing data in Laravel applications. It allows you to use objects without having to know how these objects are persisted. This means that your business logic doesn't need to know how data is retrieved or what the source of the data is. 
+The main idea of using Repository Pattern in a Laravel application is to create a bridge between models and controllers. 
+
+Here are some steps to use the Repository Pattern in a Laravel Application:
+Get started
+Set up the database
+Generate the initial data for the database
+Create the Repository
+Create the controllers
+Add the routes
+Bind the interface and the implementation
+Test the applicatio
+
+=>**
+->The resposittory acts as a connection layer between the bussiness layer and the model of appplication
+->unerstandablywhen want to access data from the database ,instead of wirting processing code in the controller
+->we crete a folder called resporitoty and then write the prcoessing code herer then we just inject it thought __construct methods
+**
+
+**Advantages**
+->Centralized data access logic: Makes code easier to maintain
+->Separates data access layer from business logic layer: Helps write cleaner and more concise code
+->Easier to test: Business and data access logic can be tested separately, and mock repositories can be constructed for unit testing
+->Reduces duplication of code: lowers the chance for making programming errors
+->More robust to changes: Allows the use of the Principle of Dependency Inversion, which makes code more robust to changes
+->Makes it easier to add new features or modify existing ones: Makes it easier to add new features or modify existing ones without impacting the entire application
+
+
+Some disadvantages of the Laravel repository design pattern include:
+->You can't test a simple class without having to mount a database
+->Adds another layer of abstraction which adds a certain level of complexity making it an overkill for small applications
+->If you are caching data in heavily loaded systems, performance can be an issue 
+
+setp 1 creater folder 
+        Repository->interface-> one interface class creater
+        namespace app\Repositry\interface;
+
+        Interface  CateoryRespositryInterface{
+            public function all();
+        }
+
+step 2 creater file 
+        repository-> one class creater catehoryRepositryphp
+            use app\repoitory\CateoryRespositryInterface
+            use App\models\ctaegory;
+            class categoryReporsitory implments CateoryRespositryInterface{
+
+                public function all(){
+                    return category::all();
+                }
+            }
+        
+Setp 3) bind the provider class in inteface class
+        appServiceproider.php
+
+        use app\repoitory\CateoryRespositryInterface
+        use app\categoryReporsitory;
+
+        public function register(){
+            $this->app->bind(CateoryRespositryInterface::class,categoryReporsitory::class)
+        }
+
+step 4) controller file 
+        use app\repoitory\CateoryRespositryInterface
+            $public $cate;
+        __construct(CateoryRespositryInterface $ctagoryInteface
+){
+$this->cate=$ctagoryInteface;
+
+}
+public function index(){
+    $catory=$this->cate->all();
+}
+ 

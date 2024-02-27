@@ -126,11 +126,12 @@ Here are some examples of Laravel jobs and queues:
     -Processing a queue: Use the queue:work Artisan command to run the queue worker, which processes new jobs as they are pushed onto the queue. The queue:work command continues to run until it is manually stopped or you close your terminal.
     -Listening to a queue: Use queue:listen to continue working after altering your code
 
-    1).env
-    queue-connection=databse
-    php artisan queue:table
+    1).env queue-connection=databse
+    
+    php artisan queue:table      //creater the queue table save data in queue database 
         create table in jobs
-    php artisan migrate
+    
+        php artisan migrate
         two table create
             fail_job
             job

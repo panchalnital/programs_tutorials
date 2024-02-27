@@ -1,0 +1,95 @@
+In Laravel, Observers are a powerful feature that allows you to monitor and respond to events that occur within your Eloquent models. They provide a convenient way to centralize and organize the handling of model events such as creating, updating, deleting, and more.
+
+Here's a brief overview of how Observers work in Laravel:
+
+1. **Creating Observers**: Observers are typically created as standalone classes that contain methods to handle various model events. You can generate an observer using Laravel's Artisan command-line tool:
+
+   ```
+   php artisan make:observer MyModelObserver --model=MyModel
+   ```
+
+   This command will generate a new observer class (`MyModelObserver`) and associate it with the specified model (`MyModel`).
+
+2. **Defining Observer Methods**: Within the generated observer class, you can define methods to handle specific model events such as `created`, `updated`, `deleted`, etc. For example:
+
+   ```php
+   <?php
+   
+   namespace App\Observers;
+   
+   use App\Models\MyModel;
+   
+   class MyModelObserver
+   {
+       public function created(MyModel $myModel)
+       {
+           // Logic to execute when a MyModel instance is created
+       }
+   
+       // Other event handler methods...
+   }
+   ```
+
+3. **Registering Observers**: Once you've created your observer classes, you need to register them with Laravel's service container. This is typically done in the `boot` method of your `AppServiceProvider` or any other service provider class:
+
+   ```php
+   <?php
+   
+   namespace App\Providers;
+   
+   use App\Models\MyModel;
+   use App\Observers\MyModelObserver;
+   use Illuminate\Support\ServiceProvider;
+   
+   class EventServiceProvider extends ServiceProvider
+   {
+       public function boot()
+       {
+           MyModel::observe(MyModelObserver::class);
+       }
+   }
+   ```
+
+4. **Using Observers**: With your observers registered, they will automatically be triggered when the corresponding model events occur. This allows you to encapsulate and centralize the logic for handling these events, keeping your code organized and maintainable.
+
+Overall, Laravel Observers are a handy tool for implementing certain application logic that needs to be triggered by model events, without cluttering your models with unnecessary code. They promote separation of concerns and help keep your codebase clean and modular.
+
+
+=====================
+Laravel observers can have several advantages, including:
+-Loose coupling :The observer pattern supports loose coupling between different parts of code.
+-Handling multiple objects:The observer pattern can help handle when multiple objects depend on a single object's state.
+-Maintainability and efficiency:Observers can improve code maintainability and efficiency, and keep application logic organized.
+-Decoupled codebase:The observer pattern can help maintain a clean and decoupled codebase.
+-Consistent mechanism:The observer pattern can provide a consistent mechanism for handling model events.
+-Flexibility:The observer pattern can promote better code organization, maintainability, and flexibility. 
+
+
+However, there are also some disadvantages to using observers, including:
+-Performance issues:Some say that using observers in large quantities can cause performance issues, as event registration can be slow.
+-Complexity:If an observer is implemented incorrectly, it can increase complexity and cause unintended performance issues.
+-Memory leaks:If the observer doesn't detach from the subject when it no longer wants to receive notifications, it can lead to memory leaks.
+-Issues for larger projects:Some say that observers and model events are fine for smaller projects, but can become an issue for projects with more than two developers and/or 100+ test cases. 
+
+
+================================
+
+-Observer are used to group event listeners for a model.Obsevers classes methods namers refer to the eloquent ebent you want to lisetn for.
+-these method receieve the model as thier only argument
+-Laravel does  not include a default directory for observers
+
+php artsian make:observer observer_name
+
+Eloquent model fire serveral events,allowing you to hook into the foolowing a model lifecyscle:
+
+->Retrieved - after a recored has been retrieved
+->Creating   -before a record has been created
+->Created    -after a recored has been retrieved
+->Updating    -before a record has been Updating
+->Updated    -after a recored has been Updated
+->Saving        -before a record has been Saving
+->Saved      -after a recored has been Saved
+->Deleting      -before a record has been soft-Deleting
+->Deleted       -after a recored has been soft- Deleted
+->restoring     -before a record has been restoring
+->restored      -after a recored has been restored

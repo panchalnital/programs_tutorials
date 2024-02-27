@@ -161,6 +161,7 @@ class dbconnection{
 }
 
 
+
 $multidimensionalArray = array(
     array('name' => 'Alice', 'age' => 30),
     array('name' => 'Bob', 'age' => 20),
@@ -169,7 +170,7 @@ $multidimensionalArray = array(
 
 $length = count($multidimensionalArray);
 
-// Bubble sort
+// Bubble sort  // sorting age or name;
 for ($i = 0; $i < $length - 1; $i++) {
     for ($j = 0; $j < $length - $i - 1; $j++) {
         if ($multidimensionalArray[$j]['age'] > $multidimensionalArray[$j + 1]['age']) {
