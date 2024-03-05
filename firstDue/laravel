@@ -40,6 +40,10 @@ Here are some methods of Illuminate\Database\PDO\Connection in Laravel:
     beginTransaction(): A void method
     commit(): A void method 
 
+    php artisan make:event postName
+    or
+    php artisan make:listener notifyuser --event=postName
+
 4)
     Laravel Events
 

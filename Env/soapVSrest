@@ -1,0 +1,30 @@
+SOAP stands for Simple Object Access Protocol, while REST stands for Representational State Transfer
+
+Here are some differences between SOAP and REST:
+
+Structure: SOAP is highly structured and uses XML data format. REST is more flexible and allows applications to exchange data in multiple formats, including XML, HTML, plain text, and JSON.
+
+Security: SOAP is a secure way to build APIs. It has WS-security (Enterprise-level security) with SSL support and built-in ACID (Atomicity, Consistency, Integrity, Durability) compliance.
+
+Architectural style: SOAP is a protocol, while REST is an architectural style. REST is often viewed as a faster alternative in web-based scenarios.
+
+Messaging patterns: SOAP is a more rigid set of messaging patterns than REST.
+
+Caching: SOAP API calls cannot be cached, while REST API calls can be cached.
+
+Use cases: SOAP is ideal for standardization and enhanced security, developing private APIs, working with stateful operations, and using an underlying transport protocol other than HTTP. REST is ideal for newer contexts like the Internet of Things (IoT), mobile application development, and serverless computing. 
+
+
+=============================================================
+SOAP API
+
+REST API
+
+-Relies on SOAP (Simple Object Access Protocol)	        =>Relies on REST (Representational State Transfer) architecture using HTTP.
+
+-Transports data in standard XML format.	            =>Generally transports data in JSON. It is based on URI. Because -REST follows stateless model, REST does not enforces message format as XML or JSON etc.
+
+-Because it is XML based and relies on SOAP, it works with WSDL	=> It works with GET, POST, PUT, DELETE
+-Works over HTTP, HTTPS, SMTP, XMPP             	    =>Works over HTTP and HTTPS
+-Highly structured/typed	Less structured             => less bulky data
+-Designed with large enterprise applications in mind	=>Designed with mobile devices in mind

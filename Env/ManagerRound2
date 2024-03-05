@@ -69,4 +69,93 @@ Do you have any question?
 9) how many people with i be working with?
 *10) what kind of the processes amd technologies you use to work collaboratively?
 
+
+==========================================================================
+jiomart
+
+Jpm -php back application
+    user
+      |
+      |
+    secerity (Layer)
+      |
+      |
+    Inter GTM (Gobal traficate manager)
+      |
+      |
+    Inter LTM (local traficate manager)
+      |
+      |
+    10 loadBlancer
+                    (3 three tier aricher)
+
+----------------------------------------------
+MerchantDB
+CatelogDB    Multiple land
+
+storid
+111         | 111 -399 are lan no.1 stored LTM
+222         | 444 -666 are lan no.2 stored LTM 
+444         | 777- 888 are lan no.3 stored LTM
+
+estatica search (search engine)
+---------------------------------------------
+DEV (developement branch) 
+SIT (systematic intergration testing branch,primary envriment branch)
+QA  (2 week developerment,5 to 7 days testing)
+UAT (business owner testing)
+PP  (pre-producton branch)
+prod 
+
+-------------------------------------------
+working envriments
+    tuseday meeting ( requriments gethering )
+                - business ownwer ->customer ownwer
+                - business ownwer ->solution architecter
+
+    thrusday meeting (soulation archietecter)
+                - developer
     
+    daliy standup meeting (product owner,manager,team lead,and developer,soulation archietecter)
+
+    status update meeting (manager,team lead,and developer)
+-----------------------------------------------
+Difference are tracking 
+- OnBording 
+- offer coupen (ppc)
+- payment
+- product diccovvery (PD)
+- ordering (OMS order managment system)
+- retring 
+- refund
+- billing 
+- backOffice    
+
+
+- ordering (OMS order managment system)
+
+-checkout 
+    - product and qty
+    - coupen,amount calaculate,qty
+    - add products
+
+creater FCCARTID
+
+
+============================================================
+
+1 => Tell me something about yourself
+
+-Hi, My name is Nital Panchal,
+-i have done my MCA from Gujarat university,Gujart
+-i am a php developer and main work which i am currently doing im ny origation  is tatolly related to backend developerment
+-the database i have worked on are mysql,sql,postrges,redius
+- Apart from working as backed developer, i have explosure of working in the front end technologies, i have good knowledge of reactjs,html,css,javascript,boostrap\
+- l am aslo being involved in the client interaction like whatever hier requrement will be , iam the dole person resonsible for handing that thing as well
+
+1 thank you,this for oppountity
+- i am nital panchal, i have done eduction mca from gujarat university, i am senior software engineer 7.5 expernices,
+- i have worked differnace domain experices , like e-commerice,banking,health-care,data analysic,music industry
+- apart from working experinces backend side technolgies php,
+- aslo i have explosure of working in the front technologies,
+ 
