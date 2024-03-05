@@ -1,0 +1,42 @@
+package install
+1) composer require spatie/laravel-permissiom
+2) composer require laravelcollective/html
+
+step 3) config/app.php
+	provider-> register the package name
+
+	Spatie\Permissiom\PermissiomServoceProvider::class
+
+step 4) vendor in register any package user
+	php artisan vendor:publish --provider="Spatie\Permissiom\PermissiomServoceProvider::class"
+	-> configation permissiom file in config
+	-> creater migratation file in databse folder
+
+	php artisn migrate
+
+	table are creater
+	- model_has_permissions
+	- model_bas_role
+
+	product migration creater
+	php artisan make:migration create_products__table
+
+step 5) model\user.php add role class
+use spatie\Permissiom\Traits\HasRole;
+
+step 6) middleware in add role ans permissiom
+	kernal.php
+	
+	'role'=>\spatie\permissiom\middleware\roleMiddleware::class,
+	'role'=>\spatie\permissiom\middleware\permissiomMiddleware::class,
+	'role_or_permission'=>\spatie\permissiom\middleware\roleOrpermissiomMiddleware::class,
+
+
+step7)package install
+	1) composer require laravel/ui
+
+	php artisan ui boostrap
+	php artisan ui boostrap --auth
+
+	npm install 
+	npm run dev

@@ -1,3 +1,8 @@
+https://www.youtube.com/watch?v=KcpXkHIciys
+
+https://www.youtube.com/watch?v=3d5sMh5rGCM&t=270s
+
+
 -Observer are used to group event listeners for a model.Obsevers classes methods namers refer to the eloquent ebent you want to lisetn for.
 -these method receieve the model as thier only argument
 -Laravel does  not include a default directory for observers
@@ -17,3 +22,16 @@ Eloquent model fire serveral events,allowing you to hook into the foolowing a mo
 ->Deleted       -after a recored has been soft- Deleted
 ->restoring     -before a record has been restoring
 ->restored      -after a recored has been restored
+
+
+1 php artsian make:observer observer_name --model=post
+
+2 app\Provider\EventServiceProvider.php
+
+  use App\Model\post
+  use App\Observers\postObservers;
+
+  boot(){
+    post::oberver(postObsrver::class);
+  }
+

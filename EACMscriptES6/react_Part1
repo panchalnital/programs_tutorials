@@ -1,0 +1,44 @@
+https://www.simplilearn.com/tutorials/reactjs-tutorial/reactjs-interview-questions
+
+https://www.youtube.com/watch?v=Zb4dPi7CANU&t=1181s
+
+Certainly! Here are some common React interview questions along with their answers:
+
+1. **What is React?**
+   - React is a JavaScript library developed by Facebook for building user interfaces, particularly for single-page applications. It allows developers to create reusable UI components that manage their own state, making the development of complex UIs more manageable.
+
+2. **What are the key features of React?**
+   - Virtual DOM: React uses a virtual DOM to improve performance by minimizing the number of direct DOM manipulations.
+   - JSX: JSX is a syntax extension for JavaScript that allows mixing HTML with JavaScript.
+   - Components: React applications are built using components, which are reusable and independent pieces of UI.
+   - Unidirectional data flow: React follows a unidirectional data flow, where data flows in a single direction, making the application more predictable.
+
+3. **What is JSX?**
+   - JSX stands for JavaScript XML. It is a syntax extension for JavaScript that allows writing HTML elements and components in JavaScript code. JSX makes it easier to write and understand the structure of UI components in React.
+
+4. **What are the differences between functional components and class components in React?**
+   - Functional components are simple JavaScript functions that take props as an argument and return JSX. They are lightweight and easy to understand. Class components are ES6 classes that extend from React.Component. They have additional features such as state and lifecycle methods.
+
+5. **What is state in React?**
+   - State is a JavaScript object that represents the dynamic data of a component. It allows components to manage and update their own data. State can be initialized in a component's constructor and updated using the `setState()` method.
+
+6. **What are props in React?**
+   - Props (short for properties) are a way of passing data from parent to child components in React. They are read-only and help to make components reusable by allowing them to accept dynamic inputs.
+
+7. **What is the purpose of keys in React lists?**
+   - Keys are used to uniquely identify elements in a list. They help React identify which items have changed, been added, or been removed. Keys should be stable, predictable, and unique among siblings.
+
+8. **What is the significance of componentDidMount() lifecycle method in React?**
+   - `componentDidMount()` is invoked immediately after a component is mounted (inserted into the DOM tree). It is commonly used for initialization tasks such as fetching data from APIs or setting up event listeners.
+
+9. **What is the difference between controlled and uncontrolled components in React?**
+   - Controlled components: Components where form data is handled by React state. The value of the input field is controlled by React.
+   - Uncontrolled components: Components where form data is handled by the DOM itself. The value of the input field is managed by the DOM.
+
+10. **How can you optimize performance in React applications?**
+    - Use shouldComponentUpdate() or PureComponent to avoid unnecessary re-renders.
+    - Implement code-splitting to load only the necessary components.
+    - Use React.memo() for memoizing functional components.
+    - Implement virtualization for long lists using libraries like react-virtualized.
+
+These are some common questions and answers that you might encounter in a React interview. Make sure to understand these concepts thoroughly and be prepared to discuss them in more detail if needed.

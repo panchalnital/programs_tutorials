@@ -1,0 +1,50 @@
+Clousres:
+-Closures are function inside function and it makes a normal function stateful
+- self contained modules
+-self containe state
+JavaScript variables can belong to the local or global scope.
+
+Global variables can be made local (private) with closures.
+
+..code
+<script>
+
+function ClousresFunction(){
+
+    var x=0;
+    function incr(){
+        x++;
+    }
+    return{
+        incr
+    }
+
+}
+
+var ref=ClousresFunction();
+ref.incr();
+ref.incr();
+
+</script>
+..
+
+----------------------------
+prototype:
+
+JavaScript uses objects inhritance or prototypical inheriance,
+inheriance is done using prototype object
+<script>
+function employee(){
+
+}
+
+function Manager(){
+
+}
+var emp=new employee();
+Manager.prototype=emp;
+
+var man=new Manager();
+
+</script>
+ 

@@ -143,3 +143,33 @@ echo $a[$i].",";
 }
 
 $output="1,5,9"; 
+
+//==================================
+// excel index in function 
+function getIndex($letter){
+    $cnt=1;
+    $letterArray=[];
+  	for($i=ord('A');$i<=ord('Z');$i++){
+  	    $letterchar1=chr($i);
+  	    $letterArray[$letterchar1]=$cnt;
+  	    $cnt++;
+  	}
+
+	$secondarr=[];
+	$cnt=27;
+	$letterchar=range('A','Z');
+	for($i=ord('A');$i<=ord('Z');$i++){
+		for($j=ord('A');$j<=ord('Z');$j++){
+		  $chr=chr($i).chr($j);
+			$secondarr[$chr]=$cnt;
+			$cnt++;
+		}
+	}
+	$merge=array_merge($letterArray,$secondarr);
+	foreach($merge as $key=>$value){
+  	if(strtolower($key)==strtolower($letter)){
+  		return $value;
+  	}
+	}
+}
+echo getIndex('AD');

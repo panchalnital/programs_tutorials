@@ -1,4 +1,4 @@
-
+https://www.youtube.com/watch?v=6xzGBH2jgOY
 repository pattern laravel
 
 The repository design pattern is a software design pattern that separates the data access layer and business logic layer of an application. It provides a consistent interface to access data stored in a database, file system, or external service. 
@@ -23,3 +23,26 @@ A basic understanding of PHP and Laravel
 -jq (optional)
 -The Laravel installer
 -Access to a MySQL database
+
+step 1) creater folder and file 
+        app\repositories\interface\cateoryRepositiryInterface.php
+            write function like 
+            all();
+            store();
+
+step 2) app\repositories\categoryRepository.php
+        implements cateoryRepositiryInterface;
+        use model name;
+
+        all(){
+            //define logica 
+        }
+step 3) app/Providers/AppServiceProvider.php
+        providers in appserviceprovide register in 
+
+        use app\repositories\interface\cateoryRepositiryInterfac;
+        use app\repositories\categoryRepository;
+
+        register(){
+            $this->app->bind(cateoryRepositiryInterfac::class,categoryRepository::class);
+        }
