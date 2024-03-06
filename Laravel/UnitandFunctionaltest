@@ -1,0 +1,60 @@
+unit test and functional test 
+========================================
+Unit testing and feature testing are both methods of software testing in Laravel:
+
+Unit testing:
+This is a necessary part of the development process. It focuses on a small piece of code, like a method inside a class. Unit tests are written from a programmer's perspective to ensure a class's method performs specific tasks. Unit testing is fast and helps write clean code, but it doesn't guarantee that the system will work as expected.
+
+Feature testing :
+This has a broader view, such as registering a user and validating their details. Feature tests verify if a particular feature is working as designed. Feature tests are written from the user's perspective to ensure that the system is functioning as users expect it to. 
+
+--------------------------------------
+
+Here are some steps for unit testing in Laravel:
+    Create new test classes
+    Run the artisan command to create a new test class
+    Write a basic unit test case 
+You can use PHPUnit, a well-known and optimized unit testing package, to perform unit testing for your app. 
+    To create a new test case, you can use the make:test Artisan command:
+    To create a test in the tests/Feature directory: php artisan make:test UserTest
+    To create a test in the tests/Unit directory: php artisan make:test UserTest --unit 
+
+
+---------------------------------
+assertEquals(), assertTrue(), assertFalse(), assertContains(), assertAttributeContains(), assertNotContains(), assertAttributeNotContains(), assertcontainsOnly(), assertAttributeContainsOnly()
+--------------------------------------------------------------
+PHPUnit is a popular testing framework for PHP, widely used for unit testing. It provides a wide range of assertions to verify the behavior of your code. Here's a list of some commonly used assertions in PHPUnit:
+
+1. **assertEquals($expected, $actual, $message = '')**: Asserts that two values are equal.
+
+2. **assertNotEquals($expected, $actual, $message = '')**: Asserts that two values are not equal.
+
+3. **assertTrue($condition, $message = '')**: Asserts that a condition is true.
+
+4. **assertFalse($condition, $message = '')**: Asserts that a condition is false.
+
+5. **assertNull($actual, $message = '')**: Asserts that a value is null.
+
+6. **assertNotNull($actual, $message = '')**: Asserts that a value is not null.
+
+7. **assertSame($expected, $actual, $message = '')**: Asserts that two values are identical (same type and value).
+
+8. **assertNotSame($expected, $actual, $message = '')**: Asserts that two values are not identical.
+
+9. **assertGreaterThan($expected, $actual, $message = '')**: Asserts that a value is greater than another.
+
+10. **assertGreaterThanOrEqual($expected, $actual, $message = '')**: Asserts that a value is greater than or equal to another.
+
+11. **assertLessThan($expected, $actual, $message = '')**: Asserts that a value is less than another.
+
+12. **assertLessThanOrEqual($expected, $actual, $message = '')**: Asserts that a value is less than or equal to another.
+
+13. **assertContains($needle, $haystack, $message = '')**: Asserts that a haystack contains a needle.
+
+14. **assertNotContains($needle, $haystack, $message = '')**: Asserts that a haystack does not contain a needle.
+
+15. **assertArrayHasKey($key, $array, $message = '')**: Asserts that an array has a specified key.
+
+16. **assertArrayNotHasKey($key, $array, $message = '')**: Asserts that an array does not have a specified key.
+
+These are just a few of the many assertions available in PHPUnit. They provide a comprehensive toolkit for testing your PHP code effectively.
