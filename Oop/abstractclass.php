@@ -27,13 +27,13 @@ abstract class customer{
     abstract public function CalclateDiscount();
 }
 
-class GoldCustomer{
+class GoldCustomer extends customer{
     public function CalclateDiscount(){
         return $productAmount-10;
     }
 }
 
-class SilverCustomer{
+class SilverCustomer extends customer{
     public function CalclateDiscount(){
         return $productAmount-5;
     }

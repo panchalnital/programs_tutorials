@@ -1,0 +1,91 @@
+package of guzzle
+Composer: composer require guzzlehttp/guzzle
+
+**Making Requests**
+    method : head, get, post, put, patch, and delete 
+
+    provided by the Http facade.
+    use Illuminate\Support\Facades\Http;
+    
+    Illuminate\Http\Client\Response
+
+    get => $response = Http::get('http://example.com');
+    post=> $response = Http::post('http://example.com/users', [
+            'name' => 'Steve',
+            'role' => 'Network Administrator',
+        ]);
+
+    Illuminate\Http\Client\Response
+            $response->body() : string;
+        $response->json($key = null, $default = null) : array|mixed;
+        $response->object() : object;
+        $response->collect($key = null) : Illuminate\Support\Collection;
+        $response->status() : int;
+        $response->successful() : bool;
+        $response->redirect(): bool;
+        $response->failed() : bool;
+        $response->clientError() : bool;
+        $response->header($header) : string;
+        $response->headers() : array;
+
+**Response code**
+        $response->ok() : bool;                  // 200 OK
+        $response->created() : bool;             // 201 Created
+        $response->accepted() : bool;            // 202 Accepted
+        $response->noContent() : bool;           // 204 No Content
+        $response->movedPermanently() : bool;    // 301 Moved Permanently
+        $response->found() : bool;               // 302 Found
+        $response->badRequest() : bool;          // 400 Bad Request
+        $response->unauthorized() : bool;        // 401 Unauthorized
+        $response->paymentRequired() : bool;     // 402 Payment Required
+        $response->forbidden() : bool;           // 403 Forbidden
+        $response->notFound() : bool;            // 404 Not Found
+        $response->requestTimeout() : bool;      // 408 Request Timeout
+        $response->conflict() : bool;            // 409 Conflict
+        $response->unprocessableEntity() : bool; // 422 Unprocessable Entity
+        $response->tooManyRequests() : bool;     // 429 Too Many Requests
+        $response->serverError() : bool;         // 500 Internal Server Error
+
+
+**Alternatively, the withQueryParameters method may be used:**
+
+    Http::retry(3, 100)->withQueryParameters([
+        'name' => 'Taylor',
+        'page' => 1,
+    ])->get('http://example.com/users')
+**Multi-Part Requests**
+    $response = Http::attach(
+        'attachment', file_get_contents('photo.jpg'), 'photo.jpg', ['Content-Type' => 'image/jpeg']
+    )->post('http://example.com/attachments');
+
+**Headers**
+    $response = Http::withHeaders([
+    'X-First' => 'foo',
+    'X-Second' => 'bar'
+        ])->post('http://example.com/users', [
+            'name' => 'Taylor',
+        ]);
+**Authentication**
+    // Basic authentication...
+    $response = Http::withBasicAuth('taylor@laravel.com', 'secret')->post(/* ... */);
+    
+    // Digest authentication...
+    $response = Http::withDigestAuth('taylor@laravel.com', 'secret')->post(/* ... */);
+
+    ::withToken
+**Timeout**
+    $response = Http::timeout(3)->get(/* ... */);
+    $response = Http::connectTimeout(3)->get(/* ... */);
+**Retries**
+    $response = Http::retry(3, 100)->post(/* ... */);
+**Concurrent Requests**
+    use Illuminate\Http\Client\Pool;
+    use Illuminate\Support\Facades\Http;
+    
+    $responses = Http::pool(fn (Pool $pool) => [
+        $pool->as('first')->get('http://localhost/first'),
+        $pool->as('second')->get('http://localhost/second'),
+        $pool->as('third')->get('http://localhost/third'),
+    ]);
+    
+    return $responses['first']->ok();

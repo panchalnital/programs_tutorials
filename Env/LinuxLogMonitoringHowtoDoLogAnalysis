@@ -1,0 +1,31 @@
+https://www.youtube.com/watch?v=tA-32BLjrFA
+
+How to use splunk to analyze a realtime log | Splunk tutorial
+https://www.youtube.com/watch?v=T4ahmkzcc0A
+
+Topics we will cover about different log files for Linux like
+boot.log
+secure
+messages
+maillog
+httpd
+cron
+
+Some basics tips and methods for log analysis on Linux server in Hindi
+Linux var/log
+Linux /var/log
+Linux logs
+Linux logging
+Linux log analysis
+
+# less boot.log-20230307
+
+/serach_key_value
+
+?end serach key world
+
+cat cron | more
+
+crontab -l list cron
+02 00 * * * /home/nital/achive_project.sh
+crontab -e edit cron

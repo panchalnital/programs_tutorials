@@ -173,3 +173,19 @@ function getIndex($letter){
 	}
 }
 echo getIndex('AD');
+
+//============================== shuffle
+function shuffle_cust(&$array){
+  
+    for($i=count($array)-1;$i>0;$i--){
+      $j=random_int(0,$i);
+      if($j!=$i){
+        $temp=$array[$i];
+        $array[$i]=$array[$j];
+        $array[$j]=$temp;
+      }
+    }
+  }
+  $array = [1, 2, 3, 4, 5];
+  shuffle_cust($array);
+  print_r($array);

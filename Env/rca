@@ -1,0 +1,40 @@
+How to File RCA(Root cause analysis) ?
+What is the RCA?
+
+Root cause analysis (RCA) is defined as a collective term that describes a wide range of approaches, tools, and techniques used to uncover causes of problems.
+
+Key Components to Fill in RCA
+
+Description - Add the full description, adding points What, how, why this happened.
+Detection - How issue was detected by which team and at what time.(how much impacts )
+What went Wrong - Filled by discussing with Dev/ Ops , What exactly happened? (which file and branche se impacted,which teams se impacts)
+Correction - What was the fix and when did we sent or going to send.
+Prevention - How we could have avoided it, May be missing test case and automation / KT / Better communication.
+Impact - Amount of user impacted with data (get it from the pm)
+Timeline - Enter logs from starting to end with ETA.
+Action Item - Add Test case, monitoring emails extra with ETAs.
+
+    Task                        responsibility
+    who file the rca?           -QA Lead +Respective QA
+    when should i file RCA?     - create Ticket immediately
+                                -set timelines
+    who approve RCA             - it should b approved by  di
+    ETA of Action Items         -QA Lead
+                                - dev team lead
+
+                                
+Developer find bug the lower enevriments 
+
+-----------------------------------------------------------------
+production Bug not face in QA/testing/ how idenitifie 
+
+defects found in production but not during the QA phase:
+-not all use cases were covered in testing : ( Real world usage of the application may exercise certain flows that were missed druing QA testing addition exploratoary testing could help more scenarios)
+-issues only occur under production load
+-testing envriroment differs from production envrorments
+-time pressures led to insufficient testing
+-changes made post testing
+-insufficent unit/integration testing
+-lack of security/penetration testing
+-improper test case design
+-human erro

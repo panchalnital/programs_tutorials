@@ -1,0 +1,12 @@
+**Projects Archiecture**
+=> it's 4-Layer Archiecture with front end in ract js ,middle layer in mvc ,data aceess layer use orm  and db in sql ,server
+
+=> PHP Framework Laravel follows MVC archiecture where model has business logic,view look and feel controller connect to model and the view (controller is binding thing which inds the model and view and model had the business logic so)
+
+=>in projecs we have implemented best practices and design patterns like repository/sigleton/factory,iterator patten and so on
+repository patten you know using enitiy framwork,i was connecting sql server
+
+Architectural style:  are rest is architectural style: means there re just guidelines and principle for
+    -rest says that it should be stateless rest says that we shulud 
+
+Architectural pattern: is MVC is an architecture pattern ,MVVM,MVP is an architecturl, three layered architectural 
