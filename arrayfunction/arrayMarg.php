@@ -6,8 +6,10 @@
  *                 : same index key array1 and and array2 they will replace on array2 
  * array_merge_recursive() multidimensional associative array
  * array_combine() index array
- * 
+ *
+ *  
  */
+
 
  $arr1=['dsfsdf','a'=>'dsfds','er1'];
  $arr2=['a'=>'aa','dd','cc'];
