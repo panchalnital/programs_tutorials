@@ -89,3 +89,10 @@ function sum(...$values) {
 $data = sum(1, 2, 3, 4, 5);
 echo array_sum($data);
 echo $data; // Output: 15
+
+
+$x=10;
+$x+++$x++;
+echo $x;    //12
+$x---$x--;
+echo $x;   //10

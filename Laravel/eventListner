@@ -1,0 +1,55 @@
+https://www.youtube.com/watch?v=dWSPG-iKOVc
+
+
+php artisan make:event postCreated
+
+php artsian make:listener NotifyUses --event=postCreated
+
+UserControll.php
+    $data=["data"=>$data];
+    event(new postCreated($data));
+
+class postCreated{
+    __construct($post){
+        $this->post;
+    }
+}
+
+listener class directy add event
+class NotifyUses{
+   
+    handle(postCreated $event){
+        $user=User::get();
+        foreach($user as $user){
+            \Mail::to($user->email)->send(new UserMail($event->post))
+        }
+    }
+}
+
+Provider/eventServiceProvider.php
+    listen=[
+        \app\event\postCreated::class=>[
+            \app\listeners\NotifyUses::class
+            ]
+    ]
+
+php artisan make:mail UserMail
+            implements shouldQueue
+
+php artisan queue:table 
+
+create table in jobs
+    
+    php artisan migrate
+    two table create
+        fail_job
+        job
+
+
+php artisan queue:work
+php artisan queue:listen:
+            1#: Set the connection name
+            2php artisan queue:listen sync
+            4#: Log a job as failed if processing fails five times
+            5php artisan queue:listen --tries=5
+            7#: Set the process timeout to two minutes

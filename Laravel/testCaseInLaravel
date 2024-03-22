@@ -1,0 +1,31 @@
+Why you should write Test case ?
+
+1)* if any bug getting and fixed code they not impact other code and modules that reson to write the test code 
+
+    1 spot ambiguities early 
+    2 write better code in the frist place
+    3 easir debugging
+    4 refactor with confidenece
+    5 release with confidenece
+    6 better desin
+
+2) Two type of test code in laravel
+    i) Fature : feature test means the if you test route (particaulr functionality or modelular) is call feature test
+    - if test login and register functionality is call feture test
+    A feature test should hit a route ,make sure  the resposne if what you want and the databse reflects the changes you made( if there are )
+
+    II) unit test:  if test particauler function or method is called unit test() 
+
+    a unit test should test a single pieact of functionality they are made to ensure a particauler method(or unit ) of a class performs a set of speficfic task
+
+    Run the test 
+    i) php artisan test
+       php artisan test --filter=test_the_application_returns_a_successful_response
+    
+    II) ./vendor/bin/phpunit
+        ./vendor/bin/phpunit --filter=test_the_application_returns_a_successful_response
+
+    deault the feature test file create 
+    php artisan make:test LoginTest
+
+    php artisan make:test LoginTest --unit
