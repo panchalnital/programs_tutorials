@@ -1,0 +1,26 @@
+**Q1 What is hoisting in javascript**
+    hoisting is javascript behavior where function and variable declaration are moved to the top of thier respective scrops druing the compilation phase
+
+
+1) function hoisting
+
+    myfunction()
+    function myfunction(){
+        console.log('Hellow');
+    }
+2) variable hoisting
+x=0
+console.log(x)
+var x;
+
+Q2 what is type coercion in javascript?
+
+type coercion is automatic conversion f values from one data type to another during cetrain operation or comparisons
+
+let string="45";
+let number=45;
+let boolean=true;
+
+// type coercion automic conversion
+    console.log(string+number) //"4545"
+    console.log(number+boolean)//45

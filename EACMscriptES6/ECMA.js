@@ -226,3 +226,20 @@ console.log(newArr);
 const arr=[1,2,3,4,5,6];
 const sum= arr.map((s)=>s*5);
 console.log(sum);
+
+/*-----------------------------------
+
+1 let,var,const
+2 arrow function
+3 class
+4 promise
+5 rest parameters
+6 array prototype
+7 ** operator
+8 shared memory
+9 async await
+10 symbol protype
+
+
+
+*/
