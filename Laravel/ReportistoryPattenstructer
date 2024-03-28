@@ -1,6 +1,15 @@
 https://www.youtube.com/watch?v=6xzGBH2jgOY
 repository pattern laravel
 
+[
+    Repository Pattern : acts like an abstract layer between Model and models access technologies in php,
+    data access logic is centrailized making code maintainabl,testble and modular
+
+    factory pattern: from cretional pattern this is most used one,creates an instance of serveral derived classes 
+    - used when thired party components are used
+
+]
+
 The repository design pattern is a software design pattern that separates the data access layer and business logic layer of an application. It provides a consistent interface to access data stored in a database, file system, or external service. 
 
 The repository pattern: 

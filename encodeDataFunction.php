@@ -1,7 +1,7 @@
 <?php
 //1)  htmlentities() This function will convert characters to HTML entities like < , > or “ 
 $str = "<a href='https://canopas.com'>Let's explore</a>";
-$str1=htmlentities($str);
+$str1=htmlentities($str); // &lt;a href=&#039;https://canopas.com&#039;&gt;Let&#039;s explore&lt;/a&gt;
 error_log(htmlentities($str));
 
 //2)  html_entity_decode() It is reverse function for htmlentities() . Means it converts HTML entities to characters.
@@ -26,6 +26,13 @@ error_log($strud1);
 echo $urlen=urlencode("https://canopas.com?data=test");
 echo "<\n>".urldecode($urlen);
 
+
+echo strip_tags("Hello <b>world!</b>");
+//The strip_tags() function strips a string from HTML, XML, and PHP tags.
+
+//Note: HTML comments are always stripped. This cannot be changed with the allow parameter.
+
+//Note: This function is binary-safe.
 
 //Base64
 //Base64 conversion is used for securing data over the network. 
