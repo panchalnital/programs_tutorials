@@ -1,0 +1,81 @@
+https://www.youtube.com/watch?v=KH4MmQsCDuw
+
+Comparisons of $x with PHP functions
+    gettype()	empty()	is_null()	isset()	bool : if($x)
+
+Loose comparisons with  ==
+Strict comparisons with ===
+
+
+07:05 - Type Hinting Example
+08:22 - Type Juggling / Type Coercion
+            in php type juggling and type hinting are same means datatype convert into define type like int ,string,float
+        function sum(int $x,int $y){
+            var_dump($x,$y);x=2,y=5
+            echo "\n";
+            return $x+$y;
+        }
+        $sum=sum(2,'5'); // 7
+10:15 - Strict Types
+        decleare(strict_type=1);
+        function sum(int $x,int $y){
+            var_dump($x,$y);x=2,y=5 error 
+            echo "\n";
+            return $x+$y;
+        }
+        $sum=sum(2,'5'); // error 
+11:12 - Type Casting
+        $var=(int)'5';
+        var_dump($var);//int(5)
+
+=============================
+
+'' signle qouate
+"" double qoate useing php variable in 
+
+$name="test";
+echo '$name welcome';  //$name welcome
+echo "\n";
+echo "$name data"; //test data
+
+Heredoc 
+$x=1;
+$y=2;
+$txt= <<<TEXT
+line1 $x
+line2 $x2
+line3
+TEXT;
+
+echo nl2br($txt);
+
+Nowdoc
+$txt= <<<TEXT
+line1 $x
+line2 $x2
+line3
+TEXT;
+
+
+==================================
+break and continue
+
+$i=0;
+while($i<=10){
+    while($i<=5){
+        if($i<=2){       // this loop break and if you used break 2 then two loop break
+            echo $i, "\n";
+            break;
+        }
+    }
+    echo "break"."\n";
+    $i++;
+}
+
+ouput :: 
+0
+break
+1
+break
+2
+break

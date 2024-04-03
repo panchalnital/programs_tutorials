@@ -1,0 +1,92 @@
+**What Are Constants & Variable Variables In PHP**
+
+In PHP, both `const` and `define` are used for defining constants, but there are some differences between them:
+
+1. **Scope**: 
+   - `const` is used to define constants within classes. These constants are class constants and are accessed using the scope resolution operator (::).
+   - `define` is used to define constants outside of classes. These constants are global and can be accessed from anywhere in the script.
+
+2. **Syntax**:
+   - `const` is a language construct and is defined using the following syntax:
+     ```
+     class ClassName {
+         const CONSTANT_NAME = value;
+     }
+     ```
+   - `define` is a function and is defined using the following syntax:
+     ```
+     define("CONSTANT_NAME", value);
+     ```
+
+3. **Value Assignment**:
+   - With `const`, the value of the constant must be a constant expression, meaning it should be able to be determined at **compile time**.
+   - With `define`, the value can be determined at **runtime** because it's a function call.
+
+4. **Dynamic Nature**:
+   - Constants defined with `const` are static and cannot be changed or redefined after they have been declared.
+   - Constants defined with `define` can be redefined or undefined during the script execution using the `define()` function.
+
+5. **Visibility**:
+   - Constants defined with `const` can have visibility modifiers (`public`, `private`, `protected`) just like class properties, controlling their accessibility.
+   - Constants defined with `define` are global and are accessible from anywhere in the script regardless of visibility.
+
+Here's a quick example to illustrate the differences:
+
+```php
+// Using const
+class MyClass {
+    const PI = 3.14;
+}
+
+echo MyClass::PI; // Outputs: 3.14
+
+// Using define
+define("PI", 3.14);
+echo PI; // Outputs: 3.14
+
+// Redefining constant using define
+define("PI", 3.14159);
+echo PI; // Outputs: 3.14159
+```
+
+In summary, `const` is typically used for class constants, whereas `define` is used for defining global constants outside of classes. The choice between them depends on the context and requirements of your code.
+
+Here are some other differences between const and define:
+= const is case-sensitive, while define() is case-insensitive by default.
+= const cannot be created inside another block scope, like inside a function or inside an if statement.
+define() has a case-insensitive option.
+
+=define() can be created inside another block scope.
+=const is a language construct for defining class constants with compile-time evaluation and a static value that cannot be modified.
+=define() is a function for defining global constants with runtime evaluation and dynamic nature.
+=const is two times faster than define
+
+======================================================
+
+Predefined Constants - https://www.php.net/manual/en/reserve...
+Magic Constants - https://www.php.net/manual/en/languag...
+
+**Predefined Constants**
+PHP_VERSION (string)
+E_ALL (int): Error reporting constant
+E_ERROR (int) : Error reporting constant
+E_WARNING (int) :Error reporting constant
+E_PARSE (int): Error reporting constant
+E_NOTICE (int) : Error reporting constant
+PHP_DEBUG (int): Indicates whether the current build of PHP is a debug build.
+PHP_INT_MAX (int)
+PHP_INT_MIN (int)
+true (bool) : See Booleans.
+false (bool) : See Booleans.
+null (null): See Null.
+
+**Magic Constants**
+
+__LINE__	The current line number of the file.
+__FILE__	The full path and filename of the file with symlinks resolved. If used inside an include, the name of the included file is returned.
+__DIR__	The directory of the file. If used inside an include, the directory of the included file is returned. This is equivalent to dirname(__FILE__). This directory name does not have a trailing slash unless it is the root directory.
+__FUNCTION__	The function name, or {closure} for anonymous functions.
+__CLASS__	The class name. The class name includes the namespace it was declared in (e.g. Foo\Bar). When used in a trait method, __CLASS__ is the name of the class the trait is used in.
+__TRAIT__	The trait name. The trait name includes the namespace it was declared in (e.g. Foo\Bar).
+__METHOD__	The class method name.
+__NAMESPACE__	The name of the current namespace.

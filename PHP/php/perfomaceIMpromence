@@ -1,0 +1,13 @@
+<?php
+
+$arr=[1,2,3,4,5];
+//good for perfoemace impromce               //bad
+for($i=0,$len=count($arr);$i<$len;$i++){    for($i=0;$i<count($arr);$i++){
+    echo $arr[$i]."\n";                         echo $arr[$i]."\n";
+}                                           }
+
+// or 
+$len=count($arr);
+for($i=0;$i<$len;$i++){   
+    echo $arr[$i]."\n";                        
+}                                          
