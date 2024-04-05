@@ -49,6 +49,10 @@ Here are the different types of the JOINs in SQL:
         FROM Customers
         CROSS JOIN Orders;
 
+        select id,name,amount,datediff
+        form customer
+        cross join orders;
+
 ======================================================================
 UNION : 
     The UNION operator selects only distinct values by default.

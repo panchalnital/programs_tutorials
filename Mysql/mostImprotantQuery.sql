@@ -143,3 +143,24 @@ modify column name varchar(50);
 
 
 ALTER TABLE `emp1` ADD PRIMARY KEY(`id`);
+
+/*===========================
+SQL Backup database statment
+
+backup databse data_name
+to disk='filepath'
+go
+
+restore databse data_name
+from disk='filepath'
+
+MYSQL Backup database statment
+
+backup
+mysqldump -u username -p "password" -r testDB > TestDB1
+
+restore
+mysqldump -u username -p "password"  creater testdb1
+mysqldump -u username -p "password" testdb1 < testdb 
+
+*/

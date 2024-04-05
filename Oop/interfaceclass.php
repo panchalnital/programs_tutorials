@@ -49,7 +49,7 @@ class Order{
         $this->paymentprocess=$PayemntProcess;
     }
     public function checkout($amount){
-        $this->paymentprocess=processPayment($amount);
+        $this->paymentprocess->processPayment($amount);
     }
 
 }

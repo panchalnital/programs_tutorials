@@ -51,3 +51,11 @@ Here are some tips for optimizing SQL queries:
     Use wildcards at the end of a phrase only
     Use SELECT fields instead of SELECT *** 
 
+    -----------------------
+    Use SELECT fields instead of SELECT (*)
+    Use Wildcards
+    Use Explicit Join
+    Avoid using SELECT DISTINCT
+    Avoid using Multiple OR
+    Use WHERE instead of HAVING
+
