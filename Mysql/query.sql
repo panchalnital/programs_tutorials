@@ -1,3 +1,4 @@
+// https://qamayankgupta.medium.com/scenario-based-sql-interview-questions-with-answer-f87d9f69fdbf
 /* update the table if male =>female and female=> male*/
 update gender_table set name=case
     when name='male' then 'female' else 'male' end;

@@ -139,7 +139,7 @@ $cout=count($a);
 
 for($i=0;$i<$cout;$i++){
   //echo $a[$i][$i].",";
-echo $a[$i].",";
+echo $a[$i][$i].",";
 }
 
 $output="1,5,9"; 
@@ -189,3 +189,15 @@ function shuffle_cust(&$array){
   $array = [1, 2, 3, 4, 5];
   shuffle_cust($array);
   print_r($array);
+
+
+//---------------------repeat string remove in program---------------------
+//Welcome The India approach this Dev Pumi difference state are avaiable The India
+//Welcome The India approach this Dev Pumi difference state are avaiable
+$string="Welcome The India approach this Dev Pumi difference state are avaiable The India";
+$explodarr=explode(" ",$string);
+$out=[];
+foreach($explodarr as $key=>$value){
+    $out[$value]=$key;
+}
+echo $string."\n".implode(" ",array_keys($out));

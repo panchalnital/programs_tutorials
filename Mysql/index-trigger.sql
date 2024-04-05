@@ -6,6 +6,23 @@ The CREATE INDEX command is used to create indexes in tables (allows duplicate v
 Indexes are used to retrieve data from the database very fast. The users cannot see the indexes, they are just used to speed up searches/queries.
 
 The following SQL creates an index named "idx_lastname" on the "LastName" column in the "Persons" table:
+
+Unique Index:
+    CREATE UNIQUE INDEX index_name
+    on table_name (column_name);
+
+Single-Column Index
+    CREATE INDEX index_name
+    ON table_name (column_name);
+
+Composite Index
+    CREATE INDEX index_name
+    on table_name (column1, column2);
+
+Implicit Index
+
+
+DROP INDEX index_name;
 */
 CREATE INDEX idx_pname
 ON Persons (LastName, FirstName);
@@ -21,6 +38,7 @@ DROP INDEX index_name;
 Sql 
 DROP INDEX table_name.index_name;
 
+SHOW INDEX FROM CUSTOMERS;
 
 /* clusterd index :Clustered indexes define the way records are physically sorted in a database table. A clustered index is very similar to the table of contents of a book. In the table of contents, you can see how the book has been physically sorted
 
@@ -74,6 +92,19 @@ Cons
     ->Data modification Indexes can slow down INSERT, UPDATE, and DELETE queries.
     ->Clustered index Updating records in the clustered index can be slower.
 Indexes are used to retrieve data from a database faster. However, updating a table with indexes takes longer than updating a table without indexes
+
+When should indexes be avoided?
+    Although indexes are intended to enhance a database's performance, there are times when they should be avoided.
+
+    The following guidelines indicate when the use of an index should be reconsidered.
+
+    Indexes should not be used on small tables.
+
+    They should not be used on tables that have frequent, large batch updates or insert operations.
+
+    Indexes should not be used on columns that contain a high number of NULL values.
+
+    Columns that are frequently manipulated should not be indexed.
 
 type of index
     unique index
@@ -179,5 +210,72 @@ Here are some disadvantages of MySQL triggers:
     •	Troubleshooting: Triggers can be difficult to troubleshoot because they execute automatically in the database.
     •	Overhead: Triggers may increase the overhead of the MySQL server.
     •	Validations: Triggers can only provide extended validations, not all validations.
+
+
+====================================================================================
+
+This test case use trigger 
+
+Automated data maintenance :For example, a trigger can update the inventory table when an order is placed to reflect the decrease in stock
+
+Enforce business rules : For example, a trigger can ensure that a product's price is never set to less than its cost plus 10%.
+
+Automate tasks : For example, a trigger can automatically log data, update a data aggregation table, or populate a user notification table.
+
+Maintain an audit file : This makes it easy to track changes and add this information to user reports.
+
+Calculate values within columns: For example, triggers can maintain a TotalSales column on a customer record which would need to be updated every time a sale is made.
+
+Data validation :You can write a trigger to ensure data is a certain type and correct values can be set when needed.
+
+Data synchronization :You can use a trigger to keep related tables updated. For example, in an ecommerce table, every time a sales record gets created, a trigger can update the vendor's balance
+
+
+
+1) 
+
+create or replace function update_inventory()
+return trigger as 
+$$
+begin
+    update Inventory
+    set stock=stock-new.quantity
+    where product_id=new.product_id
+    return new;
+end;
+
+
+
+create trigger order_place_trigger
+After insert on orders
+for each row
+excute function update_inventory();
+
+4)
+create or replace function log_employee_chanages();
+return trigger as 
+$$
+begin
+        if tg_op='insert' then
+            insert into employee_audit_log(id,'message')
+            values(new.id,'employee inserted');
+        elseif tg_op='update' then
+            insert into employee_audit_log(id,'message')
+            values(new.id,'employee update');
+        elseif tg_op='delete' then
+            iinsert into employee_audit_log(id,'message')
+            values(new.id,'employee delete');
+        end if;
+    return new;
+end;
+$$
+
+
+
+create trigger employee_change_tigger
+after insert or update or delete on employee
+for each row
+execute function log_employee_chanages();
+
 
 */
