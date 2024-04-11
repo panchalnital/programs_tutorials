@@ -137,13 +137,13 @@ Final value $b = 22
 $x = 5;
 echo $x; 5
 echo "<br />";
-echo $x+++$x++; error
+echo $x+++$x++; 11
 echo "<br />";
-echo $x;
+echo $x;      7
 echo "<br />";
-echo $x---$x--;
-echo "<br />";
-echo $x;
+echo $x---$x--; 1
+echo "<br />";  
+echo $x;    5
 
 
 $str="abbcdffg";

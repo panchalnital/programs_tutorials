@@ -4,7 +4,7 @@
 $input="1,2,3,1,4,3,6,5,4,100";
 $array=explode(',',$input);
 $out=[];
-
+//option 1
 $uniqueme = array();
 foreach ($array as $key => $value) {
    $uniqueme[$value] = $key;
@@ -15,7 +15,17 @@ foreach ($uniqueme as $key => $value) {
 }
 //print_r($uniqueme);
 print_r($final);
+
 //or
+//option 2
+foreach($array as $num){
+    if(!in_array($num,$out)){
+        $out[]=$num;
+    }
+}
+
+print_r($out);
+
 
 /** find the duplicate values */
 $Array1 = [123,124,125,127,128];
