@@ -48,7 +48,7 @@ public function user(){
 }
 
 user App\model\User;
-$user =User::with(['post'])find(1);
+$user =User::with(['post'])->find(1);
 $user->toArray();
 
 // display inverst realtion conatct which user ka he 

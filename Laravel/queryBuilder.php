@@ -35,7 +35,12 @@ DB::table('student')->insertGetId($data);
     protected $primaryKey="flight_id";
     public $incerementinf=false;//use the auto incerment flase 
     public $timetamp=false;//use the create and update dateflase 
+    protected $hidden = [
+        'attribute_name',
+        // Add other attributes you want to hide here
+    ];
 
+   // <input type="hidden" name="attribute_name" value="{{ $model->attribute_name }}">
 
 //2 insert data
 

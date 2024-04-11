@@ -14,7 +14,7 @@
         $this->lname=$lname;
     }
     public function __call($method,$args){
-        if(method_exisys($this,$method)){
+        if(method_exists($this,$method)){
             call_user_func_array([$this,$method],$argc);
         }else{
         echo "this is private or not exitising method : $method";
@@ -38,7 +38,7 @@ class student{
          echo "this is private static or not exitising method : $name ";
     }
     public static function __callstatic($method,$args){
-        if(method_exisys(__CLASS__,$method)){
+        if(method_exists(__CLASS__,$method)){
             call_user_func_array([__CLASS__,$method],$argc);
         }else{
         echo "this is private or not exitising method : $method";
