@@ -45,6 +45,10 @@ $der->show();//Late Static Binding
 
 
 /*
+
+ **storing data that needs to persist between function calls, such as caches or counters
+ **Here are some uses of static variables in PHP: Implement a singleton, Share data between objects, and Local cache
+
 Static properties and methods in PHP are useful for storing values or performing actions that are associated with the class as a whole, rather than individual instances. They can be accessed without creating an instance of the class. 
 
 Here are some advantages of using static properties and methods in PHP:

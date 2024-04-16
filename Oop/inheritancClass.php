@@ -3,6 +3,12 @@
 /***
  *  parent child reltionship , parent are something common child wil be inheritan property 
  * Inheritance => is property of oop 
+ *  : inheritance is creating a parent-child realationship,
+ *      - wetween two classes where child class will automatically get the properties and method of the parent
+ * Why ?
+ *  : inheritance is good for *Resability* and *abstracttion of code*
+ *  
+ * 
  *  : Inheritance defines a parent child relationship of two classess
  *  : base class and drived class 
  *  : resublity , is a relationship, extends 
@@ -69,4 +75,36 @@ $man->invokemanger(); //method overriding
  * Dynamic Typing: PHP is a dynamically typed language, meaning that variable types are determined at runtime. Unlike statically typed languages where method overloading might involve different parameter types, PHP allows variables to change types during runtime. This dynamic typing makes it challenging to implement traditional method overloading based on parameter types.
 
 *Backward Compatibility: PHP has a strong commitment to backward compatibility. Introducing method overloading in a way that aligns with the conventions of statically typed languages could break existing code. Since PHP has historically been a loosely typed language, adding method overloading would require a significant shift in how methods are resolved and called.
+
+// single inheritance
+// not support in php muitple inheritance
+//multilevel inheritance
+//hierachial inheritance
+
+
+// single inheritance
+class employee{
+    public $salary;
+    public function calulateSalary($salary) {
+        echo 30*$salary;
+    }
+}
+class paramentEmployee extends employee{
+    
+}
+$obj=new paramentEmployee();
+$obj->calulateSalary(10000);
+
+// not support in php muitple inheritance
+//multilevel inheritance
+
+//hierachial inheritance
+class contratEmployee extends employee{
+    
+}
+$obj=new contratEmployee();
+$obj->calulateSalary(20000);
+
+
+
  */

@@ -2,6 +2,10 @@
 
 In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.
 
+**class drigram**
+
+        ![alt text](1_rfaD8u5TfrScch3mDrmyQw.webp)
+
 **The factory pattern has several advantages, including:**
     Extensibility: New classes can be added without modifying existing code
     Separation of concerns: Objects don't need to know how to create themselves
