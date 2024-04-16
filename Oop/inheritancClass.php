@@ -108,3 +108,35 @@ $obj->calulateSalary(20000);
 
 
  */
+
+
+
+
+ /*
+  * 
+    -> This design choice was made to avoid *complexities and conflicts* that can arise with multiple inheritance, such as the **Diamond Problem**. 
+    -> Multiple inheritance allows a class to inherit from more than one base class. For example, if two parent classes have data members or methods of the same name, it can cause problems
+    ->parent classes inherit from the same base class, forming a "diamond" pattern in the inheritance hierarchy.
+
+    **
+        PHP gets around the Diamond Problem through Interfaces and Traits, which let you get all the benefits of multiple inheritance (composition, DRY) without having to suffer the Diamond Problem
+
+        DRY:  is an acronym for *"Don't Repeat Yourself"*. It's a principle that aims to reduce duplicate code and patterns, and instead favor modular and referenceable code. DRY can involve replacing information that is likely to change with abstractions that are less likely to change, or using data normalization to avoid redundancy
+            ->DRY to prevent redundancies in processes, which are actions required to achieve a result
+    **
+
+    **
+        Diamond pattern problems can occur in PHP when a class inherits another class, such as a Hybrid class that inherits both the Electric and Gasoline class. For example, a hybrid car that is both electric and gasoline. 
+
+    
+        What is a diamond problem in Object-Oriented Programming?
+        Now, there is a special case if there is another class – a Hybrid class, for example – that inherits both the Electric and Gasoline class. We can see in the diagram that it will form a diamond. The hybrid car is both an *electric* car and a *gasoline* car. These kinds of special cases will result in a diamond problem.
+
+        Here are some ways to resolve diamond pattern problems in PHP:
+            ->Dependency injection: Instantiate other classes, then inject those instances into the main class. This avoids inheritance issues.
+            ->Include_Once: This will include the file only once.
+            ->Traits: This is a mechanism for code reuse in single inheritance languages like PHP, which can be used for multiple inheritance
+
+    **
+
+  */

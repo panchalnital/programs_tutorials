@@ -1,0 +1,7 @@
+
+**Advantages of oop**
+1 Resueablity : - of code throght achive *inheritnce and  traits*
+2 flexibility : - throght achive *polymorphism*
+3 Security    : -  throght achive *Encapsulation*
+4 simple to upgrade /scale :- from smaller to largest application
+5 Modularity  : - for easiser thoubleshooting (module divedie th largest class to small class)

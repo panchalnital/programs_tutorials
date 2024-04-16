@@ -1,6 +1,9 @@
 <?php 
 //show ony what is necessary
 //show what method the neccersy 
+//  [
+//      abtracttion means showing only required things and hide the *Background* deatils
+//  ]
 //cannot create the instand(objects)
 //if you create abstract method then define on signatuetr
 //abstract class also the define property and methods 
@@ -24,21 +27,26 @@ abstract class customer{
     public $productname;
     public $productAmount;
 
-    abstract public function CalclateDiscount();
+    abstract public function calculateDiscount($productAmount);
 }
 
 class GoldCustomer extends customer{
-    public function CalclateDiscount(){
+    public function calculateDiscount($productAmount){
         return $productAmount-10;
     }
 }
 
 class SilverCustomer extends customer{
-    public function CalclateDiscount(){
+    public function calculateDiscount($productAmount){
         return $productAmount-5;
     }
 }
 
+$obj=new GoldCustomer();
+$obj->calculateDiscount(100);
+
+$obj=new SilverCustomer();
+$obj->calculateDiscount(100);
 
 abstract class car{
     // private
@@ -111,3 +119,31 @@ Here are some differences between abstract classes and interfaces in PHP:
     
     Interfaces are pure templates, while abstract classes let you provide some degree of implementation. Interfaces are completely empty shells that expect child classes to implement everything for them. 
     Interfaces allow developers to create objects of different classes that may be used interchangeably because they implement the same interface or interfaces
+
+/*
+
+Abstraction       : is a thought process that hides details and shows only essential information. 
+An abstract class : is a type of class that contains abstract or non-abstract methods
+
+Here are some more details about abstraction and abstract classes:
+
+Abstraction
+    A thought process that shows only necessary things
+    A mechanism of data hiding
+    The process of formulating general concepts by abstracting common properties of instances
+    A general concept formed by extracting common features from specific examples
+    A concept or idea not associated with any specific instance
+The act of withdrawing or removing something
+
+Abstract class
+    A type of class that contains abstract or non-abstract methods
+    Abstract classes implement abstraction to hide complexity
+    Abstract classes/methods are created so that it can be implemented in its subclasses
+    Abstract classes define behavior that is found in every object but it is used by the different every object in different -different manner
+    Abstract classes cannot be instantiated
+    Abstract classes can have abstract methods, which don't have a body
+    The body is provided by the subclass 
+
+
+
+*/
