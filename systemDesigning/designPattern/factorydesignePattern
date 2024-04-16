@@ -1,0 +1,23 @@
+**Factory pattern** : is one of the most used design patterns in Java. This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object.
+
+In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.
+
+**The factory pattern has several advantages, including:**
+    Extensibility: New classes can be added without modifying existing code
+    Separation of concerns: Objects don't need to know how to create themselves
+    Decoupling: Components can flourish independently
+    Reuse: A diverse array of functionalities can flourish under a common interface
+    Flexibility: The software ecosystem can evolve with minimal upheaval
+    Resilience: Code remains resilient in the face of change and growth 
+Pentalog
+
+Factory Method Design Pattern - Definition & Examples | Pentalog
+30 Mar 2023
+
+
+**However, the factory pattern also has some disadvantages, including:**
+    Complexity: It requires the creation of additional classes and interfaces
+    Overhead: It can introduce additional overhead into the application
+    Code difficulty: It makes code harder to read
+    Class diagram: It can be difficult to understand the general flow and the class diagram can be headache inducing 
+    The factory pattern separates calling a programming method from the implementation of new classes. It also allows sub-classes to select the kind of objects to create. 

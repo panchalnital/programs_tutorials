@@ -1,0 +1,25 @@
+facade Pattern:
+
+    - Compexit of system it a keep a hide of client 
+    
+    - hide the complexities of the susytem for user 
+    - expose the necesarry methods and of the user  
+
+    - Facade pattern hides the complexities of the system and provides an interface to the client using which the client can access the system. This type of design pattern comes under structural pattern as this pattern adds an interface to existing system to hide its complexities.
+
+    - This pattern involves a single class which provides simplified methods required by client and delegates calls to methods of existing system classes.
+
+
+Pros 
+    Simplifies the interface: A facade pattern provides a single point of access and a consistent level of abstraction.
+    Reduced coupling
+    Encapsulation
+    Improved maintainability
+    Facilitates independent development and testing
+
+Cons 
+    Introduces performance overhead: Adding an extra layer of abstraction and communication between the clients and the subsystems can increase the latency and the resource consumption of the system.
+    Increased complexity
+    Reduced flexibility
+    Overengineering
+    Complex implementation
