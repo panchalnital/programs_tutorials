@@ -148,3 +148,18 @@ Disadvantages
     Some overhead associated with the creation and casting of objects
     More code is required to first specify the interface and then code the class that implements the interface
 Interfaces can be used to achieve 100% abstraction. They can also break up complex designs and clear the dependencies between objects
+
+**differnces**
+
+abstract class 
+1 abstract class contain Delcaction and efinition method_exists
+2 abstract class keyword Abstract
+    astract class employee{ }
+3 abstract class can contain method ,feild ,constructor  and other methods 
+4 abstract class does not support Multiple inhrtitance 
+
+interface class
+1 interface contain only declaration method_exists
+2 interface keyword  *interface*
+3 interface can contain methods only nothing else
+4 inteface supports mutiple inheritance

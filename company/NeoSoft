@@ -1,0 +1,48 @@
+security and other basic concepts are clear, oops should also be good
+
+What is method overloading? supported?
+what is method overriding?
+What are abstract classes?
+What are interfaces?
+What are final class and final methods? 
+What are namespaces? 
+Explain what traits ?
+How would you set an infinite execution time in PHP? 
+Does PHP support typecasting?
+Why is “.htaccess” used? 
+How does database import/export work in MySQL? 
+What are the different ways to join tables in MySQL? 
+Can a primary key be dropped in MySQL? If yes, how? 
+LEFT JOIN? RIGHT JOIN? knows
+How to create an Index in MySQL? 
+can we have multiple indexes? 
+What is CHAR and VARCHAR in MySQL?
+what are the storage engines? 
+
+**Laravel**
+
+What is Laravel Request Lifecycle, explain in brief? 
+What are service providers? 
+What is dependency injection? 
+What is routing?
+what are the migrations? command? 
+What is ORM, explain?
+Features of Eloquent ORM? 
+What is eager loading? 
+ realated to laravel
+How do we create migration? 
+Laravel Softdeletes? 
+what are middlewares?
+Examples of one to one, one to many and many to many relations?
+How do REST APIs work ? 
+PUT vs POST ? 
+What is authorisation and authentication?
+What does OAuth stand for? What is its purpose? 
+What’s the difference between HTTPS and HTTP?
+What is Cross-Site Request Forgery (CSRF)? How can we prevent it?
+
+**get**
+
+git status - 
+What does git clone do?
+Git stash?
