@@ -1,0 +1,60 @@
+**git status** : Git provides you with information about the current state of the repository. This command shows:
+
+1. **Modified files**: Files that have been changed but not yet staged for commit.
+2. **Staged files**: Files that have been marked for the next commit.
+3. **Untracked files**: Files that are not yet tracked by Git.
+4. **Branch information**: It also displays the name of the current branch and whether it's ahead or behind of the remote branch, or if there are any changes not yet committed or pushed.
+
+Overall, `git status` gives you a snapshot of what's going on in your repository, helping you keep track of changes and manage your workflow effectively.
+
+==========================================================
+**git clone`**  : It downloads the contents of the repository, including all of the files, branches, and commits, to your local machine
+
+Here are some of the benefits of using git clone:
+    = You can work on the repository on your local machine without affecting the remote repository.
+    = You can make changes to the files, create new branches, and commit your changes.
+    = You can push your changes to the remote repository when you're ready.
+    = You can create a local copy of a repository for offline work.
+    = You can collaborate with other developers on the same repository.
+
+`git clone` is a command used in the Git version control system. It's used to create a copy of a repository, including all its files, branches, and history, on your local machine. When you run `git clone <repository_URL>`, Git fetches all the data from the specified repository and sets up a local working copy on your machine.
+
+For example, if you want to clone a repository hosted on GitHub, you would use a command like:
+
+```
+git clone https://github.com/example/repository.git
+```
+
+This command creates a new directory named `repository` in your current location and downloads all the files and history from the remote repository into it.
+
+Cloning a repository is commonly done when you want to contribute to an existing project, collaborate with others, or work on your own copy of a project without affecting the original repository.
+==============================================================================
+**git stash**  :
+Sure! Git stash is a useful command in Git version control system that allows you to temporarily store changes that you haven't committed yet. It's particularly handy when you need to switch branches or work on something else without committing your current changes. Here's a brief overview of how it works:
+
+1. **Stashing Changes**: When you run `git stash`, Git will stash (i.e., save) your current changes in a special "stash" that you can later apply or remove.
+
+2. **Viewing Stashes**: You can view your stashes using `git stash list`. This will show you a list of all stashes you've created, along with a unique identifier for each stash.
+
+3. **Applying Stashes**: To apply a stash and reapply the changes it contains to your working directory, you can use `git stash apply`. By default, this will apply the most recent stash. You can also specify a particular stash by its identifier.
+
+4. **Popping Stashes**: If you want to apply a stash and then immediately remove it from the stash list, you can use `git stash pop`. This is equivalent to applying the stash and then dropping it.
+
+5. **Dropping Stashes**: To remove a stash from the stash list without applying its changes, you can use `git stash drop` followed by the identifier of the stash you want to drop.
+
+6. **Cleaning Stashes**: If you want to remove all stashes from the stash list, you can use `git stash clear`.
+
+Remember, stashing is a great way to temporarily set aside changes, but it's not a replacement for committing your changes when they're ready to be saved permanently. It's best used for short-term storage of work in progress.
+
+=======================================================================================================
+
+Certainly! In Git, both `git reset` and `git revert` are used to undo changes, but they do so in different ways:
+
+1. **git reset**: This command is used to reset the current HEAD to the specified state. It can be used to undo changes in the staging area or the working directory. There are different options for `git reset`, such as `--soft`, `--mixed`, and `--hard`, which determine how much of the previous state is reverted. For instance:
+   - `git reset --soft`: Moves the HEAD to the specified commit, but keeps changes in the staging area.
+   - `git reset --mixed` (default): Moves the HEAD to the specified commit and unstages changes, but keeps modifications in the working directory.
+   - `git reset --hard`: Moves the HEAD to the specified commit and discards all changes in the staging area and working directory.
+
+2. **git revert**: This command is used to create a new commit that undoes the changes made by a specific commit. It does not modify the commit history but instead adds a new commit that contains the opposite changes. This is useful when you want to undo changes in a way that preserves the commit history. When you run `git revert <commit>`, Git will create a new commit that is the inverse of the specified commit.
+
+In summary, `git reset` is used to move the current branch tip to a different commit, potentially altering the commit history, while `git revert` is used to create a new commit that undoes the changes introduced by a specific commit, preserving the commit history.
