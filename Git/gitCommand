@@ -1,3 +1,7 @@
+https://www.youtube.com/@EngineeringDigest/playlists
+https://www.youtube.com/watch?v=1nUm8lUpPNA&list=PLA3GkZPtsafYYWC-N6vicOLP0w-4fiQ2S&index=10
+
+---------------------------
 **git status** : Git provides you with information about the current state of the repository. This command shows:
 
 1. **Modified files**: Files that have been changed but not yet staged for commit.
@@ -58,3 +62,43 @@ Certainly! In Git, both `git reset` and `git revert` are used to undo changes, b
 2. **git revert**: This command is used to create a new commit that undoes the changes made by a specific commit. It does not modify the commit history but instead adds a new commit that contains the opposite changes. This is useful when you want to undo changes in a way that preserves the commit history. When you run `git revert <commit>`, Git will create a new commit that is the inverse of the specified commit.
 
 In summary, `git reset` is used to move the current branch tip to a different commit, potentially altering the commit history, while `git revert` is used to create a new commit that undoes the changes introduced by a specific commit, preserving the commit history.
+
+
+Feature
+    Git reset
+    Git revert
+Undoes changes to the working tree
+    Yes
+    No
+Undoes changes to the staging area
+    Yes
+    No
+Undoes changes to the HEAD commit
+    Yes
+    Yes
+Changes the commit history
+    Yes
+    No
+Safe to use with other developers
+    No
+    Yes
+Examples
+
+---------------------------------------
+git init: Initializes a new Git repository.
+git clone [repository URL]: Clones a repository into a new directory.
+git add [file(s)]: Adds changes in the working directory to the staging area.
+git commit -m "[commit message]": Commits changes from the staging area to the repository.
+git status: Shows the status of changes as untracked, modified, or staged.
+git pull: Fetches changes from a remote repository and merges them into the current branch.
+git push: Pushes local changes to a remote repository.
+git branch: Lists all branches in the repository.
+git checkout [branch name]: Switches to the specified branch.
+git merge [branch name]: Merges changes from one branch into the current branch.
+git log: Displays a log of all commits.
+git remote -v: Lists all remote repositories.
+git fetch [remote]: Fetches changes from a remote repository.
+git reset [file(s)]: Unstages changes, or resets the working directory to a specific commit.
+git config: Configures Git settings.
+
+git cheery-pick vesionid : particular commit marge on master branch

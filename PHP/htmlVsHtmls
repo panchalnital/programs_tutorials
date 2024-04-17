@@ -1,0 +1,44 @@
+ https://www.youtube.com/watch?v=sn3AGQ3Cex0
+----------------------------------------------------------------
+
+      HTTP                                  HTTPs
+-Http stands for Hyper text Trannsfer     - Https stand for hyper text transfer protocol Secure
+  Protocol
+
+- Http worked port 80                     - Http worked port 443
+
+- Http works in the application layer of  -Https works in the transport layer of osi model 
+  OSI model
+
+-Http does not uses certificate           -Https uses SSL certificate 
+
+-there does no encryption and descyption -Http is uses certificate 
+-Http help to transfer text,audio,        -Http help to transfer scecurelt via network
+video,imgae throgh webpages
+
+============================================================
+
+Here are some differences between PUT, POST, and PATCH:
+PUT
+Creates or replaces a resource, or changes a record's information in a database. PUT is suitable when the entire resource needs to be updated and the client specifies the resource identifier.
+
+POST
+Creates a resource, or creates or appends data to resources. POST is suitable when creating a new resource and the client does not specify the resource identifier.
+
+PATCH
+Updates a resource, or partially updates existing resources. PATCH is suitable when making partial updates to a resource. PATCH updates an existing resource, but does not require sending the entire body with the request
+
+
+----------------
+Certainly! Let's break down the differences between "put," "post," and "patch":
+
+1. **PUT**: In the context of web technologies and RESTful APIs (Representational State Transfer), "PUT" is an HTTP method used to update a resource or entity on the server. When you use a PUT request, you're essentially replacing the entire resource with the new representation provided in the request.
+
+2. **POST**: Similarly, "POST" is also an HTTP method. However, unlike PUT, POST is used to submit data to be processed to a specified resource. It's often used for creating new resources on the server. POST requests are not idempotent, meaning each request can have a different outcome.
+
+3. **PATCH**: "PATCH" is another HTTP method used for updating resources, but it differs from PUT in that it's used for making partial updates to a resource. Instead of replacing the entire resource, a PATCH request only updates the fields that are provided in the request. This can be useful when you only need to change a few specific attributes of a resource without affecting the rest.
+
+In summary:
+- **PUT**: Replace the entire resource with the provided representation.
+- **POST**: Submit data to be processed, often used for creating new resources.
+- **PATCH**: Update part of a resource without replacing the entire thing.

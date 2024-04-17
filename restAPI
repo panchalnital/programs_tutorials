@@ -146,3 +146,27 @@ Flickr: Flickr provides a RESTful API for accessing photos and photo-related inf
 Instagram: Instagram's API allows developers to interact with user data, photos, and other content using RESTful calls.
 
 Zendesk: Zendesk offers a REST API for integrating with its customer support and help desk services.
+
+
+=============================================================================================
+    Difference                  SOAP                        REST
+1 style         protocol(set of rule and guildline)     Architectural style
+
+2 function      functin derive transfer structure       data-derive access a resources for data
+                information
+
+3 data format   xml                                     permits many data formats,including plain text,html,xml
+                                                         and json
+
+4 security      suppoerts WS-security and ssl           Supports ssl and https
+
+5 Bandwidth     Requires more resourece and bandwith    requries fewer resources and is lighweight
+
+6 data cache    can not be cached                       can be cached
+
+7 payload handing   has a strict communnication contract    needs no knowledge of the api
+                and needs knowlege of everyting before any
+                    interaction
+
+8. ACID         has build-in ACID complince to reduce       lacks ACID compliance
+                anomalies                               

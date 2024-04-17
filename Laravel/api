@@ -1,0 +1,91 @@
+1 migration 
+    php artisan make:migration create_blogs_table
+
+2 resources 
+    php artisan make:controller BlogController --resource –model=Blog
+
+3 route 
+    use App\Http\Controllers\BlogController;
+    Route::resource('blogs', BlogController::class);
+
+3 “app/Http/Controllers/BlogController.php”
+    index()
+    create()
+    store()
+    show()
+    edit()
+    update()
+    destroy()
+
+----------------------------
+use Illuminate\Support\Facades\Http;
+$response = Http::get('https://api.example.com/endpoint', [
+    'queryParam1' => 'value1',
+    'queryParam2' => 'value2',
+]);
+
+Http::withUrlParameters([
+    'endpoint' => 'https://laravel.com',
+    'page' => 'docs',
+    'version' => '11.x',
+    'topic' => 'validation',
+])->get('{+endpoint}/{page}/{version}/{topic}');
+
+return Http::dd()->get('http://example.com');
+
+
+$response = Http::post('http://example.com/users', [
+    'name' => 'Steve',
+    'role' => 'Network Administrator',
+]);
+
+Http::retry(3, 100)->withQueryParameters([
+    'name' => 'Taylor',
+    'page' => 1,
+])->get('http://example.com/users')
+
+
+$response = Http::attach(
+    'attachment', file_get_contents('photo.jpg'), 'photo.jpg', ['Content-Type' => 'image/jpeg']
+)->post('http://example.com/attachments');
+
+
+$response = Http::withHeaders([
+    'X-First' => 'foo',
+    'X-Second' => 'bar'
+])->post('http://example.com/users', [
+    'name' => 'Taylor',
+]);
+
+==================================================================
+Sure! Laravel is a popular PHP framework known for its elegant syntax and developer-friendly features. When working with RESTful APIs in Laravel, you typically utilize HTTP methods to perform various actions. Here's a list of common HTTP methods used in REST APIs along with examples in the context of Laravel:
+
+1. **GET**: Used to retrieve data from the server.
+   Example in Laravel:
+   ```php
+
+   Route::get('/api/resource', 'ResourceController@index');
+   
+   ```
+
+2. **POST**: Used to submit data to be processed to the server.
+   Example in Laravel:
+   ```php
+   Route::post('/api/resource', 'ResourceController@store');
+   ```
+
+3. **PUT/PATCH**: Used to update existing data on the server.
+   Example in Laravel:
+   ```php
+   Route::put('/api/resource/{id}', 'ResourceController@update');
+   // OR
+   Route::patch('/api/resource/{id}', 'ResourceController@update');
+   ```
+
+4. **DELETE**: Used to remove data from the server.
+   Example in Laravel:
+   ```php
+   Route::delete('/api/resource/{id}', 'ResourceController@destroy');
+   ```
+
+These examples assume you have a `ResourceController` with methods like `index`, `store`, `update`, and `destroy`, which handle corresponding CRUD operations. Make sure to replace `'ResourceController'` with the actual name of your controller. Also, `'api/resource'` is just a placeholder; you should replace it with the actual endpoint you want to define.
