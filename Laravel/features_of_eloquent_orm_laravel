@@ -1,0 +1,42 @@
+
+
+
+Eloquent ORM is a powerful feature of the Laravel framework, providing a simple and expressive way to interact with your database. Here are some key features of Eloquent ORM in Laravel:
+
+1. **Model-View-Controller (MVC) Architecture**: Eloquent follows the MVC architecture pattern, allowing you to separate your application's data access logic from presentation and business logic.
+
+2. **Database Table Mapping**: Eloquent models typically represent a single database table. By defining a model class, you can interact with its corresponding table using Eloquent's fluent API.
+
+3. **CRUD Operations**: Eloquent provides methods for creating, reading, updating, and deleting records in your database, making it easy to perform common database operations.
+
+4. **Relationships**: Eloquent allows you to define relationships between different database tables using simple, expressive syntax. It supports one-to-one, one-to-many, and many-to-many relationships, among others.
+
+5. **Lazy Loading and Eager Loading**: Eloquent supports lazy loading and eager loading of related models, allowing you to efficiently retrieve and work with related data.
+
+6. **Query Builder**: Eloquent includes a powerful query builder that allows you to construct complex database queries using method chaining syntax. This makes it easy to retrieve specific data from your database.
+
+7. **Automatic Timestamps**: Eloquent automatically manages created_at and updated_at timestamps for your records, simplifying the process of tracking when records were created and last updated.
+
+8. **Soft Deletes**: Eloquent supports soft deletes, allowing you to "delete" records without actually removing them from the database. Soft deleted records are automatically excluded from query results unless explicitly requested.
+
+9. **Mutators and Accessors**: Eloquent allows you to define mutator and accessor methods on your model classes, allowing you to customize how attributes are set and retrieved.
+
+10. **Scopes**: Eloquent scopes allow you to encapsulate commonly used query constraints into reusable methods, making your code more readable and maintainable.
+
+Overall, Eloquent ORM simplifies the process of interacting with databases in Laravel applications, providing a convenient and intuitive way to work with your data.
+
+====================================================
+Laravel Eloquent ORM is a model-driven tool that provides a simple way to work with databases. Here are some of its features:
+    Model-driven: Each table in the database is associated with a corresponding Eloquent model
+   
+    Expressive query builder: Developers can create complex queries using a simple and readable syntax
+   
+    Relationships: Developers can easily define and work with relationships between database tables, such as one-to-many, many-to-many, and one-to-one
+   
+    Object-oriented approach: Developers can interact with databases using an object-oriented approach
+   
+    Automatic query construction: Developers don't need to manually construct queries
+   
+    timestamps: Eloquent automatically maintains the created_at and updated_at columns on database tables
+   
+    Soft deleting: Developers can enable soft deletes for a model 

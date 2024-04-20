@@ -25,7 +25,7 @@ $revnum=0;
 while($num>1){
     $rem=$num%10;
     $revnum=($revnum*10)+$rem;
-    $num=$num*10;
+    $num=$num/10;
 }
 
 echo "reverst number".$revnum;
@@ -73,29 +73,28 @@ while($cnt<10){
 
 //A number which is only divisible by 1 and itself is called prime number. 
 //Numbers 2, 3, 5, 7, 11, 13, 17, etc. are prime numbers.
-
-function checkPrime($number){
-    if($number<2){
+function isPrime($num){
+    if($num<2){
         return false;
     }
-    for($i=2;$i<$number/2;$i++){
-        if($number%2==0){
+    for($i=2;$i<=sqrt($num);$i++){
+        if($num%$i==0){
             return false;
         }
     }
     return true;
 }
 
-
-$numberChek=checkPrime(17);
-if($numberChek==true){
-    echo "prime";
-}else{
-    echo "Not prime";
+for($i=0;$i<20;$i++){
+    if(isPrime($i)){
+        echo $i. " ";
+    }
 }
+
 // convert mobile format 
 $number='98658956323';
 $formatted_number = substr($number, 0, 3) . '-' . substr($number, 3, 3) . '-' . substr($number, 6);
+//echo substr($number,0,3)." ".substr($number,3,3)."-".substr($number,6,3)."-".substr($number,9);
 
 echo preg_replace('/(\d{3})(\d{3})(\d{4})/','$1-$2-$3',$number);
 

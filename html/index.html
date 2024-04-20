@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 30px;
+    background-color: lightgray; /* Color for the content area */
+}
+
+/* Color for padding area */
+.box {
+    padding: 20px;
+    background-clip: content-box;
+    background-color: lightblue;
+}
+
+/* Color for border area */
+.box {
+    border: 2px solid black;
+    background-clip: padding-box;
+    background-color: lightgreen;
+}
+
+/* Color for margin area */
+.box {
+    margin: 30px;
+    background-clip: border-box;
+    background-color: lightyellow;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        This is the content of the box.
+    </div>
+</body>
+</html>

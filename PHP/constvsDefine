@@ -7,3 +7,39 @@ const is always case-sensitive, but define() has a case-insensitive option.
 
 Block scope
 const cannot be created inside another block scope, like inside a function or inside an if statement. define() can be created inside another block scope.
+
+--------------------------------------------------
+In PHP, both `const` and `define()` are used for defining constants, but they have some differences:
+
+1. **Declaration**: 
+   - `const` is a language construct, whereas `define()` is a function.
+
+2. **Scope**:
+   - `const` defines constants in classes and cannot be used outside of them.
+   - `define()` defines constants globally, making them accessible throughout the script.
+
+3. **Value Assignment**:
+   - Constants defined with `const` are assigned at compile time.
+   - Constants defined with `define()` are assigned at runtime.
+
+4. **Syntax**:
+   - `const` doesn't use the `$` sign before the constant name.
+   - `define()` uses the `$` sign before the constant name.
+
+Here's a comparison:
+
+```php
+// Using const
+class MyClass {
+    const MY_CONSTANT = "This is a constant";
+}
+
+echo MyClass::MY_CONSTANT; // Outputs: This is a constant
+
+// Using define()
+define("ANOTHER_CONSTANT", "Another constant value");
+
+echo ANOTHER_CONSTANT; // Outputs: Another constant value
+```
+
+In summary, `const` is preferred for class constants because it's more concise and has better performance, while `define()` is more flexible and can be used globally or within functions.

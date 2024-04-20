@@ -1,0 +1,32 @@
+
+//https://www.youtube.com/watch?v=YuIbOzvS-Jk
+//Laravel Sanctum supports Laravel 9 and above. To support Laravel 8,
+// composer require laravel/sanctum 
+//and php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider
+1 composer.json
+    require: "laravel/sanctum": "^3.0",
+
+2 app/http/kernal.php
+        // middleware group remove comment on 
+      protected $middlewareGroups = [
+        'api' => [
+            \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+           'throttle:api'
+        ]
+      ]
+
+3 create controller 
+        php artisan make:controller API/Authcontroller
+
+        $success['token']=$user->createToken('MyApp')->plainTextToken;
+
+
+4 route 
+Route::controller(Authcontroller::class)->group(function(){
+    Route::post('login','login');
+    Route::post('register','register');
+});
+
+ postman set 
+    1 login create token and 
+    2 token user and user deatils access
