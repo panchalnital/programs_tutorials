@@ -6,6 +6,12 @@
 1 composer.json
     require: "laravel/sanctum": "^3.0",
 
+1.1 model include 
+
+    use Laravel\Sanctum\HasApiTokens;
+
+    use HasApiTokens
+
 2 app/http/kernal.php
         // middleware group remove comment on 
       protected $middlewareGroups = [

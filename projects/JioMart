@@ -1,0 +1,84 @@
+functional requiremenet
+Non-functional requiremenet
+Capacity Estimation
+Database designe
+APi designe
+High Level system designe
+Diagram
+Scaling the designe for millions of users
+
+# functional requiremenet
+
+1 Search for Product
+2 Recommendations on HomePage
+3 Place order
+4 check Order Status
+5 Write/view Product reviews
+
+    #Assumptons:
+        1 User Profile Creation is providede
+        2 Product OnBoarding is provided
+        3 Payment service is Provided
+        4 offer coupen (ppc)
+        5 product diccovvery (PD)
+        6 Ordering (OMS order managment system)
+        7 retring 
+        8 refund
+        9 billing 
+        10 backOffice    
+
+# non-functional requiremenet
+
+1 low Latency (Recommendations & Search)
+2 High Consistency (Placing Order,order status and payments)
+
+# Capacity estimations
+    Active Users : 11 million Monthly atcive users 
+                    each user search for 10 product a month
+                 =11m * 10 sreach/Month
+                 =110M seach /(30 days *24 hours * 60 mons * 60 seconds) 
+                 =1*10
+                 =1 k seaches/second
+
+# Total products :10 M
+Assume : 1 products requires 10MB storage(images+Description)
+total products storages : 10m* 10MB
+                        =10 * 10^6 *10 *10^6
+                        =100*10^12
+                        =100 TB stroges required to store all producst infromation
+
+
+ # Databse Designe :
+    1 user DB- (SQL) User ID(pk)
+                     user name (string)
+                     password (string) encrypted
+                     first name (string)
+                     last name (string)
+                     email (string)
+                     last login (datetime)
+                     created  (datatime)
+    2 Address DB- (sql) Address ID(Pk)
+                    user ID(Fk)
+                    Effictive Data (date)
+                    address Type (string)(billing/home/office)
+                    addressline1 (string)
+                    addressline2 (string)
+                    City :(string)
+                    country (strinh)
+                    zip Alphe int
+
+# APIs
+    1 GetRecommerndations(UserID) - return a list of 10 product recommendations
+    2 Search(Search string,userId) -Get method & return a list of products
+    3 AddToCart(userId,ProductID,qty,Amt)- return a boolean (true/false) status
+    4 PlaceOrder(userID,AddressId,PaymentStatus) - return boolean
+    5 checkOrderStatus(OrderId) - GET - return order status
+
+- ordering (OMS order managment system)
+
+-checkout 
+    - product and qty
+    - coupen,amount calaculate,qty
+    - add products
+
+creater FCCARTID
