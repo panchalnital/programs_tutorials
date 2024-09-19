@@ -95,3 +95,12 @@ $user_id = $this->input->cookie('user_id', TRUE);
 
 Deleting Cookies:
 delete_cookie('user_id');
+
+<?php
+
+class parant {
+
+  
+}
+
+?>

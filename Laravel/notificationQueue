@@ -1,0 +1,35 @@
+queues can be used to defer the processing of time-consuming tasks, like sending emails, until a later time. This can help speed up web requests to your application. Queues can also be used for email notifications and to stop other connections if used in a sync process. 
+
+
+To set up queues in a Laravel project, you can follow these steps:
+Update the .env file
+Import the ShouldQueue class in your Notification class
+Implement the ShouldQueue interface in your Notification class
+Generate the database tables to store the queued data
+Migrate the tables
+Run the queue
+
+
+1 php artisan make:notification InvoicePaid
+    1  Using the Notifiable Trait
+
+            use Notifiable;
+            use App\Notifications\InvoicePaid
+
+            $user->notify(new InvoicePaid($invoice));
+    2 Using the Notification Facade
+
+        use Illuminate\Support\Facades\Notification;
+ 
+        Notification::send($users, new InvoicePaid($invoice));
+
+2 use Illuminate\Contracts\Queue\ShouldQueu
+
+    class InvoicePaid extends Notification implements ShouldQueue
+    {
+        use Queueable;
+    
+        // ...
+    }
+
+    $user->notify(new InvoicePaid($invoice));

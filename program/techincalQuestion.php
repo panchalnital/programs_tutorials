@@ -14,7 +14,7 @@ echo "a=".$a--;
 echo "a=".--$a;
 //o/p a=11a=9
 
-//write a function sumation of value in php
+//write a function sumation of value in php.
 $data=sum(1,2,3,4,5);
 
 function sum(...$values) {
@@ -49,3 +49,49 @@ function calc_chocolates($n,$k){
 }	
 $n=10;$k=3;
 calc_chocolates($n,$k);
+
+//--------------------------------------
+$a=1;
+if($a == '1'){
+    $a++;
+}
+echo $a; //1 
+
+//-----
+$a=1;
+if($a == '1'){
+    $a++;
+}
+echo $a; //2
+
+//------------------------------------
+$arr=['a1','a2','a3','a4'];
+foreach($arr as $val){
+    if($val=='a3'){ // skip a3 value
+        continue;
+    }
+    echo $val;
+} // a1 a2 a4
+
+//--------------
+$arr=['a1','a2','a3','a4'];
+foreach($arr as $val){
+    if($val=='a3'){ // skip a3 ,a4 value
+        break;
+    }
+    echo $val;
+} // a1 a2 
+
+//==============
+$a=1;
+do{
+    $a++;
+}while($a==0);
+echo $a; // 2;
+//========================
+$a=1;
+do{
+    $a++;
+    continue;
+}while($a==0);
+echo $a; // 2;

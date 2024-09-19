@@ -159,7 +159,8 @@ Zendesk: Zendesk offers a REST API for integrating with its customer support and
                                                          and json
 
 4 security      suppoerts WS-security and ssl           Supports ssl and https
-
+                WS(Web Services)(authentication, integrity, and 
+                confidentiality)
 5 Bandwidth     Requires more resourece and bandwith    requries fewer resources and is lighweight
 
 6 data cache    can not be cached                       can be cached

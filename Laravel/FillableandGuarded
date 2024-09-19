@@ -1,0 +1,26 @@
+The main difference between fillable and guarded properties on your Laravel model class lies in how they control mass assignment. Mass assignment refers to assigning multiple values to a model's attributes at once, often using an array.
+
+Here's a breakdown of their functionalities:
+
+Fillable:
+
+Acts as a whitelist.
+Specifies the attributes that can be mass assigned.
+Any attribute not listed in fillable is not mass assignable.
+This approach is ideal when you have a limited number of fillable attributes.
+Guarded:
+
+Acts as a blacklist.
+Specifies the attributes that cannot be mass assigned.
+All attributes not listed in guarded are considered mass assignable by default.
+This approach is suitable when you have a large number of attributes and want to restrict updates to only a few specific ones.
+Here's a table summarizing the key differences:
+
+Property	Functionality	Use Case
+fillable	Whitelist - allows mass assignment for specified attributes	Models with limited fillable attributes
+guarded	Blacklist - prevents mass assignment for specified attributes	Models with many attributes, restrict updates to specific ones
+Important points to remember:
+
+You should use only one of these properties in your model class, not both.
+Laravel recommends using fillable for security reasons, as it explicitly defines which attributes can be modified.
+You can completely disable mass assignment by setting $guarded = ['*'].

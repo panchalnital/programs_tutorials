@@ -1,0 +1,111 @@
+https://www.youtube.com/playlist?list=PLRheCL1cXHrsDkSXOblAeA8-qJQGO7FlH
+
+Laravel includes Eloquent, an object-relational mapper (ORM) that makes it enjoyable to interact with your database. When using Eloquent, each database table has a corresponding "Model" that is used to interact with that table. In addition to retrieving records from the database table, Eloquent models allow you to insert, update, and delete records from the table as well
+
+
+# Generating Model Classes
+
+    php artisan make:model user
+        directory and extend  Illuminate\Database\Eloquent\Model
+    # migration
+        php artisan make:model Flight --migration or -m
+
+    # factories, seeders, policies, controllers, and form requests
+        # Generate a model and a FlightFactory class...
+        php artisan make:model Flight --factory
+        php artisan make:model Flight -f
+        
+        # Generate a model and a FlightSeeder class...
+        php artisan make:model Flight --seed
+        php artisan make:model Flight -s
+        
+        # Generate a model and a FlightController class...
+        php artisan make:model Flight --controller
+        php artisan make:model Flight -c
+        
+        # Generate a model, FlightController resource class, and form request classes...
+        php artisan make:model Flight --controller --resource --requests
+        php artisan make:model Flight -crR
+        
+        # Generate a model and a FlightPolicy class...
+        php artisan make:model Flight --policy
+        
+        # Generate a model and a migration, factory, seeder, and controller...
+        php artisan make:model Flight -mfsc
+        
+        # Shortcut to generate a model, migration, factory, seeder, policy, controller, and form requests...
+        php artisan make:model Flight --all
+        php artisan make:model Flight -a
+        
+        # Generate a pivot model...
+        php artisan make:model Member --pivot
+        php artisan make:model Member -p
+
+    # all of a model's available attributes and relationships
+        php artisan model:show Flight
+
+<?php
+ 
+namespace App\Models;
+ 
+use Illuminate\Database\Eloquent\Model;
+ 
+class Flight extends Model
+{
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'my_flights';   //Table Names
+    protected $primaryKey = 'flight_id'; // Primary Keys
+}
+
+# "Composite" Primary Keys
+Eloquent requires each model to have at least one uniquely identifying "ID" that can serve as its primary key. "Composite" primary keys are not supported by Eloquent models. However, you are free to add additional multi-column, unique indexes to your database tables in addition to the table's uniquely identifying primary key.
+
+# UUID and ULID Keys  36 characters long.
+$article->id; // "8f8e8478-9035-4d23-b9a7-62f4d2612ce5"
+
+1. Create a Model 
+2. Table Name ( $table Property ) 
+    protected $table = 'products
+3. Table Columns ( $fillable Property )
+        protected $fillable = [
+        'name',
+        'product_code',
+        'price',
+        'stock',
+        'is_active'
+    ];
+4. Attribute Casting ( $casts Property ) 
+        protected $casts = [
+        'start_date' => 'datetime',
+        'end_date'   => 'datetime:Y-m-d',
+        'is_active'  => 'boolean',
+    ];
+5. Append Attribute ( $appends Property )
+    protected $appends = ['name_code'];
+
+    public function getNameCodeAttribute()
+    {
+        return $this->name . ' ' . $this->product_code;
+    }
+6. Primary Key Column ( $primaryKey Property ) 
+    protected $primaryKey = 'id';
+7. Hidden Attribute ( $hidden Property )
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
+8. Accessors (Getters) and Mutators (Setters)
+    Accessors(read data)
+    // Assume 'name' (product_name) is a column in the products table.
+    public function getNameAttribute()
+    {
+        return ucfirst($this->attributes['name']);
+    }
+    Mutators(update)
+
+9. timestamp :
+    public $timestamps = false;

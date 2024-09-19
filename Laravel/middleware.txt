@@ -12,6 +12,7 @@ Route::get('/dashboard',[userController::class])->middleware('testAdmin');
 
 @csrf
 
+
 default middleware in laravel
     verifyCsrfToken
     authenticate
@@ -23,3 +24,30 @@ default middleware in laravel
 $exxcept=[//ingoter the csrf this contus
     '/contact-us'
 ]
+
+-----------------------
+Route::get('/token', function (Request $request) {
+    $token = $request->session()->token();
+ 
+    $token = csrf_token();
+ 
+    // ...
+});
+
+----------------------
+<form method="POST" action="/profile">
+    @csrf
+ 
+    <!-- Equivalent to... -->
+    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+</form>
+
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
+ajax
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
